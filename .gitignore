@@ -1,0 +1,12 @@
+*.eps
+*.pdf
+*.log
+*.aux
+*.dvi
+*.out
+*.lof
+*.lot
+*.tdo
+*.toc
+*.~
+*.bst
