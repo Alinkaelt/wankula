@@ -294,7 +294,7 @@ Aus der $r$-fachen Vereinigung $G_{1 \leftrightarrow 2}= G_1 \leftrightarrow G_2
 \begin{figure}[h!]
 		\centering 		 
    \includegraphics[width=427pt]{bilder/struktur2.pdf}
-	\caption{Beispiel für Vereinigung, kartesisches Produkt,$r$-fache Vereinigung und $r$-fache Verschmelzung}
+	\caption{Beispiel für Vereinigung, kartesisches Produkt, $r$-fache Vereinigung und $r$-fache Verschmelzung}
   	 \end{figure}
 \end{bsp}
 \newpage
@@ -384,7 +384,7 @@ Es nicht möglich dieses Modell durch weitere Kreise zu erweitern. Die außenlie
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Metrische Dimension dreier Graphklassen}
+\section{Metrische Dimension von einigen Graphklassen}
 \subsection{Stuktur Eigenschaften}
 Es erscheint einem ganz natürlich, dass durch das Entfernen von Kanten sich die metrische Dimension verringert. Nehme man zum Beispiel einen vollständigen Graphen $K_n$ und entferne solange Kanten bis der Graph zu einem einfachen Weg $P_n$ wird. Nun hat sich die metrische Dimension von $n-1$ auf $1$ verringert, also um einen Faktor von $n-1$.\\Interessant ist aber die Eigenschaft, dass durch die Entfernung von Kanten die metrische Dimension auch ansteigen kann. Der folgende Satz und Beweis zeigen, dass sich die metrische Dimension bezüglich des Löschens von Kanten bei einer Graphklasse von einem konstanten Wert um einen unbeschränkten Faktor vergrößert.
 \begin{lem}
@@ -413,6 +413,7 @@ Die metrische Dimension eines induzierten Teilgraphen ist nicht durch die metris
 \textcolor{white}{x}\newline
 Der Gittergraph $G_{3,2m-1}$ hat nach der Tabelle \ref{tbl:Metrische Dimension einiger Graphklassen} metrische Dimension zwei. Entfernt man jeden zweiten Knoten auf dem aüßeren Kreis so entsteht ein Baum $T_{3m}$ wie in Abbildung \ref{bild:Gitterbaum2} mit der metrischen Dimension $m$. Damit steigt der Anteil von Knoten : Knoten in der metrischen Basis von $6m$-$3:2$ auf $3m:m$.
 \end{proof}
+\todo{Entfernen 1ner Kante, 1nem Knoten}
 \begin{lem}
 \label{dist}
 Sei $G=(V,E)$ ein gegebener Graph. Seien $u,v$ und $w$ Knoten in $G$ und sei $\{u,v\}\in E$. Sei $d$ die Länge eines kürzesten Weges von $u$ zu $w$ in $G$. Dann ist die Länge eines kürzesten Weges von $v$ zu $w$ ein Element der Menge $\{d-1,d,d+1\}$.\cite{landmarks}
@@ -614,7 +615,7 @@ In jedem Teilgraphen eines $C_{3}$-$Baumes$ mit mindestens vier Knoten ist minde
 Der kleinste Teilgraph der durch das Löschen eines Knotens entstehen kann ist ein Blatt. Dieser besteht allerdings nur aus einem Knoten. Der nächstgrößere Teilgraph der durch das Löschen eines Knotens entstehen kann beinhaltet vier Knoten,genauer den unteren Teil eines $C_{3}$-$Blattes$. Damit beinhaltet er auch sein linkes Blatt, welches in die metrische Basis aufgenommen wird. Jeder größere Teilgraph beinhaltet diese vier Knoten. %Unabhängig davon welcher Knoten als Wurzel verwendet wurde, galt bei dem ursprünglichen Baum dass der Knoten mit der weitesten Entfernung von der Wurzel(der Knoten davor), hatte genau zwei Kinder und aus dem wurde ein $C_{3,j}$-$Blatt$.  
 \end{proof}
 \begin{proof}[Beweis von Lemma 27:]
-Der gesamte Graph besteht nur aus Knoten vom Grad drei oder Grad eins. In die metrische Basis wird das linke Blatt von jedem $C_{3}$-$Blatt$ aufgenommen. Sei $n$ die Anzahl der $C_{3}$-$Blätter$ und $m$ die Anzahl der $C_{3,j}$, die keine $C_{3}$-$Blätter$ sind und bei diesem Beweis als einfache $C_{3,j}$ bezeichnet werden.\\
+Der gesamte Graph besteht nur aus Knoten vom Grad drei oder Grad eins. In die metrische Basis wird das linke Blatt von jedem $C_{3}$-$Blatt$ aufgenommen. Sei $n$ die Anzahl der $C_{3}$-$Blätter$ und $m$ die Anzahl der $C_{3,j}$, die keine $C_{3}$-$Blätter$ sind und bei diesem Beweis als einfache $C_{3,j}$ bezeichnet werden.
 \begin{itemize}
 \item Fall I. Die Knoten $u$ und $v$ haben unterschiedliche Distanzen vom Knoten $r_1$ aus der metrischen Basis. Der Knoten $r_1$ trennt die Knoten $u$ und $v$.
 \item Fall II. Die Knoten $u$ und $v$ haben die gleiche Distanz vom Knoten $r_1$ aus der metrischen Basis und die Knoten $u$ und $v$ liegen im selben $C_{3,j}$.\\
