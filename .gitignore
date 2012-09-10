@@ -8,6 +8,10 @@
 *.lot
 *.tdo
 *.toc
+*.bbl
+*.blg
 *.~
+*.*~
 *.dia~
 *.bst
+ma_todo.tex
