@@ -26,7 +26,7 @@
 %\pdfcompresslevel=9 % compression level for text and image;
 %\pdftrue \fi
 
-\documentclass[11pt,a4paper, \zweiseitig]{article}
+\documentclass[11pt,a4paper,pointlessnumbers, \zweiseitig]{scrreprt}
 
 
 
@@ -52,6 +52,7 @@
 \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{color}
+\usepackage{caption}
 %\usepackage{stmaryrd}
 \usepackage{graphicx}
 \usepackage{graphics}
@@ -69,6 +70,8 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{array}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 % \usepackage[disable]{todonotes}				% alle todo-Anmerkungen ausblenden
 \usepackage[german, color=yellow!40, colorinlistoftodos, textsize=footnotesize, shadow]{todonotes}
 \usetikzlibrary{arrows,automata,petri,shapes,snakes}
@@ -100,30 +103,58 @@
 
 %\makeindex
 % Umgebungen f"ur S�tze usw.
-\newtheorem{bemerkung*}{Bemerkung}
-\newtheorem{defi}{Definition}
-\newtheorem{defi*}{Definition}
+\newtheorem{bem}{Bemerkung}
+\newtheorem{definition}{Definition}
 \newtheorem{bezeichnungen}{Bezeichnungen}
 \newtheorem{fakt}{Fakt}
 \newtheorem{beispiel}{Beispiel}
 \newtheorem{bsp}{Beispiel}
-\newtheorem{beispiel*}{Beispiel}
 \newtheorem{satz}{Satz}
-\newtheorem{satz*}{Theorem}
 \newtheorem{lem}{Lemma}
 \newtheorem{idee}{Idee}
 \newtheorem{corollary}{Korollar}
+\floatname{algorithm}{Algorithmus}
+\renewcommand{\algorithmicrequire}{\textbf{Eingabe:}}
+\renewcommand{\algorithmicensure}{\textbf{Ausgabe:}}
+\newenvironment{defi}[1][]{\ifthenelse{\equal{#1}{}}{\definition}{\definition[#1]}\rm}{\enddefinition}
+\newcommand{\EP}[3]{
+\medskip
+\begin{center}
+\begin{tabularx}{0.92\textwidth}{ll}
+\hline\hline
+\multicolumn{2}{c}{\textsc{#1}} \\
+\hline
+\em{Gegeben:}& #2\\
+\em{Frage:}& #3 \\
+\hline\hline
+\end{tabularx}
+\end{center}
+\medskip}
+
+\newcommand{\MP}[3]{
+\medskip
+\begin{center}
+\begin{tabularx}{0.92\textwidth}{ll}
+\hline\hline
+\multicolumn{2}{c}{\textsc{#1}} \\
+\hline
+\em{Gegeben:}& #2\\
+\em{Gesucht:}& #3 \\
+\hline\hline
+\end{tabularx}
+\end{center}
+\medskip}
 
 %definition of new commands
-\newcommand{\DGEF}{\text{\textbf{DGEF}}}
 \newcommand{\vsp}{\vspace{3mm}}
 \newcommand{\impl}[1]{\overset{\text{#1}}{\implies}}
 \newcommand{\notimplleft}[1]{\overset{\text{#1}}{\not\Leftarrow}}
 \renewcommand{\figurename}{Abbildung}
+\renewcommand{\tablename}{Tabelle}
 \renewcommand{\contentsname}{Inhaltsverzeichnis}
 \renewcommand{\listfigurename}{Abbildungsverzeichnis}
 \renewcommand{\listtablename}{Tabellenverzeichnis}
-\renewcommand{\refname}{Literaturverzeichnis}
+%\renewcommand{\refname}{Literaturverzeichnis}
 \begin{document}
 
 %\setcounter{secnumdepth}{4} %Nummerieren bis in die 4. Ebene
@@ -219,10 +250,10 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\clearpage
-\begin{titlepage}
-  ~                % eine leere Seite hinter dem Deckblatt
-\end{titlepage}
+%\clearpage
+%\begin{titlepage}
+%  ~                % eine leere Seite hinter dem Deckblatt
+%\end{titlepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \begin{titlepage}
@@ -252,8 +283,8 @@ Düsseldorf, den \abgabedatum \hspace*{2cm} & \underline{\hspace{6cm}}\\
 % Leerseite bei zweiseitigem Druck
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifthenelse{\equal{\zweiseitig}{twoside}}{\clearpage\begin{titlepage}
-~\end{titlepage}}{}
+%\ifthenelse{\equal{\zweiseitig}{twoside}}{\clearpage\begin{titlepage}
+%~\end{titlepage}}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage

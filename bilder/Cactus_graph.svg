@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+ width="234" height="351" viewBox="0 0 234 351">
+    <g style="fill:none; stroke:#00A33D; stroke-width:2;">
+        <polygon points="135,342 108,315 126,279 108,234 126,198 153,234 153,297 162,324
+            "/>
+        <polyline points="189,333 162,324 189,306 "/>
+        <polyline points="180,243 153,234 180,225 "/>
+        <polyline points="72,234 90,243 108,234 90,216 "/>
+        <line x1="72" y1="252" x2="90" y2="243"/>
+        <polyline points="126,198 99,162 117,126 135,162 126,198 189,171 207,135 189,108
+            180,135 189,171 "/>
+        <polygon points="99,162 45,143.999 36,180 "/>
+        <polyline points="9,170.999 36,180 9,189 "/>
+        <polygon points="45,143.999 63,107.999 45,89.999 27,116.999 "/>
+        <polygon points="117,126 135,90 126,54 135,27 117,9 99,54 "/>
+        <polygon points="189,108 207,72 198,54 180,81 "/>
+        <polyline points="81,45 99,54 81,63 "/>
+        <line x1="135" y1="27" x2="153" y2="18"/>
+        <polyline points="189,36 198,54 198,27 "/>
+        <line x1="207" y1="36" x2="198" y2="54"/>
+        <polyline points="225,126 207,135 225,144 "/>
+    </g>
+    <g style="fill:#BF0000; stroke:#000000; stroke-width:2;">
+        <circle cx="135" cy="342" r="3"/>
+        <circle cx="162" cy="324" r="3"/>
+        <circle cx="189" cy="333" r="3"/>
+        <circle cx="189" cy="306" r="3"/>
+        <circle cx="153" cy="297" r="3"/>
+        <circle cx="153" cy="234" r="3"/>
+        <circle cx="180" cy="243" r="3"/>
+        <circle cx="180" cy="225" r="3"/>
+        <circle cx="108" cy="315" r="3"/>
+        <circle cx="126" cy="279" r="3"/>
+        <circle cx="108" cy="234" r="3"/>
+        <circle cx="90" cy="216" r="3"/>
+        <circle cx="72" cy="234" r="3"/>
+        <circle cx="72" cy="252" r="3"/>
+        <circle cx="126" cy="198" r="3"/>
+        <circle cx="189" cy="171" r="3"/>
+        <circle cx="207" cy="135" r="3"/>
+        <circle cx="225" cy="144" r="3"/>
+        <circle cx="225" cy="126" r="3"/>
+        <circle cx="180" cy="135" r="3"/>
+        <circle cx="189" cy="108" r="3"/>
+        <circle cx="180" cy="81" r="3"/>
+        <circle cx="207" cy="72" r="3"/>
+        <circle cx="198" cy="54" r="3"/>
+        <circle cx="207" cy="36" r="3"/>
+        <circle cx="198" cy="27" r="3"/>
+        <circle cx="189" cy="36" r="3"/>
+        <circle cx="99" cy="162" r="3"/>
+        <circle cx="135" cy="162" r="3"/>
+        <circle cx="117" cy="126" r="3"/>
+        <circle cx="135" cy="90" r="3"/>
+        <circle cx="126" cy="54" r="3"/>
+        <circle cx="135" cy="27" r="3"/>
+        <circle cx="153" cy="18" r="3"/>
+        <circle cx="117" cy="9" r="3"/>
+        <circle cx="99" cy="54" r="3"/>
+        <circle cx="81" cy="45" r="3"/>
+        <circle cx="81" cy="63" r="3"/>
+        <circle cx="45" cy="89.999" r="3"/>
+        <circle cx="27" cy="116.999" r="3"/>
+        <circle cx="63" cy="108" r="3"/>
+        <circle cx="45" cy="143.999" r="3"/>
+        <circle cx="36" cy="180" r="3"/>
+        <circle cx="9" cy="170.999" r="3"/>
+        <circle cx="9" cy="189" r="3"/>
+        <circle cx="90" cy="243" r="3"/>
+    </g>
+</svg>
