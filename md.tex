@@ -106,6 +106,7 @@ Seien die folgende Graphen $G_1,G_2,G_3$ und $G_4$ gegeben. Ihre möglichen Einb
 Der Graph $G_3$ ist ein Teilgraph der Graphen $G_1$ und $G_2$. Der Graph $G_4$ ist ein induzierter Teilgraph von dem Graphen $G_1$, welcher durch das Löschen des Knotens $v_4$ entsteht. Durch das Löschen von den Kanten $\{v_1,v_3\}$,$\{v_2,v_5\}$,$\{v_5,v_7\}$ und $\{v_6,v_7\}$ in Graphen $G_2$ entsteht ein Teilgraph des Graphen $G_1$.
 \end{bsp}
 \subsection{Kürzeste Wege}
+\begin{comment}
 Ein \emph{Weg} $p$ in $G$ von Knoten $u$ nach Knoten $w$ ist eine Folge von Knoten $$p=(v_1,\ldots,v_j)$$ mit $v_1=u$ und $v_j=w$ mit $\{v_{i-1},v_i\}\in E$ für $1 <i \leq j$.\\Der Knoten $u$ wird als \emph{Startknoten} bezeichnet und der Knoten $w$ als \emph{Endknoten}.% Bei einem \emph{Kreis} ist der Startknoten gleich mit dem Endknoten $u=v$.
 \\Einen Weg $p$ nennt man \emph{einfach}, wenn alle Knoten $v_1,\ldots,v_j$ paarweise verschieden sind. Zwei Wege sind \emph{knotendisjunkt} sofern alle Knoten auf diesem Weg, ausgenommen Start- und Endknoten, paarweise verschieden sind. Die \emph{Länge} eines Weges $p$ von Knoten $u$ nach Knoten $w$ entspricht der Anzahl seiner Kanten.\\
 Die \emph{Distanz} $dist_G(u,w)$ zweier Knoten $u,w$ eines Graphen $G$ ist die \emph{Länge des kürzesten Weges} in $G$ zwischen $u$ und $w$, falls mindestens ein solcher Weg existiert, ansonsten ist die kürzeste Weglänge $\infty$. Der \emph{Durchmesser} $diam(G)$ eines Graphen ist die maximale Distanz aller Knotenpaare aus $G$.
@@ -120,7 +121,9 @@ Sei der Graph $G=(V,E)$ gegeben. Eine möglichen Einbettung in der Ebene könnte
   	 \\
 Zwischen Knoten $v_1$ und $v_2$ gibt es mehrere einfache Wege mit unterschiedlicher Länge. Der kürzeste Weg geht über vier Kanten und damit ist $dist_G(v_1, v_2)=4$. Der Durchmesser $diam(G)=5$, denn $dist_G(v_3, v_4)=5$.
 \end{bsp}
+\end{comment}
 \subsection{Zusammenhangskomponenten}
+\begin{comment}
 Zwei Knoten $a$ und $b$ eines Graphen $G$ heißen \emph{verbunden} in $G$, wenn $a = b$ ist oder es einen Weg in $G$ von $a$ nach $b$ gibt.\\Ist jedes Knotenpaar in $G$ verbunden, so heißt $G$ \emph{zusammenhängend}.\\Gibt es zwischen jedem Knotenpaar zwei (bzw. $k$) knotendisjunkte Wege, so bezeichnet man den Graphen als \emph{zweifach ($k$-fach) zusammenhängend}.\\Eine $k$-fache Zusammenhangskomponente von $G$ ist ein maximaler (bzgl. der Knotenmenge) $k$-fach zusammenhängender, induzierter Teilgraph von $G$.
 \subsection{Trennungsknoten und Bifurkatoren}
 \begin{figure}[ht]
@@ -132,6 +135,7 @@ Zwei Knoten $a$ und $b$ eines Graphen $G$ heißen \emph{verbunden} in $G$, wenn 
 Sei ein Graph $G=(V,E)$ gegeben. Für die Knoten $z,x$ und $y$ besteht die Menge $B$ aus allen Knoten, die gleichzeitig auf einem kürzesten Weg von $z$ zu $x$ und auf einem kürzesten Weg von $z$ zu $y$ liegen. Ein Knoten $v$ aus der Menge $B$ mit maximaler Distanz zum Knoten $z$ wird als ein \emph{Bifurkator} von $z, x, y$ bezeichnet.\newline
 Sind zwei Knoten $u,v$ durch die Entfernung eines Trennungsknotens $x$ in zwei unterschiedlichen Teilgraphen, so liegt der Knoten $x$ auf jedem Wege von $u$ nach $v$.
 \todo[inline]{def: Trennungsknoten, Kontraktion, Erweiterung, NP und Laufzeit}
+\end{comment}
 \newpage
 \section{Spezielle Graphklassen}
 Eine Graphklasse ist eine Menge von Graphen. Graphklassen werden durch das Teilen einer gemeinsamen Eigenschaft oder durch Einschränkungen der allgemeinen Graphdefinition definiert. In diesem Abschnitt werden die wichtigsten Graphklassen vorgestellt.
@@ -482,7 +486,7 @@ Wie in der Abbildung \ref{bild:2hintereinander} dargestellt wird darf nicht jede
 \label{bild:multikreise}  	 
   	 \end{figure} 
 \end{proof}
-\todo[inline]{1-fache Vereinigung}
+%\todo[inline]{1-fache Vereinigung}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Zusammenhang von metrischer Dimension und Graphenstruktur}
 Werden bei einem Graph Knoten oder Kanten entfernt so ist die Verkleinerung der metrischen Dimension des Graphen eine erwartete Folge. Beim Betrachten von einem vollständigen Graphen $K_n$ und dem Entfernen von Kanten bis der Graph zu einem einfachen Weg $P_n$ wird verringert sich die metrische Dimension von $n-1$ auf $1$. Dasselbe Ergebnis tritt durch das Entfernen der $n-1$ Knoten auf.\\Interessant ist die Eigenschaft, dass durch die Entfernung von Kanten die metrische Dimension auch ansteigen kann. Die folgenden Sätze zeigen, dass sich die metrische Dimension durch das Löschen von Kanten oder Knoten bei einer Graphklasse von dem konstanten Wert auf einen über die Anzahl der Knoten parametrisiertem Wert steigern kann.
@@ -525,7 +529,7 @@ Die metrische Dimension eines induzierten Teilgraphen ist nicht durch die metris
 ~ \linebreak
 Der Gittergraph $G_{3,2m-1}$ hat nach der Tabelle \ref{tbl:Metrische Dimension einiger Graphklassen} metrische Dimension zwei. Entfernt man jeden zweiten Knoten auf dem äußeren Kreis so entsteht ein Baum $T_{3m}$ wie in Abbildung \ref{bild:Gitterbaum2} mit der metrischen Dimension $m$. Damit steigt der Anteil von Knoten in der metrischen Basis von $6m-3:2$ auf $3m:m$.
 \end{proof}
-\todo{Entfernen 1ner Kante, 1nem Knoten}
+%\todo{Entfernen 1ner Kante, 1nem Knoten}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -536,6 +540,12 @@ Der Gittergraph $G_{3,2m-1}$ hat nach der Tabelle \ref{tbl:Metrische Dimension e
 \begin{lem}\cite{landmarks}
 \label{dist}
 Sei $G=(V,E)$ ein gegebener Graph. Seien $u,v$ und $w$ Knoten in $G$ und sei $\{u,v\}\in E$. Sei $d$ die Länge eines kürzesten Weges von $u$ zu $w$ in $G$. Dann ist die Länge eines kürzesten Weges von $v$ zu $w$ ein Element der Menge $\{d-1,d,d+1\}$.
+\end{lem}
+\begin{lem}
+\cite{kdimbases}
+\label{einelementreichtnicht}
+Sei ein beliebiger Graph $G=(V,E)$ gegeben. Der Graph $G'$ ensteht durch das Hinzufügen eines Knotens und das Verbinden von diesem Knoten mit genau einem anderen Knoten in $G$. Für die metrische Dimension von $G'$ gilt:
+$$\beta(G)\leq \beta(G')\leq \beta(G)+1$$ 
 \end{lem}
 \begin{lem}
 \label{wegtrennungsknoten}
@@ -579,7 +589,7 @@ Gegeben sei ein Graph bestehend aus zwei nichtleeren Teilgraphen $G_R$ und $G_L$
   \begin{bem}
   \label{aussagetrennungsgraphen}
   Die Aussage lässt sich folgend verallgemeinern:\\
-  Die beiden Teilgraphen $G_L$ und $G_R$ können nicht nur durch eine Kante oder durch einen Weg verbunden sein, sondern durch einen beliebigen Teilgraphen $G_M$. Die Aussage gilt nur dann, wenn es jeweils einen Trennungsknoten zwischen den Teilgraphen $G_L$ und $G_M$, und $G_R$ und $G_M$ gibt.
+  Die beiden Teilgraphen $G_L$ und $G_R$ können nicht nur durch eine Kante oder durch einen Weg verbunden sein, sondern durch einen beliebigen Teilgraphen $G_M$, wenn es jeweils einen Trennungsknoten zwischen den Teilgraphen $G_L$ und $G_M$, und $G_R$ und $G_M$ gibt.
   \end{bem}
 %\begin{lem}
 %\label{Bifurnachbar}
@@ -617,7 +627,7 @@ Jeder Knoten auf dem Weg $p_i$ hat den gleichen Bifurkator für den Knoten $r_j$
 \end{proof}
 \begin{lem}
 \label{nachbartrennungsknoten}
-Sei ein beliebiger Graph $G=(V,E)$ gegeben. Seien $G_L$ und $G_R$ zwei Teilgraphen von $G$ die durch genau einen Trennungsknoten $v_s$ verbunden sind. Gibt es ein nicht getrenntes Knotenpaar $\{v_L,v_R\}$ mit der Eigenschaft, dass $v_L\in G_L$ und $v_R \in G_R$ und $v_L, v_R \notin \mathcal{N}(v_s)$.\newline
+Sei ein beliebiger Graph $G=(V,E)$ gegeben. Seien $G_L$ und $G_R$ zwei Teilgraphen, die keine Wege sind, von $G$ die durch genau einen Trennungsknoten $v_s$ verbunden sind. Gibt es ein nicht getrenntes Knotenpaar $\{v_L,v_R\}$ mit der Eigenschaft, dass $v_L\in G_L$ und $v_R \in G_R$ und $v_L, v_R \notin \mathcal{N}(v_s)$.\newline
 Dann ist das Knotenpaar $u_L,u_R \in \mathcal{N}(v_s)$ und $u_L$ liegt auf dem kürzesten-Weg von $v_s$ zu $v_L$ und $u_R$ liegt auf dem kürzesten-Weg von $v_s$ zu $v_R$ nicht getrennt.
 \end{lem}
 \begin{proof}[Beweis:]~\newline
@@ -626,24 +636,43 @@ Dann ist das Knotenpaar $u_L,u_R \in \mathcal{N}(v_s)$ und $u_L$ liegt auf dem k
 \includegraphics[width=270pt]{bilder/nachbartrennungsknoten.pdf}
 \end{figure}
 ~\linebreak
-Angenommen die Knoten $u_L,u_R$ mit den obigen Eigenschaften seien getrennt, also: $$dist(r_L,u_R)\neq dist(r_L,u_L)\; [1]\;\;\; \text{oder}\;\;\; dist(r_R,u_R)\neq dist(r_R,u_L)\; [2].$$
+Da die Teilgraphen $G_L$ und $G_R$ keine Wege sind, beinhalten sie nach Lemma \ref{wegtrennungsknoten} jeweils mindestens einen Ankerknoten. Sei dies die Ankerknoten $r_R \in G_R$ und $r_L \in G_L$. Angenommen die Knoten $u_L,u_R$ mit den obigen Eigenschaften seien getrennt, also: $$dist(r_L,u_R)\neq dist(r_L,u_L)\; [1]\;\;\; \text{oder}\;\;\; dist(r_R,u_R)\neq dist(r_R,u_L)\; [2].$$
   Da die Knoten $v_L, v_R \notin \mathcal{N}(v_s)$ gilt, $$dist(v_s,v_R),dist(v_s,v_L)\geq 2.$$ Die Knoten $v_L$ und $v_R$ sind nicht getrennt, also gilt: $$dist(r_L,v_R)=dist(r_L,v_L)\;\;\; \text{und}\;\;\; dist(r_R,v_R)=dist(r_R,v_L).$$ Da $u_L,u_R \in \mathcal{N}(v_s)$ gilt $$dist(r_L,u_R)=dist(r_L,v_s)+1\;\;\; \text{und}\;\;\;dist(r_R,u_L)=dist(r_R,v_s)+1.$$   
 Die metrischen Koordinaten von $u_L$ und $u_R$ wären gleich $dist(r_R,v_s)+1/dist(r_L,v_s)+1$, außer ein Weg von einem Ankerknoten über einen der Knoten $v_L$ und $v_R$ ist kürzer. Daraus folgt: $$dist(r_L,v_s)+dist(r_L,v_L)+dist(v_L,v_s)-1< dist(r_L,v_s)+1\;[1]$$ \begin{center} oder  \end{center}$$dist(r_R,v_s)+dist(r_R,v_R)+dist(v_R,v_s)-1< dist(r_R,v_s)+1\;[2]$$ \vspace{+2mm}
   $$\text{Für Fall 1 gilt: } dist(r_R,v_s)+dist(r_R,v_R)+dist(v_R,v_s)-1< dist(r_R,v_s)+1$$
-  $$\Leftrightarrow dist(r_R,v_R)+dist(v_R,v_s)-1< 1$$
-  $$\Leftrightarrow dist(r_R,v_L)+dist(v_R,v_s)-1< 1$$
-  $$\Leftrightarrow dist(r_R,v_s)+ dist(v_s,v_L)+dist(v_R,v_s)-1 < 1$$
-  $$\Leftrightarrow dist(r_R,v_s)+dist(v_s,v_L)+dist(v_R,v_s)< 2$$
+  $$\Leftrightarrow dist(r_R,v_R)+dist(v_R,v_s)-1< 1 \;\;\Leftrightarrow dist(r_R,v_L)+dist(v_R,v_s)-1< 1$$
+  $$\Leftrightarrow dist(r_R,v_s)+ dist(v_s,v_L)+dist(v_R,v_s)-1 < 1 \;\;\Leftrightarrow dist(r_R,v_s)+dist(v_s,v_L)+dist(v_R,v_s)< 2$$
   $$\Leftrightarrow  4 \leq dist(r_R,v_s) +4 \leq dist(r_R,v_s)+dist(v_s,v_L)+dist(v_R,v_s)< 2 \lightning$$
 
 Der Beweis für Fall 2 folgt analog. 
   \end{proof}
+Es kann gezeigt werden, dass die Aussage auch für Teilgraphen ohne Ankerknoten gilt.
 \begin{lem}
-\cite{kdimbases}
-\label{einelementreichtnicht}
-Sei ein beliebiger Graph $G=(V,E)$ gegeben. Der Graph $G'$ ensteht durch das Hinzufügen eines Knotens und das Verbinden von diesem Knoten mit genau einem anderen Knoten in $G$. Für die metrische Dimension von $G'$ gilt:
-$$\beta(G)\leq \beta(G')\leq \beta(G)+1$$ 
+\label{nachbartrennungsknoten2}
+Sei ein beliebiger Graph $G=(V,E)$ gegeben. Seien $G_L$, $G_R$, die keine Wege sind, und ein Weg $p$ drei Teilgraphen von $G$ die durch genau einen Trennungsknoten $v_s$ verbunden sind. Gibt es ein nicht getrenntes Knotenpaar $\{v_L,v_R\}$ mit der Eigenschaft, dass $v_L\in p$ und $v_R \in G_R$ und $v_L, v_R \notin \mathcal{N}(v_s)$.\newline
+Dann ist das Knotenpaar $u_L,u_R \in \mathcal{N}(v_s)$ und $u_L$ liegt auf dem kürzesten-Weg von $v_s$ zu $v_L$ und $u_R$ liegt auf dem kürzesten-Weg von $v_s$ zu $v_R$ nicht getrennt.
 \end{lem}
+\par
+\begin{proof}[Beweis:] Angenommen die Knoten $u_L,u_R$ mit den obigen Eigenschaften seien getrennt.
+\begin{floatingfigure}[r]{200pt}
+\centering
+\includegraphics[width=170pt]{bilder/nachbartrennungsknoten2.pdf}
+\end{floatingfigure}
+Nur Knoten aus dem Teilgraphen $G_R$ können das Knotenpaar trennen. Angenommen, es gilt: $$dist(r_R,u_R)\neq dist(r_R,u_L)$$
+\newline
+Da die Knoten $v_L, v_R \notin \mathcal{N}(v_s)$ und nicht getrennt sind, gilt: $$dist(v_s,v_R),dist(v_s,v_L)\geq 2,\;\;\; dist(r_R,v_R)=dist(r_R,v_L)$$ 
+Aus $$dist(r_L,v_R)=dist(r_L,v_L) \text{ folgt }dist(v_s,v_R)=dist(v_s,v_L)$$\\
+Nach Lemma \ref{dist} gilt: $$dist(r_R,u_R)\in \{dist(r_R,v_s)-1,\; dist(r_R,v_s),\;dist(r_R,v_s)+1\}$$
+Da $u_L,\;u_R \in \mathcal{N}(v_s)$ und $u_R$ auf dem kürzesten Weg zu $v_R$ von $v_s$ gilt $$dist(r_R,u_L)=dist(r_R,v_s)+1\text{ und }dist(v_R,v_s)=dist(v_R,u_R)+1$$
+Also sind $$dist(r_R,u_R)\neq dist(r_R,u_L)\text{ wenn }dist(r_R,u_R)<dist(r_R,v_s)+1=dist(r_R,u_L)$$
+Dies ist nur der Fall wenn: $$dist(r_R,u_R)\in \{dist(r_R,v_s)-1,\; dist(r_R,v_s)\}$$
+Daraus folgt, dass $$dist(r_R,v_s)+dist(v_s,v_L)=dist(r_R,v_L)=dist(r_R,v_R)$$
+$$\Leftrightarrow  dist(r_R,v_s)+dist(v_s,v_L)=dist(r_R,v_R) \leq dist(r_R,u_R)+dist(u_R,v_R)$$
+$$\Leftrightarrow  dist(r_R,v_s)+dist(v_s,v_L)=dist(r_R,v_R)< dist(v_R,v_s)+dist(u_R,v_R)$$
+$$\Leftrightarrow  dist(r_R,v_s)+dist(v_s,v_L)< dist(v_R,v_s)+dist(r_R,v_s)$$
+$$\Leftrightarrow  dist(r_R,v_s)<dist(r_R,v_s)\lightning$$
+\end{proof}
+\par
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%Knotenkontraktion von Trennungsknoten vergrößert nicht%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -710,24 +739,25 @@ Ist in einem Teilgraphen kein Ankerknoten, so kann durch die Kontraktion von Tre
 \end{figure} 
 ~\linebreak
 \end{proof}
-Im Allgemeinen kann keine Kontraktion bei Wegen vorgenommen werden, aber es gibt Spezialfälle bei denen die metrische Dimension nicht verändert wird.
-\clearpage
+%Im Allgemeinen kann keine Kontraktion bei Wegen vorgenommen werden, aber es gibt Spezialfälle bei denen die %metrische Dimension nicht verändert wird.
+%\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Metrische Dimension von kreisähnlichen Graphklassen}
-In diesem Kapitel geht es um Graphen welche Erweiterungen von bekannten Graphklassen sind mit fester oder parameterabhängiger metrischer Dimension.\\In diesem Kapitel werden der Freundschaftsgraph und seine Verallgemeinerung, der Sonnengraph inkl. der unvollständigen Variante untersucht.
+In diesem Kapitel geht es um Graphen welche Erweiterungen von bekannten Graphklassen sind mit fester oder parameterabhängiger metrischer Dimension.\\Als erstes werden der Freundschaftsgraph und seine Verallgemeinerung und dannach der Sonnengraph inkl. der unvollständigen Variante untersucht.
 Von den verallgemeinerten Freundschaftsgraphen und den vollständigen und unvollständigen Sonnengraphen wird die metrische Dimension bestimmt unter der Vorraussetzung, dass ein Teil der metrischen Basis nicht frei gewählt werden kann. Die Resultate werden bei dem Algorithmus zur Bestimmung der metrischen Dimension von Kaktusgraphen in Kapitel \ref{kapkaktus} und bei dem Beweis der metrischen Dimension der $C_j-$Bäume in Kapitel \ref{kapcjbaume} benötigt.
 \vspace{-4mm}
 \section{Metrische Dimension von den Freundschaftsgraphen $F_{n}$}
-''Haben je zwei Bekannte einen weiteren gemeinsamen Bekannten, so gibt es eine Person, welche alle anderen kennt''. Diese Behauptung kann als ein Graphenproblem definiert werden, wobei Knoten Personen und Kanten Bekannschaften repräsentieren. Um es zu lösen wurde von Paul Erdős et al. \cite{Erdos} der Freundschaftsgraph eingeführt. In der Arbeit von Imran et. al. \cite{Imran} wird die Partitionsdimension der Freundschaftsgraphen bestimmt und in diesem Kapitel seine metrische Dimension.
+''Haben je zwei Bekannte einen weiteren gemeinsamen Bekannten, so gibt es eine Person, welche alle anderen kennt''. Diese Behauptung kann als ein Graphenproblem definiert werden, wobei Knoten Personen und Kanten Bekannschaften repräsentieren. Um es zu lösen wurde von Paul Erdős et al. \cite{Erdos} der Freundschaftsgraph eingeführt. In der Arbeit von Baskoro et. al \cite{amal} wird die metrische Dimension von den Freundschaftgraphen bestimmt. Der Schwerpunkt dieser Arbeit liegt jedoch auf der Anzahl der unterschiedlichen metrischen Basen und beschäftigt sich ausschließlich mit Graphen mit frei wählbaren Ankerknoten.
 \begin{defi}{\textbf{(Freundschaftsgraph $F_{n,3}$)}}\\
 Seien $n$ Kreise $C_{3}$ mit der Knotenfolge $|V|=\{v_{1,i},v_{2,i},v_{3,i}\}$  mit $1 \leq i \leq n$ gegeben. Der zweite Index steht für die Nummer des Kreises in welchem sich der Knoten befindet. Durch das Verschmelzen von allen Knoten, welche mit einer eins im ersten Index gekennzeichnet sind entsteht der Knoten $v_1$ und der Freundschaftsgraph $F_{n,3}$. Dieser Graph hat die Ordnung $2n+1$ und die Größe $3n$.
 \end{defi}
 \begin{bsp}~
+\vspace{-3mm}
 \begin{figure}[h!]
 \centering
- 		 \includegraphics[width=400pt]{bilder/freunschaftsgraph.pdf}
+ 		 \includegraphics[width=350pt]{bilder/freunschaftsgraph.pdf}
    \caption{Vier Freundschaftsgraphen}
    \label{bild:fg}
 \end{figure}
@@ -764,38 +794,30 @@ Nach Lemma \ref{mindfreundschaftsgraph} ist bekannt, dass die metrische Dimensio
 \vspace{-12mm}
 ~ \linebreak
 
-Werden nicht nur Kreise der Länge drei sondern beliebiger Länge betrachtet bleibt die metrische Dimension des $F_{n,k}$ für $k=2j+1$, $j\geq 2$ erhalten und für $k=2j$, $j\geq 2$ vergrößert sie sich um $n-1$.
 \begin{defi}{\textbf{(Verallgemeinerter Freundschaftsgraph $F_{n,k}$)}}\\
 Seien $n$ Kreise $C_k=(V_k,E_k)$ mit der Knotenfolge $|V_k|=\{v_{1,i},\ldots,v_{k,i}\}$ gegeben. Durch das Verschmelzen von allen Knoten, welche mit einer eins im ersten Index gekennzeichnet sind, entsteht der Knoten $v_1$ und der Freundschaftsgraph $F_{n,k}$. Dieser Graph hat die Ordnung $kn+1$ und die Größe $kn$.
 \end{defi}
 
-\begin{lem}
+\begin{lem} \cite{amal}
 \label{verallgFreundschaftsgraphen}
-Die metrische Dimension eines Freundschaftsgraphen $F_{n,k}$ mit $k=2j+1$ für $j \geq 1$ ist $n$ und die metrische Dimension eines Freundschaftsgraphen $F_{n,k}$ mit $k=2j$ für $j \geq 2$ ist $2n-1$.
+Die metrische Dimension eines Freundschaftsgraphen $F_{n,k}$ mit $t_1$ Kreisen der Länge $k=2j+1$ für $j \geq 1$ und $t_2$ Kreisen der Länge $k=2j$ für $j \geq 2$ ist 
+\begin{equation}
+   \beta(F_{n,k})=
+   \begin{cases}
+     t_1 & \text{f\"ur } t_2=0 \\
+     2\cdot t_2-1 & \text{f\"ur } t_1=0 \\
+     t_1+ 2\cdot t_2-1 & sonst
+   \end{cases}
+\end{equation}
 \end{lem}
-\begin{lem}
-\label{mindverallgfreundschaftsgraph}
-Sei ein Freundschaftsgraph $F_{n,k}$ gegeben. Jede metrische Basis muss aus dem $i$-ten $C_k$ mindestens einen der folgenden Knoten $\{v_{2,i},\ldots,v_{k,i}\}$ beinhalten.
-\end{lem}
-\begin{proof}[Beweis:]
-Angenommen, aus dem $i$-ten Kreis $C_k$ ist keiner dieser Knoten in der metrischen Basis. Durch die eindeutige Verbindung zu dem Restgraphen, welche über einen Trennungsknoten läuft, folgt aus Symmetriegründen, dass die Knoten $v_{2,i}$ und $v_{k,i}$ identische Markierungen haben.\\Dies ist ein Widerspruch zu der Definition einer metrischen Basis.\\
-Damit ist die metrische Dimension eines Freundschaftsgraphen $F_{n,k}$ mindestens gleich der Anzahl seiner $C_{k}$ und damit mindestens $n$.
-\end{proof}
-\vspace{-6mm}
-\begin{proof}[Beweis von Lemma \ref{verallgFreundschaftsgraphen} für $k=2j+1$:] \vspace{+1mm} ~ \linebreak 
-Nach Lemma \ref{mindverallgfreundschaftsgraph} ist bekannt, dass die metrische Dimension eines Freundschaftsgraphen $F_{n,k}$ mindestens $n$ ist. Angenommen, alle als $v_{\lceil \frac{n}{2} \rceil}$ markierten Knoten werden in die metrische Basis aufgenommen. Dadurch sind sie getrennt. Jeder Knoten $v_i$ auf dem jeweiligen Kreis hat die Distanz $\leq \lfloor \frac{n}{2} \rfloor$ zu dem Knoten $v_{\lceil \frac{n}{2} \rceil}$ und die Distanz $\geq \lfloor \frac{n}{2} \rfloor$ zu allen Knoten in der metrischen Basis. Der Knoten $v_1$ hat als einziger Knoten die Distanz $\lfloor \frac{n}{2} \rfloor$ zu allen Anderen. Jeder andere Knoten ist nach den Sätzen \ref{tbl:Metrische Dimension einiger Graphklassen} und \ref{} getrennt.
-\end{proof}
-\begin{proof}[Beweis von Lemma \ref{verallgFreundschaftsgraphen} für $k=2j$:] \vspace{+1mm} ~ \linebreak 
-Nach Lemma \ref{mindverallgfreundschaftsgraph} ist bekannt, dass die metrische Dimension eines Freundschaftsgraphen $F_{n,k}$ mindestens $n$ ist. \todo{Beweis auschreiben}
-\end{proof}
-\begin{lem}
-Die metrische Dimension von allgemeinen Freundschaftgraphen $F_{n}$ mit unterschiedlicher Kreislänge ist $n+n_g-1$. Dabei ist $n=n_u+n_g$ und $n_u$ ist die Anzahl der Kreise mit ungerader Länge und $n_g$ die Anzahl der Kreise mit gerader Länge.
-\end{lem}
+
 \subsection{Metrische Dimension von allgemeinen Freundschaftgraphen und Bäumen}
+\label{amal}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Metrische Dimension der Sonnengraphen $S_{n,k}$}
-Trotz vieler Literatur über die metrische Dimension wurde bis jetzt die metrische Dimension von Kreisen, welche an manchen Knoten Wege besitzen nicht betrachtet. Lediglich ein Spezialfall und zwar der Drachengraphen \cite{blabla}, wo ein Kreis mit einem Weg durch eine Kante an einen Endknoten des Weges vereinigt wird, wurde analysiert und die metrische Dimension davon ist zwei. Diese Graphklassen ist sehr wichtig für diese Arbeit, denn die Sonnengraphen sind induzierte Teilgraphen von in dem Kapitel \ref{kapcjbaume} behandelten $C_j$-Bäumen und in dem Kapitel \ref{kapkaktus} behandelten Kaktusgraphen.
+\label{chap_sonne}
+In der Arbeit ''The metric dimension of graph with pendant edges'' \cite{sun} betrachteten Baskoro et. al. die metrische Dimension von dem Corona Produkt von Kreisen $C_n$ und Wegen $P_1$. In diesem Kapitel wird gezeigt, dass ihr Resultat sich auf Wege beliebiger Länge übertragen lässt. Außerdem werden ebenfalls Teilgraphen der Sonnengraphen betrachtet, die unvollständigen Sonne. Diese Graphklasse ist sehr wichtig, denn beide Variationen von Sonnengraphen sind induzierte Teilgraphen von in dem Kapitel \ref{kapcjbaume} behandelten $C_j$-Bäumen und in dem Kapitel \ref{kapkaktus} behandelten Kaktusgraphen.
 \begin{defi}{\textbf{(Sonnengraph $S_{n,k}$)}}\\
 Sei ein Kreis $C_n$ für $n \geq 3$ mit der Knotenmenge $|V|=\{ c_1, \ldots , c_n \}$ und $n$ Weggraphen $P_{k-1}$ für $k \geq 2$ gegeben. Die Knoten mit Grad eins auf dem $i-$ten Weg werden als $v_{i,1}$ und $v_{i,k-1}$ bezeichnet. Durch das Hinzufügen von $n$ neuen Kanten der Form $\{v_{i,1},c_i\}$ für $1 \leq i \leq n$ ensteht der zusammenhängende Sonnengraph $S_{n,k}$.\\
 Alle als $v_{i,k-1}$ bezeichneten Knoten werden Endknoten genannt, als $c_i$ bezeichneten Knoten werden Ursprungsknoten genannt und eine Knotenmenge mit den\\Knoten $\{c_i,v_{i,1}, \ldots ,v_{i,k-1}\}$ für $1 \leq i \leq n$ als Strahl. (vgl. Abbildung \ref{bild:sonnengraph})\\
@@ -857,7 +879,8 @@ Durch die Wahl von $v_{\frac{n-1}{2}}$ oder $v_{\frac{n+1}{2}}$ entstehen mindes
 %  	 \end{figure}
 Jeder Knoten auf einem Strahl hat eine $a+x/b+x$ Markierung mit $0 \leq x \leq k$ und $a/b$ die Markierung des Strahlursprung auf dem Kreis $C_n$.
 \end{proof}
-\subsection{Metrische Dimension unvollständiger Sonnengraphen}  	 
+\subsection{Metrische Dimension unvollständiger Sonnengraphen}  	
+\label{chap_usonne} 
 \begin{defi}{\textbf{(Unvollstängiger Sonnengraph $S'_{n,k}$)}}\\
 Sei ein Kreis $C_n$ für $n \geq 3$ mit der Knotenmenge $|V|=\{ c_1, \ldots , c_n \}$ und $n'$ Weggraphen $P_{k'}$ mit $1 \leq n' \leq n-1$ für $2 \leq k' \leq k$ gegeben. Die Knoten mit Grad eins auf dem $i-$ten Weg werden als $v_{i,1}$ und $v_{i,k-1}$ bezeichnet. Durch das Hinzufügen von $n'$ neuen Kanten der Form $\{v_{i,1},c_i\}$ für $1 \leq i \leq n$ ensteht der zusammenhängende Sonnengraph $S'_{n',k'}$. Knoten mit den Indizes $v_{i,k-1}$ werden Endknoten genannt und Knoten mit der Bezeichnung $c_i$ als Ursprungsknoten. Die Knotenmenge mit den Knoten $\{c_i,v_{i,1}, \ldots ,v_{i,k-1}\}$ für $1 \leq i \leq n$ bezeichnet man als Strahl. (vgl. Abbildung \ref{bild:sonnengraph})
 \end{defi}
@@ -948,7 +971,7 @@ Jeder Graph mit höchstens einem Kreis gehört zu der Graphklasse der Kaktusgrap
 \vspace{2mm}
 \ENSURE{Die metrische Dimension $\beta(G) \in \mathbb{N^+}$}
 \vspace{2mm}
-\STATE 1. Bestimmung alle zweifachen Zusammenhangskomponente mit mindestens 3 Kanten\\$\;\;\;\;$und Einordnung von jedem Knoten zu einer der drei Klassen $\{0,i,A\}$ mit $i \geq 1$\\
+\STATE 1. Bestimmung zweifacher Zusammenhangskomponenten (ZZK) mit mindestens drei\\$\;\;\;\;$Kanten und Einordnung jedes Knotens zu einer der drei Klassen $\{0,i,A\}$ mit $i \geq 1$\\
 \vspace{2mm}
 \STATE 2. Erkennen von Amalgamationsknoten\\
 \vspace{2mm}
@@ -963,7 +986,9 @@ Jeder Graph mit höchstens einem Kreis gehört zu der Graphklasse der Kaktusgrap
 \newpage
 \section{Vorbereitung}
 In diesem Abschnitt werden die Begriffe und Definitionen, welche im diesem Kapitel und in dem Algorithmus zur Berechnung der metrischen Dimension eines Kaktusgraphen verwendet werden, zusammengefasst.
-\subsection{Glossar zum Kapitel}
+\newline\newline
+In dem gesamten Graphen gibt es zwei Arten von Kanten. 
+Jede Kante $v$ die in keiner zweifachen Zusammenhangskomponente ist mit $ZZK[v]=0$ gekennzeichnet und die Anderen mit $ZZK[v]=1$. Laut Definition eines Kaktusgraphen ist eine Kante in maximal einem Kreis. Damit ist jede zweifache Zusammenhangskomponente ein Kreis und eine eindeutige Menge von Kanten. Die Endknoten dieser Kanten werden in drei Klassen unterteilt.
 \begin{defi}[Klasse von einem Knoten]~\newline
 Ein Knoten welcher in mindestens einer zweifachen Zusammenhangskomponente ist bekommt eine Klasse.
 \begin{itemize}
@@ -972,14 +997,23 @@ Ein Knoten welcher in mindestens einer zweifachen Zusammenhangskomponente ist be
 \item[A] Dieser Knoten ist ein Bifurkator für jedes Knotenpaar aus jeder zweifachen Zusammenhangskomponente in welcher er liegt und mindestens einem Ankerknoten. 
 \end{itemize}
 \end{defi}
-\begin{defi}[Typ von einer ZZK]~\newline
-Eine zweifache Zusammenhangskomponente beinhaltet immer einen Kreis und kann an den Knoten einfache Wege haben:
+Ist an einem Knoten $v$ der Klasse $A$ ein induzierter einfacher Weg, so bekommt er die Markierung $Weg[v]=1$.
+\begin{defi}[Komponente]~\newline
+Als Komponente in einem Kaktusgraphen werden bezeichnet:
 \begin{itemize}
-\item[K] Dieser Knoten hat nur Nachbaren aus der gleichen zweifachen Zusammenhangskomponente.
-\item[S] Dieser Knoten hat drei Nachbaren, ein Nachbar liegt an einem einfachen Weg.
-\item[US] Dieser Knoten ist ein Bifurkator für jedes Knotenpaar aus jeder zweifachen Zusammenhangskomponente in welcher er liegt und mindestens einem Ankerknoten. 
+\item zweifache Zusammenhangskomponenten mit ggf. induzierten einfachen Wegen an Knoten der Klasse $i$
+\item maximale Teilgraphen inkl. Trennungsknoten welche Bäume, aber keine Wege sind 
 \end{itemize}
 \end{defi}
+\begin{defi}[Typ von einer ZZK]~\newline
+Eine zweifache Zusammenhangskomponente beinhaltet immer einen Kreis und kann an den Knoten einfache Wege haben. Die folgenden Aussagen gelten für nicht $A$ Knoten. 
+\begin{itemize}
+\item[K] Jeder Knoten hat nur Nachbarn aus der gleichen zweifachen Zusammenhangskomponente. (Nur Typ $0$)
+\item[S] Jeder Knoten hat drei Nachbarn, ein Nachbar liegt an einem induzierten einfachen Weg. (Nur Typ $i$)
+\item[US] Es gibt jeweils mindestens einen Knoten von Typ $0$ und von Typ $i$.
+\end{itemize}
+\end{defi}
+\begin{comment}
 Nach Definition eines Kaktusgraphen ist jede Kante an maximal einem Kreis beteiligt, kann somit zu 
 \begin{enumerate}
 \item einem Weg 
@@ -989,16 +1023,25 @@ Nach Definition eines Kaktusgraphen ist jede Kante an maximal einem Kreis beteil
 gehören. Ihre Endknoten hingegen gehören zu:\newline
 ~\linebreak
 \begin{tabular}{lccc}
-Kombination & $ZK[u]=$ & $Klasse[u]=$ & ''markiert''\\
-$\cdot$ ein Weg& $0$& $0$ & ja\\
-$\cdot$ ein Baum& $0$& $0/A$& nein\\
-$\cdot$ ein Kreis& $1$& $0$& nein\\
-$\cdot$ ein Kreis und ein Weg& $1$&$j$ mit $j\geq 1$& ja\\
-$\cdot$ $i$ Kreise mit $i\geq 2$& $1$& $A$ & nein\\
-$\cdot$ $i$ Kreise mit $i\geq 2$ und ein Weg &$1$& $A$& nein\\
-$\cdot$ $i$ Kreise mit $i\geq 1$ und ein Baum & $1$& $A$& ja/nein\\
-oder eine Verbindung zu einem anderen Kreis&&&\\
+Kombination & $ZZK[u]=$ & $Klasse[u]=$ & ''markiert''\\
+$\cdot$ einem Weg& $0$& $0$ & ja\\
+$\cdot$ einem Baum& $0$& $0/A$& nein\\
+$\cdot$ einem Kreis& $1$& $0$& nein\\
+$\cdot$ einem Kreis und einem Weg& $1$&$j$ mit $j\geq 1$& ja\\
+$\cdot$ $i$ Kreisen mit $i\geq 2$& $1$& $A$ & nein\\
+$\cdot$ $i$ Kreisen mit $i\geq 2$ und einem Weg &$1$& $A$& nein\\
+$\cdot$ $i$ Kreisen mit $i\geq 1$ und einem Baum & $1$& $A$& ja/nein\\
+oder einer Verbindung zu einem anderen Kreis&&&\\
 \end{tabular}
+Die unterschiedlichen Arten von Wegen sind:
+\begin{itemize}
+\item Wege zwischen zweifachen Zusammenhangskomponenten
+\item Wege an zweifachen Zusammenhangskomponenten
+\begin{itemize}
+\item an einem Knoten ist nur ein Weg
+\item an einem Knoten ein Weg und noch etwas Anderes (kein Baum)
+\end{itemize}
+\end{itemize}
 ~\linebreak
 Gehört ein Knoten zu mehreren Wegen, so gehört er zu einem Baum. Die Kombination aus mehreren Bäume bleibt ein Baum. Ein Baum und ein Weg werden auch zu einem Baum. Ein Kreis bleibt in beliebiger Kombination ein Kreise und so auch eine beliebige Anzahl von Kreisen.\newline\newline
 Zu separaten Untersuchung bleiben damit Knoten $v$ mit $Klasse[v]=A$ und mit dem $deg(v)\geq 4$. Es gibt bestimmte Kombinationen die nochmal separat untersucht werden müssen, diese sind:
@@ -1008,24 +1051,25 @@ Zu separaten Untersuchung bleiben damit Knoten $v$ mit $Klasse[v]=A$ und mit dem
 \item $i$ Kreise mit $i\geq 1$ und ein Baum
 \end{enumerate}
 \begin{tabular}{lcccc}
-Kombination & $ZK[u]=$ & $Klasse[u]=$ & ''markiert''& $Weg[u]=$ \\
+Kombination & $ZZK[u]=$ & $Klasse[u]=$ & ''markiert''& $Weg[u]=$ \\
 $\cdot$ $i$ Kreise mit $i\geq 2$& $1$& $A$ & nein& $0$\\
 $\cdot$ $i$ Kreise mit $i\geq 2$ und ein Weg &$1$& $A$& nein &$1$\\
 $\cdot$ $i$ Kreise mit $i\geq 1$ und ein Baum & $1$& $A$& ja/nein &$0/1$\\
 \end{tabular}
-\begin{defi}[Amalgamationsknoten]
+\end{comment}
+\begin{defi}[Amalgamationsknoten]~\newline
 Ein \textbf{Amalgamationsknoten (Amalknoten)} ist ein Knoten $v$ mit $deg(v)\geq 4$ und 
 \begin{itemize}
-\item $ZK[v]=1$ und $Weg[v]=1$
+\item $ZZK[v]=1$ und $Weg[v]=1$
 \item oder $v \in x$ und $v \in y$ mit $x,y$ zweifache Zusammenhangskomponenten und $x \neq y$.
 \end{itemize}
 \end{defi}
 \newpage
 \section{Der Algorithmus zur Berechnung der metrischen Dimension von Kakturgraphen}
 \textbf{Idee:} Ein Kaktusgraph wird in einen Baum mit gleicher metrischer Dimension umgewandelt, welche dann mit einem bekannten linearzeit Algorithmus bestimmt wird.\newline\newline
-Zunächst wird der gegebene Kaktusgraph in fünf unterschiedliche Komponenten partitioniert, welche durch genau einen Knoten verbunden sind. Diese Komponenten sind Kreise, Sonnen, unvollständige Sonnen, Bäume und einige besondere Wege.\newline\newline
+Zunächst wird der gegebene Kaktusgraph in unterschiedliche Komponenten partitioniert, welche durch genau einen Knoten verbunden sind. Diese Komponenten sind Kreise, Sonnen, unvollständige Sonnen und Bäume.\newline\newline
 \begin{comment}
-Die unterschiedlichen Arten von Wegen sind:
+Wege werden nichts explizit als Komponenten aufgefasst, betrachte dazu die Arten von Wegen in einem Kaktusgraphen:
 \begin{itemize}
 \item Wege zwischen zweifachen Zusammenhangskomponenten
 \item Wege an zweifachen Zusammenhangskomponenten
@@ -1061,9 +1105,9 @@ In der Abbildung \ref{kaktus1} wurde der Algorithmus \ref{alginit} ausgeführt u
   	 ~\linebreak
 In der Abbildung \ref{kaktus1.2} wurde der Algorithmus \ref{algeinteilung} ausgeführt. Jede zweifache Zusammenhangskomponente wurde einzeln betrachtet und eindeutig als einer der drei Typen erkannt.\\
 \vspace{-6mm}
-  	   	  	   	 \begin{figure}[h!]
+  	   	\begin{figure}[h!]
 		\centering
- 		 \includegraphics[width=320pt]{bilder/kaktusallgschritt8.pdf}
+ 		 \includegraphics[width=360pt]{bilder/kaktusallgschritt8.pdf}
    \caption{Amalgamationsknoten sind markiert und MD von ZZK ist ausgerechnet}
 \label{kaktus2}  	
   	 \end{figure}
@@ -1129,9 +1173,9 @@ Um zu zeigen, dass die metrische Dimension von Kaktusgraphen in Linearzeit besti
 \hline
 Algorithmus \ref{algsonderfall1}& Amalgamationsnoten werden markiert & $\mathcal{O}(|V|+|E|)$\\
 \hline
-Algorithmus \ref{algberechnungsonne}& Die zusätzliche MD von Sonnen wird bestimmt & $\mathcal{O}(|E|)$\\
+Algorithmus \ref{algberechnungsonne}& Die zusätzliche MD von Sonnen wird bestimmt & $\mathcal{O}(|1|)$\\
 \hline
-Algorithmus \ref{algberechnungkreis}& Die zusätzliche MD von Kreisen wird bestimmt & $\mathcal{O}(|E|)$\\
+Algorithmus \ref{algberechnungkreis}& Die zusätzliche MD von Kreisen wird bestimmt & $\mathcal{O}(|1|)$\\
 \hline
 \multirow{2}{26mm}{Algorithmen \ref{algberechnungungeradesonne1}, \ref{algberechnunggeradesonne1}, \ref{algberechnungusonne2} und \ref{algberechnungungeradesonne0}}& Die zusätzliche MD von & \multirow{2}{25mm}{$\mathcal{O}(|V|+|E|)$}\\&unvollständigen Sonnen wird bestimmt&\\
 \hline
@@ -1145,186 +1189,152 @@ Algorithmus \ref{algberechnungkreis}& Die zusätzliche MD von Kreisen wird besti
 \end{table}
 \vspace{-7mm}
 \subsubsection{Erläuterung der Laufzeiten der einzelnen Algorithmen}
+\vspace{-2mm}
 \begin{itemize}
-\item Der Algorithmus \ref{alginit} bestimmt zunächst alle zweifachen Zusammenhangskomponenten und speichert sie in einer Liste von Listen, sofern diese aus mindestens drei Kanten besteht. Die asymptotische Laufzeit von diesem Algorithmus ist $\mathcal{O}(|V|+|E|)$. \newline
-In Zeile 5-7 wird die Darstellung der zweifachen Zusammenhangskomponenten von Kanten auf Knoten geändert. Dafür würde man über alle zweifachen Zusammenhangskomponenten und über jeweils die Kanten in einer zweifachen Zusammenhangskomponente laufen und die Anzahl von Kanten zählen. Die inzidenten Knoten zu der Kante werden in eine Zusammenhangskomponente aufgenommen, sofern diese noch nicht drin sind, und die Kante aus der ZZK gelöscht. Die unterschiedlichen Knoten $v$ in einer ZZK werden gezählt und $ZK(v)=1$ gesetzt. Nach der Definition eines Kaktusgraphen darf keine Kante in zwei Kreisen und somit in zwei zweifachen Zusammenhangskomponenten liegen. Der Algorithmus läuft über eine Teilmenge der Kanten einmalig drüber und hat eine asymptotische Laufzeit von $\mathcal{O}(|V|+|E|)$.\newline
-Die Anweisungen in den Zeilen 8-11 sind für die Einteilung von Knoten aus ZZK in Klassen zuständig. Für Knoten vom Grad drei wird mittels Tiefensuche ermittelt ob ein Weg nur über Knoten vom Grad zwei erreichbar ist. Sofern dies zutrifft ist die Länge $i\geq 1$ von diesem Weg die Klasse $i$ des betrachteten Knotens. Ansonsten ist seine Klasse $A$. Jeder Knoten wird maximal einmal besucht. Ein weiterer Durchlauf über die restlichen Knoten ist notwendig um die restlichen Knoten in Abhängigkeit von ihrem Grad einer Klasse zu zuordnen. Die asymptotische Laufzeit von dem Abschnitt ist in $\mathcal{O}(|V|+|E|)$.\newline
-In der Zeile 12 werden nochmal Knoten der Klasse $A$  mit $deg(v)\geq 4$ überprüft ob ein Blatt nur über Knoten vom Grad zwei erreichbar ist. Man iteriert über eine Teilmenge der Knoten und benutzt die Tiefensuche. Die asymptotische Laufzeit hier ist ebenfalls in $\mathcal{O}(|V|+|E|)$ und damit linear für den gesamten Algorithmus.
+\item Der Algorithmus \ref{alginit} bestimmt zunächst alle zweifachen Zusammenhangskomponenten und speichert sie in einer Liste $ZZK$ von Listen $x$, sofern diese aus mindestens drei Kanten besteht. Die asymptotische Laufzeit von diesem Algorithmus ist $\mathcal{O}(|V|+|E|)$ \footnote{Benutze zum Beispiel den Algorithmus aus \cite{Vorlesung}}. \newline
+In den Zeilen 5-7 wird die Darstellung der zweifachen Zusammenhangskomponenten von Kanten auf Knoten geändert. Dafür würde man über alle zweifachen Zusammenhangskomponenten und über jeweils die Kanten in einer zweifachen Zusammenhangskomponente laufen und die Anzahl von Kanten in $x.Kanten$ zählen. Die inzidenten Knoten zu der Kante werden in eine Zusammenhangskomponente aufgenommen, sofern diese noch nicht drin sind, und die Kante aus der Liste $x$ gelöscht. Jede ZZK kommt in die Liste von jedem Knoten welcher in der ZZK ist. Die unterschiedlichen Knoten $v$ in einer ZZK werden in $x.Knoten$ gezählt und $ZZK[v]=1$ gesetzt. Nach der Definition eines Kaktusgraphen darf keine Kante in zwei Kreisen und somit in zwei zweifachen Zusammenhangskomponenten liegen. Der Algorithmus läuft einmalig über eine Teilmenge der Kanten und hat eine asymptotische Laufzeit von $\mathcal{O}(|V|+|E|)$.\newline\newline Die Anweisungen in den Zeilen 8-11 sind für die Einteilung von Knoten aus ZZK in Klassen zuständig. Für Knoten vom Grad drei wird mittels Tiefensuche ermittelt ob ein Weg nur über Knoten vom Grad zwei erreichbar ist. Sofern dies zutrifft ist die Länge $i\geq 1$ von diesem Weg die Klasse $i$ des betrachteten Knotens. Ansonsten ist seine Klasse $A$. Jeder Knoten wird maximal einmal besucht. Ein weiterer Durchlauf über die restlichen Knoten in ZZK ist notwendig um die restlichen Knoten in Abhängigkeit von ihrem Grad einer Klasse zu zuordnen. Die asymptotische Laufzeit von dem Abschnitt ist in $\mathcal{O}(|V|+|E|)$.\newline\newline
+In der Zeile 12 werden zusätzlich Knoten der Klasse $A$  mit $deg(v)\geq 4$ überprüft ob ein Blatt nur über Knoten vom Grad zwei erreichbar ist. Man iteriert über eine Teilmenge der Knoten und benutzt Tiefensuche. Die asymptotische Laufzeit hier ist ebenfalls in $\mathcal{O}(|V|+|E|)$ und damit linear für den gesamten Algorithmus \ref{alginit}.
+\item Der Algorithmus \ref{algeinteilung} überprüft den Typ einer zweifachen Zusammenhangskomponente und ruft einen entsprechenden Algorithmus zur Berechnung der metrischen Dimension auf. Es gibt zwei \textsc{for}-Schleifen in Zeile 1 und 2 über alle zweifachen Zusammenhangskomponenten und die Knoten in jeder ZZK. 
+Alle ZZK bei einem Kaktusgraphen haben die gleiche Anzahl von Knoten und Kanten. Die asymptotische Laufzeit ist damit in $\mathcal{O}(|V|+|E|)$. Dannach wird für jede ZZK mittels Fallunterscheidung einer von den Algorithmen \ref{algberechnungsonne}, \ref{algberechnungkreis},\ref{algberechnungungeradesonne1}, \ref{algberechnunggeradesonne1}, \ref{algberechnungusonne2} oder \ref{algberechnungungeradesonne0} aufgerufen.
 
-\item Der Algorithmus \ref{algeinteilung} überprüft den Typ einer zweifachen Zusammenhangskomponente und ruft einen entsprechenden Algorithmus zur Berechnung der metrischen Dimension auf. Es gibt zwei \textsc{for}-Schleifen in Zeile 1 und 2 über alle zweifachen Zusammenhangskomponenten und die Knoten in jeder ZZK. Über jeden Knoten $v$ wird maximal $\frac{\mathcal{N}(v)}{2}$-mal iteriert, also über die Hälfte seiner Kanten. Die asymptotische Laufzeit ist damit in $\mathcal{O}(|V|+|E|)$. Dannach wird mittels einer Fallunterscheidung einer von den Algorithmen \ref{algberechnungsonne}, \ref{algberechnungkreis},\ref{algberechnungungeradesonne1}, \ref{algberechnunggeradesonne1}, \ref{algberechnungusonne2} oder \ref{algberechnungungeradesonne0} aufgerufen.
-
-\item Der Algorithmus \ref{algsonderfall1} läuft einmal am Anfang über jeden Knoten in jeder zweifachen Zusammenhangskomponente und speichert dabei den Abstand zwischen zwei Knoten der Klasse $A$. An jedem $A$ Knoten wird der größere von den beiden Abständen zu dem nächsten $A$ Knoten gespeichert und an jeder zweifachen Zusammenhangskomponente der größte Abstand zwischen zwei $A$ Knoten in dieser Komponente.
+\item Der Algorithmus \ref{algsonderfall1} läuft einmal am Anfang über jeden Knoten in jeder zweifachen Zusammenhangskomponente und speichert dabei den maximalen Abstand zwischen zwei Knoten der Klasse $A$.
 \begin{figure}[h!]
 \centering
-\includegraphics[width=140pt]{bilder/bspalgsonderfall2.pdf}
+\includegraphics[width=150pt]{bilder/bspalgsonderfall2.pdf}
 \caption{Verlauf für die Berechnung von $dist(x,v)$}
 \label{bild:distberechnung}
 \end{figure}
+An jedem $A$ Knoten wird der größere von den beiden Abständen zu dem nächsten $A$ Knoten gespeichert und an jeder zweifachen Zusammenhangskomponente der größte Abstand zwischen zwei $A$ Knoten in dieser Komponente.
 Fängt man bei einem Knoten (z.B. $A_1$ in der Abbildung \ref{bild:distberechnung}) der Klasse $A$ an, so wird mittels Tiefensuche zunächst die Entfernung zum nächsten rechtsliegenden Knoten der Klasse $A$ bestimmt. Wird ein $A$ Knoten erreicht (z.B. $A_2$ in der Abbildung \ref{bild:distberechnung}), so wird an seinem Vorgänger sowie an dem Knoten $A_1$ die Entfernung gespeichert. Das gleiche Vorgehen wird bei dem linksliegenden nächsten $A$ Knoten angewendet. Ruft man den Algorithmus nun für einen weiteren Knoten (z.B. $A_2$ in der Abbildung \ref{bild:distberechnung}) auf, so prüft der Algorithmus ob eine Distanz in den Nachbarn von diesem Knoten gespeichert wurde und muss nicht noch einmal durchlaufen. Hat man zwei Werte, so wird der Kleinere verworfen.
-Die Werte werden an den Nachbarn gespeichert um eindeutig die Richtung der berechneten Distanz zu kennzeichnen. Insgesamt werden weniger als zwei Durchläufe über jede ZZK und damit über den Graphen benötigt. Damit ist man asymptotisch in $\mathcal{O}(|V|+|E|)$.
-\item Die Algorithmen \ref{algberechnungsonne} und \ref{algberechnungkreis} berechnen die zusätliche Anzahl der Knoten in der metrische Basis für den Fall das eine zweifache Zusammenhangskomponente eine Sonne oder ein Kreis ist. Beide Algorithmen bestehen ausschließlich aus \textsc{if}-Abfragen, die in konstanter Zeit durchgeführt werden können.
-\item Die Algorithmen \ref{algberechnungungeradesonne1}, \ref{algberechnunggeradesonne1} und \ref{algberechnungusonne2} berechnen die zusätzliche metrische Dimension von unvollständigen Sonnen. Der Algorithmus \ref{algberechnungungeradesonne1} überprüft die ''einfachen'' Fälle, dabei wird eine zusätzliche \textsc{for}-Schleife benötigt, für den Fall, dass zwei Ankerknoten vorhanden sind und diese eine Sonne nicht trennen würden. Dafür wird mittels Tiefensuche einmalig eine zweifache Zusammenhangskomponente überprüft ob bestimmte Knoten der Klasse $0$ angehören.
-Der Algorithmus \ref{algberechnungusonne2} betrachtet unvollständige Sonnen sofern mindestens drei und höchstens $\frac{n}{2}$ Ankerknoten vorhanden sind. Wäre eine Sonne durch die vorhandenen Ankerknoten nicht getrennt, müssen bestimmte Knoten in der zweifachen Zusammenhangskomponente überprüft werden. Dies kann mittels Tiefensuche geschehen und es wird ein asymptotischer Aufwand von $\mathcal{O}(|V|+|E|)$ benötigt.\\
-Der Algorithmus \ref{algberechnunggeradesonne1} läuft über die zweifache Zusammenhangskomponente in Zeile 2,6,20 und 24. Bei der Anweisung in Zeile 2 und Zeile 20 läuft man mittels Tiefensuche über die zweifache Zusammenhangskomponente und arbeitet mit einem Zähler, der die Anzahl von aufeinanderfolgenden Knoten der Klasse $0$ zählt. Bei den Anweisungen in Zeile 6 und Zeile 24 wird zusätzlich bei jedem Schritt die Klasse von dem gegenüberliegendem Knoten überprüft. Da die Knoten eine Nummerierung haben kann man auf den $i$-ten und den $i+\frac{n}{2}$-ten Knoten direkt zugreifen und die Klasse überprüfen. Die einzelnen zusammenhängenden Mengen von Knoten der Klasse $0$ werden mit ihren gegenüberliegenden Knoten in einer Liste von Listen gespeichert. Jeder Knoten kommt maximal in einer Liste vor, denn jeder Knoten gehört zu genau einer zusammenhängenden Menge der Klasse $0$.
+Die Werte werden an den Nachbarn gespeichert um eindeutig die Richtung der berechneten Distanz zu kennzeichnen. Insgesamt werden weniger als zwei Durchläufe über jede ZZK und damit über den Graphen benötigt. Damit ist man asymptotisch in $\mathcal{O}(|V|+|E|)$.\\
+In den Zeilen 4-22 wird für jeden Amalgamationsknoten die Liste seiner ZZK in einer Liste von Listen $V.ZZK$ gespeichert. Der Knoten selbst kommt in die Liste, falls die Markierung $Weg[v]=1$ gesetzt ist. Einige ZZK werden aus der Liste von jedem Knoten entfernt. Die Anzahl der ZZK in einer Liste ist kleiner als seine Nachbarschaft, denn aus einer ZZK sind zwei Kanten in der Nachbarschaft von einem Knoten. Die asymptotische Laufzeit ist in $\mathcal{O}(|V|+|E|)$.
+\item Die Algorithmen \ref{algberechnungsonne} und \ref{algberechnungkreis} berechnen die zusätliche Anzahl der Knoten in der metrische Basis für den Fall das eine zweifache Zusammenhangskomponente vom Typ $S$ oder $K$ ist. Beide Algorithmen bestehen ausschließlich aus \textsc{if}-Abfragen, die in konstanter Zeit durchgeführt werden können.
+\item Die Algorithmen \ref{algberechnungungeradesonne1}, \ref{algberechnunggeradesonne1}, \ref{algberechnungusonne2} und \ref{algberechnungungeradesonne0} berechnen die zusätzliche metrische Dimension von ZZK vom Typ $US$. 
+\begin{itemize}
+\item Der Algorithmus \ref{algberechnungungeradesonne1} überprüft die ''einfachen'' Fälle, dabei wird eine zusätzliche \textsc{for}-Schleife benötigt, für den Fall, dass zwei $A$ Knoten vorhanden sind und diese eine ZZK vom Typ $S$ nicht trennen würden. Dafür wird mittels Tiefensuche einmalig eine zweifache Zusammenhangskomponente überprüft ob bestimmte Knoten der Klasse $0$ angehören.
+\item Der Algorithmus \ref{algberechnungusonne2} betrachtet ZZK vom Typ $US$ sofern mindestens drei und höchstens $\frac{n}{2}$ Ankerknoten vorhanden sind. Wäre eine ZZK vom Typ $S$ durch die vorhandenen $A$ Knoten nicht getrennt, müssen bestimmte Knoten in der zweifachen Zusammenhangskomponente überprüft werden. Dies kann mittels Tiefensuche geschehen und es wird ein asymptotischer Aufwand von $\mathcal{O}(|V|+|E|)$ benötigt. 
+\item Der Algorithmus \ref{algberechnunggeradesonne1} läuft über die zweifache Zusammenhangskomponente in Zeile 2 und 6 und überprüft in konstanter Zeit ggf. ob der gegenüberliegende Knoten ebenfalls der Klasse $0$ zugewiesen wurde. In Zeile 7 und 15 kann ein weiterer Durchlauf über die ZKK benötigt werden, um zu überprüfen ob die zwei ausgewählten Knoten die ZKK trennen.
+\item Der Algorithmus \ref{algberechnungungeradesonne0} läuft über die ZZK in Zeile 2 und überprüft die Größe der größten zusammenhängenden Knotenmenge von Typ $0$.
+\end{itemize}
+\newpage
+Falls diese Menge zu klein ist, läuft der Algorithmus wiederholt über die Komponente und sucht die größte zusammenhängende Menge, sodass die gegenüberliegenden Knoten ebenfalls von Typ $0$ sind. Diese Information kann in konstanter Zeit abgefragt werden. Die Knoten links und rechts von zwei zusammengehörigen Mengen werden als Ausgangsknoten $s_i$ und Endknoten $e_i$ im Uhrzeigersinn markiert. Die Funktionsweise der Zeilen 6-13 von dem Algorithmus \ref{algberechnungungeradesonne0} wird in der Abbildung \ref{bild:algUSG0} dargestellt. In der Abbildung gibt es drei solcher Mengen, welche farblich markiert sind. Die größte Menge bestimmt das $l_{max}$, in der Abbildung besteht die größte Menge aus drei Knoten, damit wäre das $l_{max}=4$. Die Größe der Liste mit den verbotene Strahllängen $l_max$ ist maximal $\frac{n}{2}$, und damit linear zur Größe der ZZK. 
+An den Anfang der Liste wird ein Zeiger gestellt, welcher sich bei dem Durchlaufen jedes Strahls bewegt.\\
+In Zeile 12 gibt es einen letzten Durchlauf durch die gesamte Komponente. An jedem Ausgangsknoten $s_i$ wird ein Element $I_i$ an das $l_i$-te Element in der Liste der verbotenen Strahllängen verkettet. Dies kann in konstanter Zeit durchgeführt werden bei einer Implementierung der Liste als Array. Sofern es während dem Durchlauf einen Strahl gibt, welcher mindestens so lang ist, wird das Element aus der Verkettung entfernt oder ansonsten der Algorithmus beendet mit den Ausgangs- und Endknoten als Ankerknoten. Sofern dieser Fall nicht eintritt, beendet der Algorithmus wenn über alle Knoten in der Komponente iteriert hat.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=280pt]{bilder/algsonngeradea02.pdf}
-\caption{Verlauf für die Berechnung der MD einer geraden Sonne ohne $A$ Knoten}
+\caption{Berechnung der MD einer geraden ZZK vom Typ $US$ ohne $A$ Knoten}
+\label{bild:algUSG0}
 \end{figure}
-
+\vspace{-5mm}
 \item In dem Algorithmus \ref{algreplace} werden für eine zweifache Zusammenhangskomponente alle Knoten mit der Markierung $i$ für $i \geq 0$ mit ggf. den zugehörigen Wegen entfernt. Dieser Algorithmus läuft über jede zweifache Zusammenhangskomponente und liegt asymptotisch in $\mathcal{O}(|V|+|E|)$.
-Das Einfügen von einem neuen Knoten liegt in $\mathcal{O}(1)$, genauso wie das Einfügen von einer konstanten Anzahl von Kanten oder Knoten. Das Verbinden von einem Knoten mit allen $A$ Knoten in einer zweifachen Zusammenhangskomponente liegt in $\mathcal{O}(|V|)$ für alle zweifachen Zusammenhangskomponenten.
+Das Einfügen von einem neuen Knoten liegt in $\mathcal{O}(1)$, genauso wie das Einfügen von einer konstanten Anzahl von Kanten oder Knoten. Die maximale zusätzliche MD von einer ZZK ist drei und damit werden pro ZZK maximal fünf neue Knoten eingefügt. Das Verbinden von einem Knoten mit allen $A$ Knoten in einer zweifachen Zusammenhangskomponente liegt in $\mathcal{O}(|V|)$ für alle zweifachen Zusammenhangskomponenten.
 
-\item Der Algorithmus \ref{algsonderfall2} berechnet für einen Amalgamationsknoten die Anzahl der zusätzlichen Knoten für die Aufnahme in die metrische Basis um seine Nachbarschaft zu trennen. Dafür werden die zweifachen Zusammenhangskomponenten welche inzident sind mit einem Knoten untersucht und ggf. mit einer Baumstruktur ergänzt. Dieser zusätzlich eingefügte Teilgraph stellt sicher, dass die metrische Dimension von dem Kaktusgraphen gleich der metrischen Dimension vom Baum ist.\\
-In den Zeilen 1 und 2 gibt es zwei \textsc{for}-Schleifen für jeden Knoten über die zugehörige Menge von zweifachen Zusammenhangskomponenten iterieren. Jede Kante ist in genau einer Zusammenhangskomponente. Durch die Endknoten dieser Kante kann die Zusammenhangskomponente für diese Kante zu zwei Knoten zugeordnet werden. Jeder Knoten hat genau zwei inzidente Kanten in der gleichen Zusammenhangskomponente. An jedem Knoten gibt maximal einen Weg, der zusätzlich als Komponente gezählt wird. Insgesamt ist die Laufzeit für diese zwei \textsc{for}-Schleifen asymptotisch in $\mathcal{O}(|V|+|E|)$. Weiterhin gibt es noch eine weitere \textsc{for}-Schleife in Zeile 14, wenn bei einigen Amalgamationsknoten zusätzliche Knoten eingefügt werden. Die Anzahl der Knoten ist beschränkt durch die Anzahl der Komponenten welche inzident sind zu dem Knoten. Aufgrund des gleichen Arguments ist die Laufzeit in $\mathcal{O}(|V|+|E|)$ und damit insgesamt aus $\mathcal{O}(|V|+|E|+|V|+|E|)=\mathcal{O}(|V|+|E|)$.
+\item Der Algorithmus \ref{algsonderfall2} berechnet für jeden Amalgamationsknoten die Größe der zusätzlichen metrischen Dimension um seine Nachbarschaft zu trennen. Dafür werden ZZK mit einem gemeinsamen Knoten untersucht und ggf. mit einer Baumstruktur ergänzt.\\ %Dieser zusätzlich eingefügte Teilgraph stellt sicher, dass die metrische Dimension von dem Kaktusgraphen gleich der metrischen Dimension vom Baum ist.\\
+In den Zeilen 1 und 2 gibt es zwei \textsc{for}-Schleifen welche für jeden Amalgamationsknoten über die zugehörige Menge von zweifachen Zusammenhangskomponenten iterieren. Für jede ZZK in einer Liste von einem Knoten git es eine oder zwei Kanten im Kaktusgraphen. Insgesamt ist die Laufzeit für diese zwei \textsc{for}-Schleifen asymptotisch in $\mathcal{O}(|V|+|E|)$.\\
+In der Zeile 17 wird ein neuer Graph $T$ erstellt, seine Größe ist abhängig von der Anzahl der Amalgamationsknoten und ihrer Nachbarschaft. Auf diesem Graphen, welcher ein Baum ist wird ein maximales Matching bestimmt. Es werden Blätter verwaltet und der Graph wird von außen nach innen vollständig abgebaut, dafür sind maximal zwei Durchläufe über den Baum notwendig und somit linear.\\
+Mit der Größe des Baumes und des Matchings lässt sich die Anzahl der Knoten bestimmt die noch eingefügt werden in den Graphen. Diese Zahl ist kleiner oder gleich der Anzahl der zweifachen Zusammenhangskomponenten in dem Graphen. Für jeden Knoten muss genau eine Kante eingefügt werden. Die asymptotische Laufzeit ist in $\mathcal{O}(|V|+|E|)$.
 \end{itemize}
 \section{Der Korrektheitsbeweis vom Algorithmus}
-Einer der Gründe weshalb es keinen einfachen und effizienten Algorithmen für die Berechnung der metrischen Dimension gibt, ist dass sich das Problem nicht lokal auf Teilgraphen lösen lässt und die metrische Dimension für den Gesamtgraphen nicht einfach die Summe der Komponenten ist (vgl. Kapitel \ref{kapallg}).\newline\newline
-Die Kaktusgraphen haben durch die starken Einschränkungen der Struktur nur ''eine handvoll'' unterschiedlicher Komponenten als Bestandteile, welche durch jeweils einen Trennungsknoten verbunden sind. Dazu gehören Bäume, Wege und Kreise.
 \begin{lem}
-Ein Kaktusgraph ist genau dann getrennt, wenn die Knoten in jeder Komponente (Baumkomponente oder zweifachen Zusammenhangskomponente mit oder ohne einfache Wege) getrennt sind und wenn die Nachbarschaft von allen Amalgamationsknoten getrennt ist.  
+Ein Kaktusgraph ist genau dann getrennt, wenn die Knoten in jeder Komponente und die Nachbarschaft von jedem Amalgamationsknoten getrennt sind.  
 \end{lem}
-\begin{proof}[Beweis:]~\newline
+\begin{proof}[Beweis:]
 $\Longrightarrow$ Gegeben sei eine metrische Basis $R_n$ für den Kaktusgraphen $G$. Für jedes Knotenpaar $u,v \in V$ gilt $dist(u,r_i)\neq dist(v,r_i)$ für mindestens ein $r_i \in R_n$. Die Aussage gilt für jedes Knotenpaar im Graphen, damit auch für jedes Knotenpaar aus der gleichen Komponente oder aus der gleichen Nachbarschaft eines Amalgamationsknotens.\newline
-$\Longleftarrow$ Nach Lemma \newline
-
-Nach Lemma \ref{first_theorem} und der Verallgemeinerung gilt für jedes Knotenpaar in unterschiedlichen Teilgraphen welche nicht\newline
-
-
-Die Kaktusgraphen haben durch die starken Einschränkungen der Struktur nur ''eine handvoll'' unterschiedlicher Komponenten als Bestandteile, welche durch jeweils einen Trennungsknoten verbunden sind. Dazu gehören Bäume, Wege und Kreise.\newline\newline
-Nach dem Lemma \ref{wegtrennungsknoten} kann ein Trennungsknoten lokal als Ankerknoten aufgefasst werden. Hierbei bedeutet lokal, dass man nur einen Teilgraph mit dem Trennungsknoten als Gesamtgraph betrachtet. Aus dem Lemma \ref{einelementreichtnicht} ist bekannt, dass ein Teilgraph, welcher kein Kreis ist immer mindestens einen Ankerknoten beinhaltet. Daraus folgt aber nicht, dass Wege keine Ankerknoten haben können. Es bedarf einer gesonderten Untersuchung wie sich Wege als Teilgraphen verhalten. Ein Weg kann an einem Baum vorkommen, es bleibt aber für die Untersuchung ein Baum. Außerdem kann ein Weg an einem Kreis vorkommen. Es entsteht dadurch eine voll- oder unvollständige Sonne. Der Fall, dass mehrere Kreise und ein Weg an einem Knoten vorkommen wird ebenfalls untersucht. Weitere Möglichkeiten gibt es nicht. \newline
-Der Abschnitt \ref{korraufteilung} zeigt, dass der Algorithmus im Anhang die Bestandteile des Graphens richtig erkennt und aufteilt. Der Abschnitt \ref{korrkomp} behandelt die Korrektheit der Berechnung der metrischen Dimension einzelner Komponenten.\newline\newline
-Eine Sache muss bei der Berechnung des Gesamtgraphen gegenüber der Berechnung der einzelner Komponenten beachtet werden. Nach dem Lemma \ref{trennungsknoten} sind alle Knotenpaare getrennt, welche sich in zwei Teilgraphen mit jeweils mindestens einem Ankerknoten befinden und mit mindestens einer Kante verbunden sind. Damit vereinfacht sich die Betrachtung auf einen einzigen Fall, und zwar wenn zwei oder mehr Teilgraphen mit einem Trennungsknoten direkt verbunden sind. Der Trennungsknoten muss dafür mindestens der Grad vier haben. Um die korrekte Erkennung und Berechnung dieses Falles geht es in dem Abschnitt \ref{korramal}.\newline\newline
-Die letzte Frage die geklärt werden muss, ist warum man bei Kaktusgraphen die Komponenten einzeln betrachten darf. Wären alle Komponenten mit jeweils mindestens einer Kante verbunden, so würde nach dem Lemma \ref{trennungsknoten} durch eine Trennung der Komponenten direkt eine Trennung des Gesamtgraphen folgen. Diese Eigenschaft kann aber nur für Komponenten benutzt werden welche mit mindestens einer Kante verbunden sind. Für die anderen Kompositionen gilt nach Lemma \ref{nachbartrennungsknoten}, dass wenn alle Nachbarn eines Trennungsknotens getrennt sind, sind auch alle Knotenpaare in jeweils unterschiedlichen Komponenten getrennt. In dem Abschnitt \ref{korramal} wird explizit gezeigt warum die Anzahl der zusätzlich gewählten Ankerknoten minimal ist.
+$\Longleftarrow$ Angenommen, alle Knotenpaare in der gleichen Komponente und in der Nachbarschaft eines Amalgamationsknotens sind getrennt.\\
+Seien $u,v \in V$ zwei Knoten in einem Kaktusgraphen welche nicht getrennt sind.
+\begin{enumerate}
+\item Fall: Ein Knoten liegt in keiner Komponente, also auf einem einfachen Weg. Sei dies O.B.d.A. der Knoten $u$. Der Weg ist entweder zwischen zwei Komponenten oder an einem Amalgamationsknoten.
+\begin{itemize}
+\item Der Knoten $u$ liegt auf einem Weg zwischen zwei Komponenten. Damit ist $u$ ein Trennungsknoten. Die zwei Teilgraphen $G'$ und $G''$ enstehen durch das Löschen vom Knoten $u$ beinhalten jeder mindestens eine Komponente. Nach Definition ist eine Komponente kein Weg und nach Lemma \ref{wegtrennungsknoten} beinhaltet jeder Teilgraph der kein Weg ist und durch die Entfernung von einem Knoten ensteht mindestens einen Ankerknoten. Sei $r_i \in G'$ und $r_j \in G''$ zwei Ankerknoten, dann gilt für jeden Knoten $v \in G'$:
+$$ dist(v,r_j)>dist(u,r_j)\text{ und } dist(v,r_i)<dist(u,r_i)$$
+Und für jeden Knoten $w \in G''$:
+$$ dist(w,r_j)<dist(u,r_j)\text{ und } dist(w,r_i)>dist(u,r_i)$$
+Es kann keinen Knoten mit der gleichen Markierung wie Knoten $u$ geben.
+\item Der Knoten $u$ liegt in einem Weg an einem Amalgamationsknoten $v_A$. Nach der Definiton des Amalgamationssknotens liegt dieser Knoten $v_A$ noch in mindestens zwei Komponenten, welche jeweils mindestens einen Ankerknoten beinhaltet. Nach Lemma \ref{trennungsknoten} kann der Amalgamationsknoten lokal als Ankerknoten für den Weg betrachtet werden. Ein Weg ist getrennt wenn ein Endknoten ein Ankerknoten ist, was hier der Fall ist.\\Ein Knoten mit der gleichen Markierung wie der Knoten $u$ muss also in einer Komponente liegen. Die Nachbarschaft von dem Amalgamationsknoten $v_A$ ist nach Vorraussetzung getrennt und nach Lemma \ref{nachbartrennungsknoten2} sind alle Knotenpaare getrennt, wobei der eine Knoten auf einem einfachen Weg und der andere Knoten in einer Komponente liegen und einen gemeinsamen Knoten haben.  
+\end{itemize}  
+\item Fall: Ein Knoten liegt in einer Komponente $x$, sei dies O.B.d.A. der Knoten $u$. Der Knoten $v$ liegt nach Annahme nicht in dieser Komponente. 
+\begin{itemize}
+\item Der Knoten $v$ liegt in einer Komponente $y$ die keinen gemeinsamen Knoten mit der Komponente $x$ hat. Zwischen den Komponenten $x$ und $y$ ist ein einfacher Weg oder mindestens eine Komponente mir je einem Trennungsknoten an der Komponente $x$ bzw. $y$. Nach Lemma \ref{first_theorem} und der Verallgemeinerung sind alle Knotenpaare getrennt.
+\item Der Knoten $v$ liegt in einer Komponente $y$ die einen gemeinsamen Knoten $w$ mit der Komponente $x$ hat. Es gilt $u \neq w \neq v$. Nach Vorraussetung sind $v$ und $x$ nicht in der Nachbarschaft von $w$ und die Nachbarschaft von $w$ ist getrennt. Dies ist ein Widerspruch zu Lemma \ref{nachbartrennungsknoten} $\lightning$.
+\end{itemize}  
+\end{enumerate}
 \end{proof}
-\begin{bem}
-Der Grund dafür das einfache Wege nicht als Komponente aufgefasst werden müssen ist abhängig von der Position des Weges. Die Wege an zweifachen Zusammenhangskomponenten werden bei der Berechnung der metrischen Dimension der Komponenten beachtet. Wege zwischen zwei Komponenten sind nach Lemma \ref{} 
-\end{bem}
-Einer der Gründe weshalb es keinen einfachen und effizienten Algorithmen für die Berechnung der metrischen Dimension gibt, ist dass sich das Problem nicht lokal auf Teilgraphen lösen lässt und die metrische Dimension für den Gesamtgraphen nicht einfach die Summe der Komponenten ist (vgl. Kapitel \ref{kapallg}).\newline\newline
-Die Kaktusgraphen haben durch die starken Einschränkungen der Struktur nur ''eine handvoll'' unterschiedlicher Komponenten als Bestandteile, welche durch jeweils einen Trennungsknoten verbunden sind. Dazu gehören Bäume, Wege und Kreise.\newline\newline
-Nach dem Lemma \ref{wegtrennungsknoten} kann ein Trennungsknoten lokal als Ankerknoten aufgefasst werden. Hierbei bedeutet lokal, dass man nur einen Teilgraph mit dem Trennungsknoten als Gesamtgraph betrachtet. Aus dem Lemma \ref{einelementreichtnicht} ist bekannt, dass ein Teilgraph, welcher kein Kreis ist immer mindestens einen Ankerknoten beinhaltet. Daraus folgt aber nicht, dass Wege keine Ankerknoten haben können. Es bedarf einer gesonderten Untersuchung wie sich Wege als Teilgraphen verhalten. Ein Weg kann an einem Baum vorkommen, es bleibt aber für die Untersuchung ein Baum. Außerdem kann ein Weg an einem Kreis vorkommen. Es entsteht dadurch eine voll- oder unvollständige Sonne. Der Fall, dass mehrere Kreise und ein Weg an einem Knoten vorkommen wird ebenfalls untersucht. Weitere Möglichkeiten gibt es nicht. \newline
-Der Abschnitt \ref{korraufteilung} zeigt, dass der Algorithmus im Anhang die Bestandteile des Graphens richtig erkennt und aufteilt. Der Abschnitt \ref{korrkomp} behandelt die Korrektheit der Berechnung der metrischen Dimension einzelner Komponenten.\newline\newline
-Eine Sache muss bei der Berechnung des Gesamtgraphen gegenüber der Berechnung der einzelner Komponenten beachtet werden. Nach dem Lemma \ref{trennungsknoten} sind alle Knotenpaare getrennt, welche sich in zwei Teilgraphen mit jeweils mindestens einem Ankerknoten befinden und mit mindestens einer Kante verbunden sind. Damit vereinfacht sich die Betrachtung auf einen einzigen Fall, und zwar wenn zwei oder mehr Teilgraphen mit einem Trennungsknoten direkt verbunden sind. Der Trennungsknoten muss dafür mindestens der Grad vier haben. Um die korrekte Erkennung und Berechnung dieses Falles geht es in dem Abschnitt \ref{korramal}.\newline\newline
-Die letzte Frage die geklärt werden muss, ist warum man bei Kaktusgraphen die Komponenten einzeln betrachten darf. Wären alle Komponenten mit jeweils mindestens einer Kante verbunden, so würde nach dem Lemma \ref{trennungsknoten} durch eine Trennung der Komponenten direkt eine Trennung des Gesamtgraphen folgen. Diese Eigenschaft kann aber nur für Komponenten benutzt werden welche mit mindestens einer Kante verbunden sind. Für die anderen Kompositionen gilt nach Lemma \ref{nachbartrennungsknoten}, dass wenn alle Nachbarn eines Trennungsknotens getrennt sind, sind auch alle Knotenpaare in jeweils unterschiedlichen Komponenten getrennt. In dem Abschnitt \ref{korramal} wird explizit gezeigt warum die Anzahl der zusätzlich gewählten Ankerknoten minimal ist.
+\begin{comment}
 \subsection{Die Korrektheit der Aufteilung}
 \label{korraufteilung}
 Die Korrektheit der Tiefensuche, sowie die Korrektheit vom Algorithmus zur Erkennung der 2-fachen Zusammenhangskomponenten werden vorrausgesetzt.\\
-Für Kaktusgraphen ist es bekannt, dass jede zweifache Zusammenhangskomponente mit mindestens drei Knoten ein Kreis ist.\cite{}. Da nach Vorraussetzung die Algorithmen \ref{alg2zssuche1} und \ref{alg2zssuche2} die zweifachen Zusammenhangskomponenten korrekt erkennen, kann der Algorithmus \ref{algzweifachzus} diese Komponenten korrekt markieren.
+Für Kaktusgraphen ist es bekannt, dass jede zweifache Zusammenhangskomponente mit mindestens drei Knoten ein Kreis ist. Da nach Vorraussetzung der Algorithmus \ref{alginit} die zweifachen Zusammenhangskomponenten korrekt erkennt, musst gezeigt werden, dass die Markierung und Zuordnung der Komponenten richtig ist.
 \begin{bem}
-Ordne jeden Knoten jeder zweifachen Zusammenhangskomponente zu einer der drei Klassen $\{0,i,A\}$ mit $i \geq 1$
+Zuordnung der ZZK zu den drei Klassen $\{0,i,A\}$ mit $i \geq 1$
 \begin{itemize}
 \item Es gibt keine Knoten mit Grad eins auf einem Kreis.
 \item Alle Knoten mit Grad zwei sind der Klasse $0$ zugeordnet.
 \item Alle Knoten mit Grad $\geq 4$ sind der Klasse $A$ zugeordnet.
-\item Es fehlt die Zuordnung der Knoten mit Grad $3$, dazu dienen die Algorithmen \ref{algtiefen1} und \ref{algtiefen2}.
+\item Es fehlt die Zuordnung der Knoten mit Grad drei, dazu dient die Tiefensuche in Algorithmus \ref{alginit}.
+Es wird überprüft ob an diesem Knoten neben seinen Nachnarn in der ZZK nur ein einfacher Weg ist. Dann ist die Länge des Weges die Klasse $i$ des Knotens. Oder wenn es kein einfacher Weg ist, so ist die Klasse vom Knoten $A$.
 \end{itemize}
 \end{bem}
+\end{comment}
 \subsection{Die Korrektheit der Berechnung der metrischen Dimension einzelner Komponenten}
 \label{korrkomp}
-\textbf{Kreise}\newline
+Alle zweifachen Zusammenhangskomponenten von Typ $K,S$ oder $US$ werden als Kreise, Sonnen oder unvollständige Sonnen aufgefasst. Die $A$ Knoten sind feste Ankerknoten. Es wird gezeigt wie üperprüft werden dann ob die Ankerknoten eine vollständige metrische Basis sind oder durch weitere Ankerknoten ergänzt werden müssen.
+\begin{itemize}
+\item[Typ $K$]
 Die metrische Dimension von einem Kreis ist zwei. In der Arbeit ''Resolvability and the upper dimension of graphs'' \cite{upper} behandeln Gary Chartrand, Christopher Poisson und Ping Zhang die Oberdimension von Kreisen. Die Oberdimension ist die minimale Anzahl von Knoten so dass jede Menge eine metrische Basis ist.\newline
 Für Kreise mit einer ungeraden Anzahl von Knoten ist die Oberdimension zwei.\newline
-Für Kreise mit einer geraden Anzahl von Knoten ist die Oberdimension drei, denn zwei gegenüberliegende Knoten können keinen Kreis trennen. Algorithmisch muss also untersucht werden, ob es mindestens zwei Knoten der Klasse $A$ gibt und falls dies nicht der Fall ist, werden maximal zwei Knoten in die metrische Basis aufgenommen. Bei einem Kreis mit einer geraden Anzahl von Knoten und genau zwei Knoten der Klasse $A$, wird überprüft ob sich die Knoten der Klasse $A$ gegenüber liegen.\newline\newline
-\textbf{Sonnen}\newline
-Die metrische Dimension 
-\textbf{Halbsonnen}\newline
-\textbf{Bäume}\newline
-\textbf{Wege an Knoten der Klasse $A$}\newline
-\subsection{Die Korrektheit der Erkennung und Berechnung der metrischen Dimension bei Amalgamationsknoten}
-\label{korramal}
-Der Graph besteht aus unterschiedlichen Komponenten, darunter sind Kreise, Sonnen, unvollständige Sonnen, Bäume und Wege zwischen Komponenten. Ein Knoten kann gleichzeitig zu mehreren Komponenten gehören, eine Kante hingegen gehört immer zu genau einer Komponente. Damit liefert die Aufteilung der Kanten in Komponenten eine Partitionierung des Graphen.\newline 
-Angenommen zwei Knoten in einer Komponente haben die gleiche metrische Dimension. 
-Angenommen zwei Knoten in unterschiedlichen Komponenten haben die gleiche metrische Dimension. 
-\begin{comment}
-\large{Induktion über die Anzahl der Komponenten $k$}\newline
-\textbf{Induktionsanfang:}
+ür Kreise mit einer geraden Anzahl von Knoten ist die Oberdimension drei, denn zwei gegenüberliegende Knoten können keinen Kreis trennen. Algorithmisch muss also untersucht werden, ob es mindestens zwei Knoten der Klasse $A$ gibt und falls dies nicht der Fall ist, werden maximal zwei Knoten in die metrische Basis aufgenommen. Bei einem Kreis mit einer geraden Anzahl von Knoten und genau zwei Knoten der Klasse $A$, wird überprüft ob sich die Knoten der Klasse $A$ gegenüber liegen.\newline\newline
+\item[Typ $S$]
+Die metrische Dimension von einem geraden Sonnengraphen ist drei und von einem ungeraden Sonnengraphen zwei.
+In dem Kapitel \ref{chap_sonne} geht es um die metrische Dimension von solchen Graphen. Neben dem Fall, dass es zu wenige Ankerknoten gibt, gibt es eine weitere Art von Knotenpaaren welche ungetrennt sein können:
 \begin{itemize}
-\item{Fall $k=0$:} Der Graph ist ein Weg. $\Longrightarrow$ Die metrische Dimension ist eins.
-\item{Fall $k=1$:} Der Graph ist ein Baum, ein Kreis, eine Sonne oder eine unvollständige Sonne. Da es nur eine Komponente gibt, muss kein Sonderfall an den Trennungsknoten beachtet werden. 
+\item Es gibt ein Knotenpaar $\{u,v\}$ auf dem Kreis der Ursprungsknoten und o.B.d.A. ist $u$ der Bifurkator zwischen allen Ankerknoten, $v$ und dem ersten Knoten auf dem Strahl bei $u$.
+\end{itemize}
+Dieser Fall tritt auf, wenn die kürzesten Wege von allen Ankerknoten über einen Ankerknoten laufen, und tritt nicht auf, wenn der größte Abstand zwischen jedem Ankerknotenpaar kleiner als $\frac{n+3}{2}$ ist. 
+\item[Typ $US$]
+Die metrische Dimension von einem geraden unvollständigen Sonnengraphen ist zwei oder drei und von einem ungeraden unvollständigen Sonnengraphen zwei.\\
+Jede unvollständige Sonne ist durch die metrische Basis einer Sonne getrennt. Außerdem ist jede unvollständige Sonne getrennt, wenn sich an auserwählten Knoten keine Strahlen befinden. Eine ausführliche Betrachtung der metrischen Dimension von unvollständigen Sonnengraphen ist in Kapitel \ref{chap_usonne}.
+\item[Typ $B$]
+Bäume werden zwar als einzelne Komponenten während der Berechnung betrachtet, aber ihre metrische Dimension wird nicht explizit als Komponente berechnet. Die Berechnung der metrischen Dimension erfolgt in letzten Teil des Algorithmus, wobei die Korrektheit von diesem in mehreren Quellen bewiesen wurde.\\
+Bei den Algorithmus zur Berechnung des Kaktusgraphen werden aber Komponenten an denen Bäume liegen können ausgetauscht, das folgende Lemma zeigt, dass sich die metrische Dimension der Bäume nicht ändert.
+\end{itemize}
+\begin{lem}
+Durch den Austausch von Komponenten im Algorithmus \ref{algreplace} ändert sich die metrische Dimension der Bäume nicht.
+\end{lem}
+\begin{proof}[Beweis:]
+Die Berechnung der metrischen Dimension bei Bäumen erfolgt mittels Summierung von Wegen an Knoten $v$ mit $deg(v)\geq 3$. Um das Ergebnis dieser Summe zu beeinflussen, gibt es zwei Möglichkeiten:
 \begin{itemize}
-\item Baum\\
-Die metrische Dimension kann mit dem Algorithmus von \cite{} bestimmt werden.
-\item Kreis\\
-Die metrische Dimension ist zwei.
-\item Sonne\\
-Die metrische Dimension ist für gerade Sonnen drei und für ungerade Sonnen zwei.
-\item unvollständige Sonne\\
-Die metrische Dimension ist für ungerade, unvollständige Sonnen zwei. Für gerade, unvollständige Sonnen wird überprüft ob einer in der Tabelle \ref{tab} aufgelisteten Fälle eintritt, dann ist die metrische Dimension zwei. Ist dies nicht der Fall so ist die metrische Dimension drei.
-\end{itemize}
-\item{Fall $k\to k+1$:} Angenommen, die metrische Dimension wurde für $k$ andere Komponenten korrekt berechnet. 
-Wird nun die $k+1$-Komponente überprüft. Sei $l$ die Anzahl der Trennungsknoten in der Komponente $k$.
-\begin{itemize}
-\item Kreis 
-\begin{itemize}  
-\item $l\geq 3$\\
-Die metrische Dimension ist $k$.
-\item $l=1$\\
-Die metrische Dimension ist $k+1$.
-\item $lk=2$\\
-Wenn $k$ ein ungerader Kreis ist  
-\end{itemize}
-\item Sonne\\
-Die metrische Dimension ist für gerade Sonnen drei und für ungerade Sonnen zwei.
-\item unvollständige Sonne\\
-Die metrische Dimension ist für ungerade, unvollständige Sonnen zwei. Für gerade, unvollständige Sonnen wird überprüft ob einer in der Tabelle \ref{tab} aufgelisteten Fälle eintritt, dann ist die metrische Dimension zwei. Ist dies nicht der Fall so ist die metrische Dimension drei.
-\end{itemize}
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Für die Berechnung der metrischen Dimension von Sonnengraphen sind unterschiedliche Fälle zu beachten:
-\begin{itemize}
-\item Kreis gerader oder ungerader Länge?
-\item An wievielen Knoten befinden sich Wege, welche Länge haben diese und wie sind sie positioniert?
-\item Gibt es bereits Teilgraphen mit Ankerknoten, wieviele gibt es und wo sind sie positioniert?
-\end{itemize}
-Um nicht jeden Fall einzeln zu beachten kann man mehrere Zusammenfassen, so z.B. Kreise gerader und ungerader Länge in vielen Fällen.
-Für den Fall, dass es mehr als einen Ankerknoten bereits gibt reicht die Aufnahme von maximal einem weiteren Knoten in die metrische Basis aus um einen Kreis oder einen beliebigen Sonnengraphen zu trennen.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Ein Knoten $u$ kann zu 
-\begin{enumerate}
-\item einem Weg 
-\item einem Baum
-\item einem Kreis
-\end{enumerate}
-oder beliebiger Kombinationen von diesen drei Arten gehören. Diese Kombinationen sind:\newline
-~\linebreak
-\begin{tabular}{lccc}
-Kombination & $ZK[u]=$ & $Klasse[u]=$ & ''markiert''\\
-$\cdot$ ein Weg& $0$& $0$ & ja\\
-$\cdot$ ein Baum& $0$& $0/A$& nein\\
-$\cdot$ ein Kreis& $1$& $0$& nein\\
-$\cdot$ ein Kreis und ein Weg& $1$&$j$ mit $j\geq 1$& ja\\
-$\cdot$ $i$ Kreise mit $i\geq 2$& $1$& $A$ & nein\\
-$\cdot$ $i$ Kreise mit $i\geq 2$ und ein Weg &$1$& $A$& nein\\
-$\cdot$ $i$ Kreise mit $i\geq 1$ und ein Baum & $1$& $A$& ja/nein\\
-oder eine Verbindung zu einem anderen Kreis&&&\\
-\end{tabular}
-~\linebreak
-Gehört ein Knoten zu mehreren Wegen, so gehört er zu einem Baum. Die Kombination aus mehreren Bäume bleibt ein Baum. Ein Baum und ein Weg werden auch zu einem Baum. Ein Kreis bleibt in beliebiger Kombination ein Kreise und so auch eine beliebige Anzahl von Kreisen.\newline\newline
-Ist ein Knoten der einzige Trennungsknoten in einer zweifachen Zusammenhangskomponente so haben alle seine Nachbaren in dieser Komponente die gleiche Markierung. Um diese Knoten zu trennen müssen weitere Knoten in die metrische Basis aufgenommen werden. Die genaue Anzahl wird in Teil drei vom Algorithmus bestimmt.\\
-Können Knoten aus unterschiedlichen Komponenten durch Ankerknoten aus unterschiedlichen Komponenten nicht getrennt werden?\newline
-Die Antwort ist ja, aber nur bei benachbarten Komponenten, welche einen gemeinsamen Knoten teilen.
-Dies gilt nicht für Zusammenhangskomponenten, die nicht unmittelbar verbunden sind. Nach Bemerkung \ref{aussagetrennungsgraphen} und dem Satz \ref{first_theorem} können keine zwei Ankerknoten aus unterschiedlichen Teilgraphen keine zwei Knoten in unterschiedlichen Teilgraphen nicht trennen, wenn da ein Weg, oder ein anderer Teilgraph zwischen liegt.\newline\newline
-Zu separaten Untersuchung bleiben damit Knoten $v$ mit $Klasse[v]=A$ und mit dem $deg(v)\geq 4$. Es gibt bestimmte Kombinationen die nochmal separat untersucht werden müssen, diese sind:
-\begin{enumerate}
-\item $i$ Kreise mit $i\geq 2$
-\item $i$ Kreise mit $i\geq 2$ und ein Weg
-\item $i$ Kreise mit $i\geq 1$ und ein Baum
-\end{enumerate}
-\begin{tabular}{lcccc}
-Kombination & $ZK[u]=$ & $Klasse[u]=$ & ''markiert''& $Weg[u]=$ \\
-$\cdot$ $i$ Kreise mit $i\geq 2$& $1$& $A$ & nein& $0$\\
-$\cdot$ $i$ Kreise mit $i\geq 2$ und ein Weg &$1$& $A$& nein &$1$\\
-$\cdot$ $i$ Kreise mit $i\geq 1$ und ein Baum & $1$& $A$& ja/nein &$0/1$\\
-\end{tabular}
-\end{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Ein einfacher Weg an einem Knoten verschwindet.
+Da sich nur was an Knoten der Klasse $A$ ändert, kann dieser Fall nicht eintreten. 
+\item Ein einfacher Weg an einem Knoten kommt dazu. Alle Komponenten an einem $A$ Knoten an einem Baum werden durch einen der folgenden Teilgraphen ersetzt:
+\vspace{-4mm}
 \begin{figure}[h!]
 		\centering 		 
-   \includegraphics[width=350pt]{bilder/algorithmus.pdf}
+   \includegraphics[width=340pt]{bilder/algorithmus.pdf}
 	\caption{Unterschiedliche Bäume mit denen die Komponenten ersetzt werden}
   	 \end{figure}
+  	 \newpage
+Es gibt mindestens eine Komponente die ersetzt wird, sonst gäbe es keinen $A$ Knoten. Wenn es nur einen $A$ Knoten gibt, wird die Komponente durch den Baum von Typ $2$ oder höher ersetzt. Keine Komponente kann mit einem Ankerknoten getrennt werden. Es gibt einen Knoten von mindestens Grad drei. Wenn es mindestens zwei $A$ Knoten in der Komponente gibt, beinhaltet sie ebenfalls einen Knoten von mindestens Grad drei. In beiden Fällen ist an dem $A$ Knoten aus dem Baum kein neuer einfacher Weg enstanden.
+\end{itemize}
+
+\end{proof}
+\subsection{Die Korrektheit der Erkennung und Berechnung der metrischen Dimension bei Amalgamationsknoten}
+\label{korramal}
+Der Graph besteht aus unterschiedlichen Komponenten, darunter sind Kreise, Sonnen, unvollständige Sonnen, Bäume und Wege zwischen Komponenten. Ein Knoten kann gleichzeitig zu mehreren Komponenten gehören, solche Knoten werden Amalgamationsknoten genannt.\newline 
+Jeder Knoten $v$ in mindestens einer Zusammenhangskomponente mit $deg(v)\geq 4$ ist ein Amalgamationsknoten.\\
+Jede Komponente in welcher der Amalgamationsknoten ist, gehört zu der Menge der Komponenten die überprüft werden muss. Außerdem wird ein einfacher Weg an einem Amalgamationsknoten ebenfalls als eine Komponente betrachtet. Doch nicht für jede Komponente muss ein Ankerknoten in die metrische Basis aufgenommen werden.
+Die ganauen Vorraussetzungen für die Berechnung der metrischen Dimension bei Amalgamationsknoten sind in Kapitel \ref{amal} beschrieben.
+\begin{lem}
+Für eine Komponente mit mindestens zwei $A$ Knoten reicht ein zusätzlicher Knoten aus um die Knoten in der Komponente und die Nachbarschaft von den Amalknoten in der Komponente zu trennen.
+\end{lem}
+Eine Komponente kann nur dann in die Menge der Amalgamationsknoten aufgenommen werden, wenn es keinen Ankerknoten gibt, oder die maximale Entfernung zu einem Ankerknoten den Wert $\frac{n}{2}$ übersteigt. Somit kann es in einer Komponente maximal zwei Amalgamationsknoten geben.
+Nach Kapitel \ref{amal} muss für jeden Amalgamationsknoten für jede relevante Komponente bis auf Eine ein Ankerknoten gesetzt werden. Werden in bestimmten Komponenten Ankerknoten gesetzt, so können zwei Amalgamationsknoten davon gleichzeitig profitieren. Wird der Ankerknoten in die falsche Komponente gesetzt so erhält man insgesamt keine metrische Basis, denn die Vorraussetzung der Minimalität wird verletzt. Es wird also eine maximale Menge von Komponenten gesucht, bei denen kein Ankerknoten gesetzt werden braucht, sodass für jeden Amalgamationsknoten in jeder relevanten Komponente bis auf Einer ein Ankerknoten gesetzt wurde.\\
+Dafür wird der Graph modifiziert und das folgende Problem gelöst:
+\vspace{-1mm}
+\MP{{Maximales Matching}}
+{Ein ungerichteter Baum $G=(V,E)$.}
+{Ein maximales Matching $k$ oder die maximale Anzahl $k$ an Kanten,\\&so dass an jedem Knoten maximal eine Kante gewählt wurde.}
+
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1422,7 +1432,7 @@ Der Teilgraph $G_L$ links von der Kante $\{x,y\}$ beinhaltet den Knoten $u$ und 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Verallgemeinerungen}
-Unterschiedliche Möglichkeiten sind für die Verallgemeinerung von $C_3-$Bäumen möglich. Einerseits ist es möglich die Kreisordnung zu erhöhen. Eine andere Möglichkeit ist es jeden Knoten durch einen Kreis, welcher aus sovielen Knoten besteht wie der Grad des ersetzten Knotens, zu ersetzen und jeden Knoten eindeutig einem Nachbarn zuzuordnen.
+Unterschiedliche Möglichkeiten sind für die Verallgemeinerung von $C_3-$Bäumen möglich. Einerseits ist es möglich die Kreisordnung zu erhöhen. Eine andere Möglichkeit ist es jeden Knoten durch einen Kreis, dessen Größe der Ordnung des ersetzten Knotens entspricht, zu ersetzen und jeden Knoten eindeutig einem Nachbarn zu verbinden.
 
 \begin{defi}
 Sei ein Baum $T=(V,E)$ mit $deg(v_i)\leq j$ für $v_i \in V$ gegeben. Der $C_j-Baum$ resultiert daraus folgend: 
@@ -1430,35 +1440,35 @@ Für alle $3 \leq i \leq j$ und $i \in \mathbb{N}$ sei $$V'=\{v_k|v_k \in V \wed
 \end{defi}
 
 \begin{bsp}~\newline
-
+\begin{figure}[h!]
+		\centering 		 
+   \includegraphics[width=410pt]{bilder/trees3.pdf}
+	\caption{Entwicklung von einem Baum zum $C_{j}-Baum$}
+  	 \end{figure}
 \end{bsp}
 
 \begin{bem}
-Da ein $C_j$-Baum ein Kaktusgraph ist, kann die metrische Dimension von $C_j$-Bäumen mit dem Algorithmus für die Berechnung der metrischen Dimension für Kaktusgraphen bestimmt werden. Es kann auch eine vereinfachte Variante verwendet werden, die folgend aussieht:\newline
+Da ein $C_j$-Baum ein Kaktusgraph ist, kann die metrische Dimension von $C_j$-Bäumen mit dem Algorithmus für die Berechnung der metrischen Dimension für Kaktusgraphen bestimmt werden. Es kann auch eine vereinfachte Variante verwendet werden.
 \begin{algorithm}
 \caption{Aufbau vom Algorithmus zur Berechnung der MD von $C_j$-Bäumen}
 \begin{algorithmic}
 \vspace{2mm}
-\STATE 1. Initialisiere den Graph
+\STATE 1. Bestimme alle zweifachen Zusammenhangskomponente mit mindestens 3 Kanten und\\$\;\;\;\;$ordne jeden Knoten jeder Zusammenhangskomponente zu einer der drei Klassen\\$\;\;\;\;\{0,i,A\}$ mit $i \geq 1$\\
 \vspace{2mm}
-\STATE 2. Bestimme alle zweifachen Zusammenhangskomponente mit mindestens 3 Kanten\\
+\STATE 2. Berechne die metrische Dimension der ZZK vom Typ $S$ und $US$ und ersetze die\\$\;\;\;\;$Komponente durch Bäume\\
 \vspace{2mm}
-\STATE 3. Ordne jeden Knoten jeder Zusammenhangskomponente zu einer der drei Klassen\\$\;\;\;\;\{0,i,A\}$ mit $i \geq 1$\\
-\vspace{2mm}
-\STATE 4. Berechne die metrische Dimension der Sonnengraphen und ändere die Komponente in Bäume\\
-\vspace{2mm}
-\STATE 5. Berechne die metrische Dimension vom Baum
+\STATE 3. Berechne die metrische Dimension vom Baum
 \vspace{2mm}
 \end{algorithmic}
 \end{algorithm}
 ~\linebreak
-Da alle Knoten in einem $C_j$-Baum maximal den Grad drei haben tritt der Sonderfall nicht ein. Außerdem gibt es in $C_j$-Bäumen keine Kreise, sondern nur vollständige und unvollständige Sonnen.
+Da alle Knoten in einem $C_j$-Baum maximal den Grad drei haben gibt es keine Amalgamationsknoten. Außerdem gibt es in $C_j$-Bäumen keine Kreise, sondern nur vollständige und unvollständige Sonnen.
 
 \end{bem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Vergleich der metrischen Dimension zwischen Bäumen und $C_j-$Baümen}
 \begin{lem}
-Die metrische Dimension eines $C_j$-Baumes ist immer kleiner oder gelich der metrischen Dimension des zugehörigen Baumes.
+Die metrische Dimension eines $C_j$-Baumes ist immer kleiner oder gleich der metrischen Dimension des zugehörigen Baumes.
 \end{lem}
 Das folgende Beispiel zeigt den maximalen Unterschied der metrischen Dimension eines $C_j$-Baumes und des zugehörigen Baumes.
 \begin{bsp}~\newline
@@ -1470,7 +1480,7 @@ Das folgende Beispiel zeigt den maximalen Unterschied der metrischen Dimension e
 \begin{figure}[ht]
 \centering
 \includegraphics*[width = 410pt]{bilder/bspcjbaum2.pdf}
-\caption{Der zugehörige $C_j$-Baum mit Knoten $4nk+2$ und metrischer Dimension $2$}
+\caption{Der zugehörige $C_j$-Baum mit $4nk+2$ Knoten und metrischer Dimension $2$}
 \end{figure}
 \end{bsp}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1549,24 +1559,24 @@ $\:$Divide-$\&-$Conquer & \Checkmark & \Checkmark &\Checkmark &\Checkmark &  \XS
 \caption{Einteilung der Knoten}
 \algsetup{indent=2em}
 \begin{algorithmic}[1]
-\STATE Berechne die zweifachen Zusammenhangskomponenten des Graphen $G$ \footnote{Benutze zum Beispiel den Algorithmus aus \cite{Vorlesung}};
-\IF{(Anzahl der Kanten $\geq 3$)}{\STATE Speichere sie als eine Komponente $x$ in der Liste $ZK$;} \ENDIF
+\STATE Berechne die zweifachen Zusammenhangskomponenten des Graphen $G$;
+\IF{(Anzahl der Kanten $\geq 3$)}{\STATE Speichere sie als eine Komponente $x$ in der Liste $ZZK$;} \ENDIF
 \STATE Zähle die Anzahl der Kanten in jeder zweifachen Zusammenhangskomponente $x$ und speichere die Werte in $x.Kanten$;
-\STATE Ändere die Auflistung der zweifachen Zusammenhangskomponenten $x$ von Kanten zu Knoten ohne Wiederholungen, zähle die Anzahl der Knoten und speichere die Werte in $x.Knoten$;
-\STATE Setze $ZK[v]=1$ für jeden Knoten $v$, wenn der Knoten in mindestens einer zweifachen Zusammenhangskomponente liegt;
+\STATE Ändere die Auflistung der zweifachen Zusammenhangskomponenten $x$ von Kanten zu Knoten ohne Wiederholungen, speichere für jeden Knoten $v$ zusätzlich jede ZSK in welcher er vorkommt in einer Liste $v.ZZK$ und zähle die Anzahl der Knoten und speichere die Werte in $x.Knoten$;
+\STATE Setze $ZZK[v]=1$ für jeden Knoten $v$, wenn der Knoten in mindestens einer zweifachen Zusammenhangskomponente liegt;
 %\STATE Ist $x.Kanten\;>\;x.Knoten$ so markiere alle Knoten in $x$ und speichere $x=C$;
 %\STATE Ordne jeden markierten Knoten $u$ mit $deg(u) \geq x.Knoten+1$ zu $\text{Klasse}[u]=A$;
 %\STATE Ordne jeden markierten Knoten $u$ mit $deg(u) = x.Knoten-1$ zu $\text{Klasse}[u]=0$;
 %\STATE Für jeden markierten Knoten $u$ mit $deg(u) = x.Knoten$ überprüfe mittels Tiefensuche ob es einen einfachen Weg zu einem Blatt über Knoten vom Grad zwei gibt und ordne ihn zu $\text{Klasse}[u]=0$, falls der Fall zutrifft. Sonst ordne den Knoten zu $\text{Klasse}[u]=A$;\\
 %\IF{($u$ nicht markiert)}{
-\STATE Ordne jeden Knoten $u$ mit $deg(u)\geq 4$ und $ZK[u]=1$ zu $\text{Klasse}[u]=A$;
-\STATE Ordne jeden Knoten $u$ mit $deg(u)\leq 2$ und $ZK[u]=1$ zu $\text{Klasse}[u]=0$;
-%\STATE Ordne jeden Knoten $u$ mit $deg(u)=3$ und $ZK(u)=0$ zu $\text{Klasse}[u]=0$;
+\STATE Ordne jeden Knoten $u$ mit $deg(u)\geq 4$ und $ZZK[u]=1$ zu $\text{Klasse}[u]=A$;
+\STATE Ordne jeden Knoten $u$ mit $deg(u)\leq 2$ und $ZZK[u]=1$ zu $\text{Klasse}[u]=0$;
+%\STATE Ordne jeden Knoten $u$ mit $deg(u)=3$ und $ZZK(u)=0$ zu $\text{Klasse}[u]=0$;
 \STATE Berechne mittels Tiefensuche für jeden Knoten $u$ in einer zweifachen Zusammenhangskomponente mit $deg(u)=3$ die Länge $i$, mit $i \geq 1$, eines einfachen Weges an diesem Knoten und ordne ihn zu $\text{Klasse}[u]=i$, falls es einen einfachen Weg gibt. Sonst ordne den Knoten zu $\text{Klasse}[u]=A$;
 %}\ENDIF
 \FORALL{($u \in V$ %$\setminus{\{u \text{ ist markiert}\}}$
 )}{
-\IF{($Klasse[u]==A$ und $deg(u)\geq 4$ und $ZK[u]==1$)} \STATE Überprüfe mit einer Tiefensuche ob man über Knoten vom Grad zwei zu einem Blatt kommt und setze $Weg[u]=1$. Falls nicht, setze $Weg[u]=0$; \ENDIF}
+\IF{($Klasse[u]==A$ und $deg(u)\geq 4$ und $ZZK[u]==1$)} \STATE Überprüfe mit einer Tiefensuche ob man über Knoten vom Grad zwei zu einem Blatt kommt und setze $Weg[u]=1$. Falls nicht, setze $Weg[u]=0$; \ENDIF}
 \ENDFOR
 \end{algorithmic}
 \label{alginit}
@@ -1576,7 +1586,7 @@ $\:$Divide-$\&-$Conquer & \Checkmark & \Checkmark &\Checkmark &\Checkmark &  \XS
 \begin{algorithmic}[1]
 %\STATE $Anzahl[x]:=K[x]:=S[x]:=0$;
 %\STATE $ZK=ZK$; \COMMENT{Ab hier werden in den Zusammenhangskomponente Knoten an Stelle von Kanten gespeichert}
-\FORALL{($x \in ZK$%$\setminus{\{x==C\}}$}
+\FORALL{($x \in ZZK$%$\setminus{\{x==C\}}$}
 )}{
 \FORALL{($v \in x$)}{ 
 \STATE Erhöhe $K[x]$ um eins für jeden Knoten $v$ mit $Klasse[v]=0$ oder $Klasse[v]=A$;
@@ -1585,11 +1595,12 @@ $\:$Divide-$\&-$Conquer & \Checkmark & \Checkmark &\Checkmark &\Checkmark &  \XS
 }\ENDFOR
 \IF{($x.Knoten==S[x]$)}{\STATE $S(x)$;}\ELSIF{($x.Knoten==K[x]$)}{\STATE $K(x)$;}\ELSE{\IF{($Anker[x] \leq 2$ oder $Anker[x] \geq \frac{n}{2}$)}{
 		\IF{($(n\; \textbf{mod} \; 2)==1$ oder $n==4$)}
-		{		 
-			\IF{($Anker[x]==0$)}{\STATE $USU0(x)$;}
-			\ELSE{\STATE $USU1(x)$;}
-			\ENDIF}
-		\ELSIF{($(n\; \textbf{mod} \; 2)==0$)}{\STATE $USG(x)$;
+		{		 \STATE $USU(x)$;
+			}
+		\ELSIF{($(n\; \textbf{mod} \; 2)==0$)}{
+		\IF{($Anker[x]==0$)}{\STATE $USG0(x)$;}
+			\ELSE{\STATE $USG1(x)$;}
+			\ENDIF
 		}\ENDIF}
 	\ELSE{\STATE $US(x)$;
 	}\ENDIF}\ENDIF
@@ -1606,28 +1617,27 @@ $\:$Divide-$\&-$Conquer & \Checkmark & \Checkmark &\Checkmark &\Checkmark &  \XS
 \vspace{2mm}
 \STATE Berechne für jeden Knoten $v$ mit $Klasse[v]=A$ in der zweifachen Zusammenhangskomponente $x$ die maximale Distanz zum nächsten Knoten $u$ mit $Klasse[u]=A$ und speichere den Wert in $dist(v,x)$;
 \STATE Der maximale Wert von $dist(v,x)$ für eine zweifachen Zusammenhangskomponente $x$ wird in $dist(x)$ gespeichert;
-\STATE $V.ZK:= \emptyset$;
+\STATE $V.ZZK:= \emptyset$;
 \FORALL{($v \in V$)}{
-\STATE $create(v.ZK)$;
-\IF{($Klasse[v]==A$ und $ZK[v]==1$ und $deg(v)\geq 4$)}{
-\STATE $insert(v.ZK \in V.ZK)$;}
-\ELSE{ \STATE $delete(v.ZK)$;}
+\IF{($Klasse[v]==A$ und $ZZK[v]==1$ und $deg(v)\geq 4$)}{
+\STATE $insert(v.ZZK \in V.ZZK)$;}
+\ELSE{ \STATE $delete(v.ZZK)$;}
 \ENDIF
-%\IF{($Klasse[v]==A$ und $ZK[v]==1$ und $deg(v)\geq 4$)}{
-%\FORALL{($x \in ZK$)}{
+%\IF{($Klasse[v]==A$ und $ZZK[v]==1$ und $deg(v)\geq 4$)}{
+%\FORALL{($x \in ZZK$)}{
 %\IF{($v \in x$)}{
-%\STATE $insert(x \in v.ZK)$;}
+%\STATE $insert(x \in v.ZZK)$;}
 %\ENDIF
 %}\ENDFOR
 \IF{($Weg[v]==1$)}{
-\STATE $insert(v \in v.ZK)$;}
+\STATE $insert(v \in v.ZZK)$;}
 \ENDIF
-\FORALL{($x \in v.ZK$)}{
+\FORALL{($x \in v.ZZK$)}{
 \IF{($Anker[x]==1$ und $(n\; \textbf{mod} \; 2)==1$) oder\\$\;\;\;\;$($x==S$ und $(n\; \textbf{mod} \; 2)==0$) oder\\$\;\;\;\;$($x==S$ und $Anker[x]\geq 3$) oder\\$\;\;\;\;$($dist(v,x) \leq \lceil\frac{n}{2}\rceil$)%oder\\$\;\;\;\;$($x==C$)
 }{\STATE $delete(x)$;}\ENDIF
 }\ENDFOR
 %}\ENDIF
-\IF{($|v.ZK|\leq 1$)}\STATE $delete(v.ZK)$;\ENDIF
+\IF{($|v.ZZK|\leq 1$)}\STATE $delete(v.ZZK)$;\ENDIF
 }\ENDFOR
 \end{algorithmic}
 \label{algsonderfall1}
@@ -1679,7 +1689,7 @@ $\:$Divide-$\&-$Conquer & \Checkmark & \Checkmark &\Checkmark &\Checkmark &  \XS
 \caption{$USU(x)$}
 \begin{algorithmic}[1]
 \vspace{2mm} 
-\IF{($Anker[x]==0$)} \STATE $MD^+(x)=2$;\ELSIF{($Anker[x]==1$)} \STATE $MD^+(x)=1$;\ELSIF{($Anker[x]\geq \frac{n}{2}-2$)} \STATE $MD^+(x)=0$;\STATE $insert(x \in MD-)$;\ELSIF{($Anker[x]==2$)} \IF{($dist(x)==\frac{n+1}{2}$ oder $dist(x)==\frac{n+3}{2}$)}{\IF{($dist(x)==\frac{n+1}{2}$))} \STATE $insert(x \in MD-)$;\ENDIF \STATE $MD^+(x)=0$;}\ELSIF{Jeder Knoten $v \in V \setminus \{v_1,v_2,v_{1,\frac{n-1}{2}},v_{1,\frac{n+1}{2}},v_{2,\frac{n-1}{2}},v_{2,\frac{n+1}{2}}\}$) hat $Klasse[v]=0$}{\STATE $MD^+(x)=0$;} \ELSE{\STATE $MD^+(x)=1$;\STATE $insert(x \in MD-)$;} \ENDIF \ENDIF
+\IF{($Anker[x]==0$)} \STATE $MD^+(x)=2$;\ELSIF{($Anker[x]==1$)} \STATE $MD^+(x)=1$;\ELSIF{($Anker[x]\geq \frac{n}{2}-2$)} \STATE $MD^+(x)=0$;\STATE $insert(x \in MD-)$;\ELSIF{($Anker[x]==2$)} \IF{($dist(x)==\frac{n+1}{2}$ oder $dist(x)==\frac{n+3}{2}$)}{\IF{($dist(x)==\frac{n+1}{2}$))} \STATE $insert(x \in MD-)$;\ENDIF \STATE $MD^+(x)=0$;}\ELSIF{(Jeder Knoten $v \in x \setminus \{v_1,v_2,v_{1+\frac{n-1}{2}},v_{1+\frac{n+1}{2}},v_{2+\frac{n-1}{2}},v_{2+\frac{n+1}{2}}\}$) hat\\ $Klasse[v]=0$)}{\STATE $MD^+(x)=0$;} \ELSE{\STATE $MD^+(x)=1$;\STATE $insert(x \in MD-)$;} \ENDIF \ENDIF
 \vspace{2mm}
 \end{algorithmic}
 \label{algberechnungungeradesonne1}
@@ -1689,12 +1699,17 @@ $\:$Divide-$\&-$Conquer & \Checkmark & \Checkmark &\Checkmark &\Checkmark &  \XS
 \caption{$USG1(x)$}
 \begin{algorithmic}[1]
 \vspace{2mm} 
-\IF{($Anker[x]==1$ und $n>4$)}\STATE $a=0$; \STATE Finde maximale zusammenhängende Menge links $M$ mit $|M|=s$ und rechts $M'$ mit $|M'|=s'$ mit $Klasse[v]=0$;
-\IF{($s\geq \frac{n}{2}-2$ oder $s'\geq \frac{n}{2}-2$)}{ \STATE $MD^+(x)=1$;$a=1$;}\ENDIF
-\STATE Finde maximale gegenüberliegende zusammenhängende Menge links $M$ mit $|M|=s$ und rechts $M'$ mit $|M'|=s'$ mit $Klasse[v]=0$;
-\IF{(Einer der beiden Fälle die unvollständige Sonne trennt)}{ \STATE $MD^+(x)=1$; $a=1$;}\ENDIF
-\IF{($a==0$)} \STATE $MD^+(x)=2$;\STATE $insert(x \in MD-)$;\ENDIF
-\ELSIF{($Anker[x]\geq \frac{n}{2}-2$)} \STATE $MD^+(x)=0$; \STATE $insert(x \in MD-)$;\ELSIF{($Anker[x]==2$ und $n>4$)} \IF{(Die unvollständige Sonne getrennt wird)}{ \STATE $MD^+(x)=0$;}\ELSE{\STATE $MD^+(x)=1$;\STATE $insert(x \in MD-)$;}\ENDIF \ENDIF
+\IF{($Anker[x]==1$ und $n>4$)}
+	\STATE Finde maximale zusammenhängende Menge links $M$ mit $|M|=s$ und rechts $M'$ mit $|M'|=s'$ mit 			$Klasse[v]=0$;
+	\IF{($s \geq \frac{n}{2}-2$ oder $s'\geq \frac{n}{2}-2$)}{ \STATE $MD^+(x)=1$;}\ELSE{
+	\STATE Finde maximale gegenüberliegende zusammenhängende Menge links $M$ mit $|M|=s$ und dem Ankerknoten $v_{1+\frac{n}{2}-s-1}$ und rechts $M'$ mit $|M'|=s'$ dem Ankerknoten $v_{1+\frac{n}{2}+s'+1}$ mit $Klasse[v]=0$;
+	\IF{($\{v_1, v_{1+\frac{n}{2}-s-1}\}\text{ oder }\{v_1, v_{1+\frac{n}{2}+s'+1}\}$ die ZSK trennen)}{\STATE $MD^+(x)=1$;}\ELSE{\STATE $MD^+(x)=2$;\STATE $insert(x \in MD-)$;}\ENDIF
+	}\ENDIF
+\ELSIF{($Anker[x]==2$ und $n>4$)} 
+	\IF{($\{v_1, v_{2}\}$ die ZSK trennen)}{ \STATE $MD^+(x)=0$;}
+	\ELSE{\STATE $MD^+(x)=1$;\STATE $insert(x \in MD-)$;}\ENDIF 
+\ELSIF{($Anker[x]\geq \frac{n}{2}-2$)}  \STATE $MD^+(x)=0$;
+									 	\STATE $insert(x \in MD-)$;\ENDIF
 \vspace{2mm}
 \end{algorithmic}
 \label{algberechnunggeradesonne1}
@@ -1704,7 +1719,7 @@ $\:$Divide-$\&-$Conquer & \Checkmark & \Checkmark &\Checkmark &\Checkmark &  \XS
 \caption{$US(x)$}
 \begin{algorithmic}[1]
 \vspace{2mm}
-\IF{($dist[x]\leq \lceil\frac{n}{2}\rceil$)}{\STATE $MD^+(x)=0$;\STATE $insert(x \in MD-)$;}\ELSIF{(Jeder Knoten $v \in kw(v_1, \; v_{2,\frac{n}{2}}) \setminus \{v_1, \;v_{2,\frac{n}{2}}\}$ und $v \in kw(v_2, \; v_{1,\frac{n}{2}}) \setminus \{v_2, \;v_{1,\frac{n}{2}}\}$ hat $Klasse[v]=0$)}{ \STATE $MD^+(x)=0$; \STATE $x \in CHECK$;}
+\IF{($dist[x]\leq \lceil\frac{n}{2}\rceil$)}{\STATE $MD^+(x)=0$;\STATE $insert(x \in MD-)$;}\ELSIF{(Jeder Knoten $v$ auf dem kürzeren Weg zwischen $v_1$ und$v_{2+\frac{n}{2}}$ und zwischen $v_2$ und $v_{1+\frac{n}{2}}$ hat $Klasse[v]=0$)}{ \STATE $MD^+(x)=0$; \STATE $x \in CHECK$;}
 \ELSE{\STATE $MD^+(x)=1$; \STATE $insert(x \in MD-)$;}
 \ENDIF
 \vspace{2mm}
@@ -1716,17 +1731,18 @@ $\:$Divide-$\&-$Conquer & \Checkmark & \Checkmark &\Checkmark &\Checkmark &  \XS
 \caption{$USG0(x)$}
 \begin{algorithmic}[1]
 \vspace{2mm} 
-\IF{($Anker[x]==0$ und $n>4$)} \STATE $a=0$; Finde maximale zusammenhängende Menge $M$ mit $Klasse[v]=A$;
-\IF{($|M| \geq \frac{n}{2}-2$)} \STATE $MD^+(x)=2$; $a=1$;\ENDIF
+\IF{($Anker[x]==0$ und $n>4$)}{ \STATE Finde maximale zusammenhängende Menge $M$ mit $Klasse[v]=A$;
+\IF{($|M| \geq \frac{n}{2}-2$)}{ \STATE $MD^+(x)=2$;}\ELSE{
 \STATE Finde alle maximalen gegenüberliegende Menge $M'$ mit $Klasse[v]=0$;
 \STATE Speichere beim Suchen das Maximum aller gegenüberliegender Mengen $m'_{max}$;
 \STATE Berechne die verbotene Länge eines Strahls $l_{max}$ für $m'_{max}$;
 \STATE Initialisiere eine Liste von $0$ bis $l_{max}$;
 \STATE Speichere die Wege zwischen den möglichen Ankerknoten von jedem Intervall als $I_1, \ldots , I_k$ mit dem Startknoten $s_i$ und Endknoten $e_i$ für das Intervall $I_i$;
 \STATE Berechne für jedes Intervall $I_i$ die verbotene Strahllänge $l_i$;
-\STATE Durchlaufe die zweifache Zusammenhangskomponente und hefte jedes Intervall an den $l_k$-ten Eintrag in der Liste;
-\IF{(Ein Intervall bleibt bis zum Ende in der Liste)}{ \STATE $MD^+(x)=2$; $a=1$;}\ENDIF
-\IF{($a==0$)} \STATE $MD^+(x)=3$; \ENDIF \ENDIF
+\STATE Durchlaufe die zweifache Zusammenhangskomponente mit den Strahlen und hefte jedes Intervall $I_i$ an den $l_i$-ten Eintrag in der Liste beim Betreten von Knoten $s_i$. Laufe in jeden einfachen Weg auf der ZZK und gleichzeitig in der Liste. Entferne jedes Intervall an der Liste wenn das Element in der Liste beim Durchlaufen erreicht wird;
+\IF{(Beim Erreichen von $e_i$ ist das Intervall $I_i$ in der Liste)}{\STATE $MD^+(x)=2$;}\ELSE{ \STATE $MD^+(x)=3$; }\ENDIF 
+}\ENDIF
+}\ENDIF
 \vspace{2mm}
 \end{algorithmic}
 \label{algberechnungungeradesonne0}
@@ -1735,7 +1751,7 @@ $\:$Divide-$\&-$Conquer & \Checkmark & \Checkmark &\Checkmark &\Checkmark &  \XS
 \caption{Ersetze die Zusammenhangskomponenten durch Bäume}
 \begin{algorithmic}[1]
 \vspace{2mm}
-\FORALL{($x \in ZK$)}{
+\FORALL{($x \in ZZK$)}{
 \STATE $insert(v_{new} \in V)$;
 \FORALL{($v \in x$)}{\IF{($Klasse[v]==i$ mit $i\geq 0$)}{\STATE $delete(v)$;
 \IF{($Klasse[v]==i$ mit $i\geq 1$)}{ \STATE Lösche den Weg an $v$, also $i$ Knoten mit ($deg(v)\leq 2$ und $v$ ist ''markiert'');}\ENDIF }\ENDIF
@@ -1755,20 +1771,20 @@ $\:$Divide-$\&-$Conquer & \Checkmark & \Checkmark &\Checkmark &\Checkmark &  \XS
 \caption{MD der Nachbarschaft von Amalgamationsknoten bestimmen}
 \begin{algorithmic}[1]
 \vspace{2mm}
-\FORALL{($v.ZK \in V.ZK$)}{
-\FORALL{($x \in v.ZK$)}{
+\FORALL{($v.ZZK \in V.ZZK$)}{
+\FORALL{($x \in v.ZZK$)}{
 \IF{($x \in MD-$)}\STATE  $delete(x)$;\ENDIF
 \IF{($x \in CHECK$ oder ($x=Kreis$ und ($Anker[x]\geq 3$ oder $Anker[x]=2$ und $(n\; \textbf{mod} \; 2)=1$)))}
 \IF{($dist(v,x) \leq \lceil\frac{n}{2}\rceil$)}{\STATE $delete(x)$;}\ENDIF;\ENDIF
 }\ENDFOR
-\IF{($|v.ZK|\leq 1$)}{
-\STATE  $delete(v.ZK)$;
+\IF{($|v.ZZK|\leq 1$)}{
+\STATE  $delete(v.ZZK)$;
 }\ENDIF
 }\ENDFOR
-\STATE Speichere an jeder 2-fachen Zusammenhangskomponente ob keiner, einer oder zwei Amalgamationsknoten auf ihr liegen und welche das sind; 
+\STATE Speichere an jeder 2-fachen Zusammenhangskomponente die Anzahl ($0,\;1$ oder $2$) der Amalgamationsknoten und ihre Bezeichnung; 
 \STATE Erstelle einen neuen Graphen $T$ mit den Amalgamationsknoten als Knoten, welche verbunden sind sofern sie in der gleichen zweifachen Zusammenhangskomponente sind;\\
 \STATE Und für jede Komponente mit nur einem Amalgamationsknoten (zweifachen Zusammenhangskomponente oder einfacher Weg) erstelle einen weiteren Knoten, welcher mit dem Knoten für den jeweiligen Amalgamationsknoten in dem Graphen $T$ verbunden wird;
-\STATE Berechne ein maximales Matching $M$ für $T$ durch wiederholtes Verwalten von Knoten mit Grad eins. Es wird eine Kante pro Vater und seine Blätter in das Matching $M$ aufgenommen und dannach dieser Teilgraph entfernt, so dass neue Blätter im Graphen enstehen;
+\STATE Berechne ein maximales Matching $M$ für $T$ durch wiederholtes Verwalten von Knoten mit Grad eins. Es wird eine Kante pro Vater und seine Blätter in das Matching $M$ aufgenommen und dannach dieser Teilgraph entfernt, so dass neue Blätter im Graphen enstehen und der Baum $T$ komplett abgebaut wird;
 \STATE $MD.A=|E(T)|-M$;
 \STATE Gehe zum letzten betrachteten Amalgamationsknoten $v$;
 \IF{($Weg[x]\neq 1$)}{ \STATE $MD.A=MD.A+1$;}
