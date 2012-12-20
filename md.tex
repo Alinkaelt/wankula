@@ -47,7 +47,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGINN ZUSAMMENFASSUNG %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Die metrische Dimension \ldots\\
-%1 SEITE
+Von einer Teilmenge der Knoten werden die Distanzen zu jedem Knoten im Graphen bestimmt. Die kleinste Menge an Knoten, so dass keine zwei Knoten die gleichen Distanzen besitzen wird gesucht. Die Größe dieser Menge bezeichnet man als metrische Dimension. Die metrische Dimension eines Graphen zu finden ist im Allgemeinen und auch für eingeschränkte Strukturen wie planare Graphen $NP$-vollständig.\newline\newline Andererseits wurden über die Jahre in denen das Problem bekannt ist, viele Graphklassen bestimmt mit konstanter oder parameterabhängiger metrischer Dimension.\newline\newline Im Allgemeinen hat es sich als schwierig erwiesen Aussagen über Teilgraphen oder Kompositionen von unterschiedlichen Graphen mit bekannter metrischer Dimension zu machen. Algorithmisch kann die metrische Dimension in Linearzeit von Bäumen und in Polynomialzeit von außenplanaren Graphen bestimmt werden.\newline\newline
+In dieser Arbeit werden Aussagen über steigende metrische Dimension von Teilgraphen gemacht und eine besondere Verknüpfung von Graphen analysiert. Neben einigen allgemeinen Zusammenhängen werden zwei Graphklassen ausführlich betrachtet.\newline\newline Die erste Graphklasse, Freundschaftsgraphen, welche in \cite{amal} zwar betrachtet wurden, werden verallgemeinert, wobei nicht nur Kreise sondern auch Bäume und Wege an einem Knoten erlaubt werden. Die zweite Graphklasse, die Sonnengraphen \cite{sonnen}, werden mit beliebig langen Wegen an Stelle von Wegen der Länge eins betrachtet. Außerdem werden Teilgraphen von Sonnengraphen, Kreise mit und ohne Wege an den Knoten, analysiert. Von diesen Teilgraphen haben einige eine kleinere metrische Dimension als die Sonnengraphen.\newline\newline Erst durch diese Analysen war es möglich einen Linearzeit-Algorithmus für Kaktusgraphen zu entwerfen. Dieser Algorithmus ist eine Erweiterung der bereits bekannten algorithmisch bestimmbaren Resultate für Bäume zur metrischen Dimension ohne Laufzeitverlust.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% ENDE ZUSAMMENFASSUNG %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -62,23 +64,24 @@
 %\listoftodos
 
 
-\chapter{Einführung}
-%\begin{itemize}
-%\item BSP
+\chapter{Einleitung}
+ 
+In einem mehrdimensionalem Raum befindet sich ein Agent. Es gibt weder eine Richtung noch hat der Agent Sicht über den Raum. Seine Aufgabe ist seine Position zu erfahren. Er kann via Signalen mit Stationen kommunizieren, und diese Informationen sollten seine Position liefern. Aus Kostengründen muss die Anzahl der Stationen minimal gehalten werden, und zur Lösung des Problems muss jede Position in dem Raum eindeutig sein.\newline\newline 
+Von dieser Problematik motiviert began 1975 Slater seine Forschung an einem Langstreckennavigationssystem U.S. Sonar. Er stellte den Raum durch einen Graphen dar, den Agenten als einen Knoten und die Sendestationen als eine ausgewählte Menge von Knoten, welche er als ein ''locating set'' bezeichnete. Unabhängig davon führten Harary und Melter in ihrer Arbeit ''On the metric dimension of a graph'' in 1976 das selbe Problem ein. Sie benanten die minimale Mengen von Knoten, durch welche jeder Knoten eine eindeutige Bezeichnung bekommt metrische Basis und die Anzahlt dieser Knoten die metrische Dimension eines Graphen.\newline
+Drei Jahre später gab es das erste Ergebnis zur Komplexität des Problem in dem Buch von Garey und Johnson: NP blabla. Durch eine Reduktion von dem Problem 3DM konnte gezeigt werden, dass das Problem ob ein gegebener Graph eine metrische Dimension kleiner $k$ hat ist NP-Vollständig. Im Jahre 1993 entdeckte M Johnson in seinem Arbeit die metrische Dimension wieder für den Umgang mit großen chemischen Daten. Seitdem zählen unter Anderem die ... zur praktischen Anwendung der metrischen Dimension. \newline
+Seit der Einführung der metrischen Dimension gibt es zahlreiche Ergebnisse z.B. für Kreise, Radgraphen, vollst. Bipartite Graphen, Gitter, Honeycomb Netzwerke, Circulant Netzwerke, Cayley Graphen. Insbesondere in den letzten zwei Dekaden wurde intensiv an der Thematik geforscht und zahlreiche Abwandlungen des Problems eingefüht, so u.A. die Partitionsdimension, die Oberdimension, ''Forcing number'' oder metrische Dimension für gerichtete Graphen. \\Hervorzuheben sind auch die vollständigen Charakteresierung von bestimmten metrischen Dimensionen, wie z.B. Wege als einzige Graphen mit metrischer Dimension eins, oder vollständige Graphen mit metrischer Dimension $|V|-1$. Eine vollständige CHarakterisierung gibt es ebenfalls von der metrischen Dimension 2?, $|V|-2$ und $|V|-3$.\\Andererseits konnte, neben der Reduktion von der metrischer Dimension allgemeiner Graphen auf 3SAT von Khuller, gezeigt werden, dass das Problem der metrischen Dimension für planare Graphen \cite{}, bipartite Graphen\cite{} ... ebenfalls NP-Vollständig ist. Neben dem Linearzeit Algorithmus von ... von \cite{},\cite{} konnten blabla zeigen, dass die metrische Dimension von außenplanaren Graphen sich in Polynomial-Zeit berechnen lässt.
 
-%\item Wo benutzt
+In dieser Arbeit wird die Lücke zwischen einer Linearzeit Lösung und einer Polynomialzeit Lösung verengt in dem ein Linearzeit-Algorithmus zur Berechnung der metrischen Dimension für Kaktusgraphen angegeben wird. Kaktusgraphen sind außenplanare Graphen, wobei die Kreise maximal einen gemeinsamen Knoten haben dürfen. Trotz der eingeschränkten Struktur sind sie eine deutlich allgemeiner als Bäume.\newline\newline
 
-%\item Entwicklung der metrischen Dimension
-
-%\item Aufbau der Arbeit
-% Die Arbeit gliedert sich in vier Teile. Zunächst gibt eine Einführung in die Termininologie von Graphentheorie und metrischer Dimension und bekannte Ergebnisse über die metrische Dimension werden dargestellt. Dann werden verschiedene Eigenschaften von Graphen bezüglich metrischer Dimension bewiesen und zwei besondere Graphklassen, die Freundschafts- und Sonnengraphen auf unterschiedliche Arten untersucht. Anschließend wird detailiert auf den Algorithmus zur Berechnung der Kaktusgraphen eingegangen inklusive seiner Laufzeit und Korrektheit. Im Schluss wird er mit anderen Algorithmen zur Berechnung der metrischen Dimension verglichen und es wird eine Graphklasse, die $C_j$-Bäume, eingeführt und analysiert.
-%\end{itemize}
+Die ersten beiden Kapitel dienen als Einführung in die Termininologie von Graphentheorie und metrischer Dimension. Es werden bekannte Ergebnisse und wichtige Zusammenhänge dargestellt und ein Ausblick über ähnliche oder sogar von der metrischen Dimension abgeleitete Probleme wird gegeben.\\In Kapitel 3 werden Teilgraphen mit größerer metrischer Dimension als der Graph selbt betrachtet. Ergebnisse zur Komposition von Graphen und eine weitere Art zur Verbindung von Graphen mit unteren und oberen Schranken werden dargestellt. Anschließend werden verschiedene Eigenschaften von Graphen bezüglich metrischer Dimension bewiesen.\\ 
+Das 4-te Kapitel konzentriert sich auf zwei besondere Graphklassen, die Freundschafts- und Sonnengraphen, welche auf unterschiedliche Arten untersucht werden. Der Kern der Arbeit ist der Algorithmus zur Berechnung der Kaktusgraphen und die Analyse seiner Laufzeit und Korrektheit in Kapitel 5.\\Zum Schluss wird wird eine Graphklasse, die $C_j$-Bäume, welche eingeschränkte Kaktusgraphen sind, eingeführt und analysiert. Am Ende gibt es eine Zusammenfassung, einen Ausblick und einen Vergleich mit anderen Algorithmen zur metrischen Dimension spezieller Graphklassen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Grundbegriffe}
-Dieses Kapitel dient als Überblick über grundlegende Begriffe aus der Graphentheorie, welche für das Verständnis dieser Arbeit notwendig sind. Formale Definitionen und Zusammenhänge sind dargestellt und an Beispielen illustriert. Einen tieferen Einblick in diese Thematik verschaffen die Bücher von U. Schöning \cite{Schoning} und R. Diestel \cite{Diestel}.\\
-Die gesamten Operationen werden auf den natürlichen Zahlen durchgeführt, welche als $\mathbb{N}=\{1,2,\ldots\}$ und $\mathbb{N}_0=\{0,1,\ldots\}$ notiert werden.
+Dieses Kapitel dient als Überblick über grundlegende Begriffe aus der Graphentheorie, welche für das Verständnis dieser Arbeit notwendig sind. Formale Definitionen und Zusammenhänge sind dargestellt und an Beispielen illustriert.%Einen tieferen Einblick in diese Thematik verschaffen die Bücher von U. Schöning \cite{Schoning} und R. Diestel \cite{Diestel}.
+\\
+Die gesamten Operationen werden auf den natürlichen Zahlen durchgeführt, welche als $\mathbb{N}^+=\{1,2,\ldots\}$ und $\mathbb{N}=\{0,1,\ldots\}$ notiert werden.
 \section{Graphentheoretische Begriffe}
 \label{chap_prel}
 \subsection{Grundlagen}
@@ -779,95 +782,30 @@ Sei ein getrennter Kreis $G=(V,E)$ mit Wegen der Länge eins und seine metrische
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Metrische Dimension von kreisähnlichen Graphklassen}
-\vspace{-3mm}
-In diesem Kapitel geht es um Erweiterungen von bekannten Graphklassen.\\Als erstes werden der Freundschaftsgraph und seine Verallgemeinerung und dannach der Sonnengraph inkl. der unvollständigen Variante untersucht.
-Von den verallgemeinerten Freundschaftsgraphen und beiden Sonnengraphen wird die metrische Dimension bestimmt unter der Vorraussetzung, dass ein Teil der metrischen Basis fest vorgegeben ist. Die Resultate werden bei dem Algorithmus zur Bestimmung der metrischen Dimension von Kaktusgraphen in Kapitel \ref{kapkaktus} und bei dem Beweis der metrischen Dimension der $C_j-$Bäume in Kapitel \ref{kapcjbaume} benötigt.
+\vspace{-5mm}
+In diesem Kapitel geht es um Erweiterungen von bekannten Graphklassen.\\Als erstes werden der Sonnengraph mit der unvollständigen Variante und dannach der Freundschaftsgraph und seine Verallgemeinerung untersucht.
+Von den verallgemeinerten Freundschaftsgraphen und beiden Sonnengraphen wird die metrische Dimension bestimmt unter der Vorraussetzung, dass bestimmte Ankerknoten fest vorgegeben sind. Die Resultate werden bei dem Algorithmus zur Bestimmung der metrischen Dimension von Kaktusgraphen in Kapitel \ref{kapkaktus} und bei dem Beweis der metrischen Dimension der $C_j-$Bäume in Kapitel \ref{kapcjbaume} benötigt.
 \vspace{-4mm}
-\section{Metrische Dimension der Freundschaftsgraphen $F_{n}$}
-''Haben je zwei Bekannte einen weiteren gemeinsamen Bekannten und sie sind untereinander bekannt, so gibt es eine Person, welche alle anderen kennt''. Diese Behauptung kann als ein Graphenproblem definiert werden, wobei Knoten Personen und Kanten Bekannschaften repräsentieren. Um es zu lösen wurde von Paul Erdős et al. \cite{Erdos} der Freundschaftsgraph eingeführt. In der Arbeit von Baskoro et. al \cite{amal} wird die metrische Dimension von den Freundschaftgraphen bestimmt. Der Schwerpunkt dieser Arbeit liegt auf der Anzahl der unterschiedlichen metrischen Basen.
-\begin{defi}{\textbf{(Freundschaftsgraph $F_{n,3}$)}}\\
-Der Freundschaftsgraph $F_{n,3}=(V,E)$ besteht aus der Knotenmenge $$V = \{u,v_{1,1},v_{1,2},v_{2,1},v_{2,2},\ldots,v_{n,1},v_{n,2}\}$$ und der Kantenmenge $$E = \{ \{u,v_{1,i}\}~|~ 1 \leq i \leq n \} \cup \{ \{u,v_{i,2}\}~|~ 1 \leq i \leq n \} \cup \{ \{ v_{i,1}, v_{i,2} \} ~|~ 1 \leq i \leq n \}$$
-Die Kanten $\{u,v_{i,1}\},\;\{u,v_{i,2}\}$ und $\{v_{i,1},v_{i,2}\}$ bilden den $i$-ten Kreis $C_3$.
-\end{defi}
-\begin{bsp}~
-\vspace{-3mm}
-\begin{figure}[h!]
-\centering
- 		 \includegraphics[width=380pt]{bilder/freunschaftsgraph.pdf}
-   \caption{Vier Freundschaftsgraphen}
-   \label{bild:fg}
-\end{figure}
-\end{bsp}\newpage
-\begin{lem}
-\label{Freundschaftsgraphen}
-Die metrische Dimension eines Freundschaftsgraphen $F_{n,3}$ ist $n$.
-\end{lem}
-Um diese Behauptung zu beweisen, wird das folgende Lemma benötigt. 
-\begin{lem}
-\label{mindfreundschaftsgraph}
-Sei ein Freundschaftsgraph $F_{n,3}$ gegeben. Jede metrische Basis muss aus dem $i$-ten $C_3$ mindestens einen der folgenden Knoten $\{v_{i,1},v_{i,2}\}$ beinhalten. 
-\end{lem}
-\vspace{-2mm}
-\begin{proof}[Beweis:]~
-\par
-\begin{floatingfigure}[l]{200pt}
-{\flushleft
-\hspace*{1.7cm}
-\includegraphics[width=100pt]{bilder/freundschaftsgraphbew.pdf}}
-\caption{Ein markierter $C_{3}$}
-\label{CA9}
-\end{floatingfigure}
-
-Angenommen es gibt einen $C_3$ ohne Ankerknoten. Durch die eindeutige Verbindung zu dem Restgraphen, welche über einen\\Trennungsknoten läuft, folgt aus Symmetriegründen, dass die Knoten $v_{i,1}$ und $v_{i,2}$ identische Markierungen haben.\\Dies ist ein Widerspruch zu der Definition einer metrischen Basis.\\
-Die metrische Dimension eines Freundschaftsgraphen $F_{n,3}$ ist mindestens gleich der Anzahl seiner $C_{3}$, mindestens $n$.
-\end{proof}
-\par
-\vspace{-2mm}
-\begin{proof}[Beweis von Lemma \ref{Freundschaftsgraphen}:] \vspace{+1mm} ~ \linebreak
-Nach Lemma \ref{mindfreundschaftsgraph} ist bekannt, dass die metrische Dimension eines Freundschaftsgraphen $F_{n,3}$ mindestens $n$ ist. Angenommen, alle als $v_{2,i}$ markierten Knoten werden in die metrische Basis aufgenommen. Also sind sie getrennt. Der Knoten $v_1$ hat die Distanz eins zu allen Knoten in der metrischen Basis und ist der einzige Knoten mit dieser Eigenschaft. Für jeden Knoten $v_{3,i}$ gibt es genau einen Knoten $v_{2,i}$ mit der Distanz eins. Zu allen anderen Knoten in der metrischen Basis hat jeder Knoten $v_{3,i}$ die Distanz zwei. Alle Markierungen sind eindeutig und der gesamte Graph ist durch die $n$ Knoten getrennt.
-\end{proof}
-\vspace{-14mm}
-~ \linebreak
-\begin{defi}{\textbf{(Freundschaftsgraph $F_n$)}}\\
-%Der $k$-fache Freundschaftsgraph $F_{n,k}=(V,E)$ mit $k\geq 3$ besteht aus der Knotenmenge $$V = \{u,v_{1,1}, \ldots, v_{1,k-1},v_{2,1},\ldots v_{2,k-1},\ldots,v_{n,1},\ldots v_{n,k-1}\}$$ und der Kantenmenge $$E = \{ \{u,v_{1,i}\}~|~ 1 \leq i \leq n \} \cup \{ \{u,v_{i,k-1}\}~|~ 1 \leq i \leq n \}$$$$\cup \{ \{ v_{i,j}, v_{i,j+1} \} ~|~ 1 \leq i \leq n \text{ und }1 \leq j \leq k-2\}$$
-Der Freundschaftsgraph $F_{n}=(V,E)$ mit $k_1,\ldots, k_n \geq 3 $ besteht aus der Knotenmenge $$V = \{u,v_{1,1}, \ldots, v_{1,k_1-1},v_{2,1},\ldots v_{2,k_2-1},\ldots,v_{n,1},\ldots v_{n,k_n-1}\}$$ und der Kantenmenge $$E = \{ \{u,v_{1,i}\}~|~ 1 \leq i \leq n \} \cup \{ \{u,v_{i,k_i-1}\}~|~ 1 \leq i \leq n \}$$$$\cup \{ \{ v_{i,j}, v_{i,j+1} \} ~|~ 1 \leq i \leq n \text{ und }1 \leq j \leq k_i-2\}$$
-Die Kanten $\{u,v_{i,1}\},\;\{u,v_{i,k-1}\}$ und $\{v_{i,j},v_{i,j+1}\}$ für $1 \leq j \leq k_i-2$ bilden den $i$-ten Kreis $C_k$.
-\end{defi}
-
-\begin{lem} \cite{amal}
-\label{verallgFreundschaftsgraphen}
-Die metrische Dimension eines Freundschaftsgraphen $F_{n}$ mit $t_1$ Kreisen der Länge $k=2j+1$ für $j \geq 1$ und $t_2$ Kreisen der Länge $k=2j$ für $j \geq 2$ ist 
-\begin{equation}
-   \beta(F_{n,k})=
-   \begin{cases}
-     t_1 & \text{f\"ur } t_2=0 \\
-     2\cdot t_2-1 & \text{f\"ur } t_1=0 \\
-     t_1+ 2\cdot t_2-1 & sonst
-   \end{cases}
-\end{equation}
-\end{lem}
-\begin{lem}
-Beinhaltet ein Freundschaftgraph mindestens ein gerades $k_i$ und ist $n\geq 2$, so beinhaltet jede metrische Basis mindestens zwei Knoten aus jedem $i$-ten Kreis mit einem geraden $k_i$.  
-\end{lem}
-\subsection{Metrische Dimension von allgemeinen Freundschaftgraphen und Bäumen}
-\label{amal}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
 \section{Metrische Dimension der Sonnengraphen $S_{n,k}$}
 \label{chap_sonne}
 In der Arbeit ''The metric dimension of graph with pendant edges'' \cite{sun} betrachteten Baskoro et. al. die metrische Dimension des Corona Produktes von Kreisen $C_n$ und Wegen $P_1$. In diesem Kapitel wird gezeigt, dass ihr Resultat sich auf Wege beliebiger Länge übertragen lässt. Außerdem werden ebenfalls Teilgraphen der Sonnengraphen betrachtet, die unvollständigen Sonnengraphen. Diese Graphklasse ist sehr wichtig, denn beide Variationen von Sonnengraphen sind induzierte Teilgraphen von den in Kapitel \ref{kapcjbaume} behandelten $C_j$-Bäumen und den in Kapitel \ref{kapkaktus} behandelten Kaktusgraphen.
-\begin{defi}{\textbf{(Sonnengraph $S_{n}$)}}\\
+
+\begin{defi}{\textbf{(Sonnengraph $S_{n}$)}}
 \label{sun}
+\begin{floatingfigure}[r]{180pt}
+{\centering
+\hspace*{0.1cm}
+ 		 \includegraphics[width=178pt]{bilder/sonne4.pdf}}
+   \caption{Sonnengraph $S_{12,3}$}
+   \label{bild:sonnengraph}
+\end{floatingfigure}
 Sei ein Kreis $C_n$ für $n \geq 3$ mit der Knotenmenge $|V|=\{ c_1, \ldots , c_n \}$ und $n$ Weggraphen $P_{k-1}$ für $k \geq 2$ gegeben. Die Knoten mit Grad eins auf dem $i-$ten Weg werden als $v_{i,1}$ und $v_{i,k-1}$ bezeichnet. Durch das Hinzufügen von $n$ neuen Kanten der Form $\{v_{i,1},c_i\}$ für $1 \leq i \leq n$ ensteht der zusammenhängende Sonnengraph $S_{n,k}$.\\
 Alle als $v_{i,k-1}$ bezeichneten Knoten werden Endknoten genannt, als $c_i$ bezeichnete Knoten werden Ursprungsknoten genannt und eine Knotenmenge mit den Knoten $\{c_i,v_{i,1}, \ldots ,v_{i,k-1}\}$ für $1 \leq i \leq n$ als Strahl. (vgl. Abbildung \ref{bild:sonnengraph})\\
-Für $n=1$ ist der Graph der Sterngraph aus Definition \ref{defstern}. Als Sonnengraph $S_n$ bezeichne man einen Graphen mit $n$ Strahlen beliebiger Länge $i$ mit $i \geq 2$. Ist $n=2m+3$ mit $m \in \mathbb{N}$ so nennt man den Sonnengraphen ungerade, ist $n=2m+2$ mit $m \in \mathbb{N}^+$ so bezeichnet man den Sonnengraphen als gerade.
+Für $n=1$ ist der Graph der Sterngraph aus Definition \ref{defstern}. Als Sonnengraph $S_n$ bezeichne man einen Graphen mit $n$ Strahlen beliebiger Länge $i$ mit $i \geq 1$. Ist $n=2m+1$ so nennt man den Sonnengraphen ungerade, ist $n=2m+2$ mit $m \in \mathbb{N}^+$ so bezeichnet man den Sonnengraphen als gerade.
+\par
 \end{defi}
-\begin{figure}[h!]
-\centering
- 		 \includegraphics[width=165pt]{bilder/sonne4.pdf}
-   \caption{Der Sonnengraph $S_{12,3}$}
-   \label{bild:sonnengraph}
-\end{figure}
+\newpage
 %\begin{bem}
 %Nach Satz \ref{sepvertex} können beliebige Wege $P_i$ mit $i\geq 2$ bei der Berechnung der metrischen Dimension als $P_2$ aufgefasst werden. Also gilt: $$md(S_{n,2})=md(S_{n,3})= \ldots =md(S_{n,k})=md(S_{n})$$
 %Im folgenden wird der Graph $S_{n,2}$ repräsentativ für $S_{n,k}$ betrachtet.
@@ -921,16 +859,17 @@ Die metrische Dimension eines Sonnengraphen $S_{n}$ mit $n = 2j+4$ für $j \in \
 %\end{minipage}
 %\end{figure}
 %\vspace{-7mm}
-\begin{proof}[Beweis:]~
-Für den ersten Knoten in der metrischen Basis gibt es $2n$ Möglichkeiten, aber nur $n$ unterschiedliche Fälle. Denn wird der erste Knoten aus einem Strahl aufgenommen, so gilt nach Lemma \ref{bifur}, dass der Strahlursprung als Element der metrischen Basis betrachtet werden kann.\\
 \vspace{-8mm}
  \begin{figure}[h!]
 		\centering
- 		 \includegraphics[width=100pt]{bilder/gbsbspsonne2glr.pdf}
+ 		 \includegraphics[width=120pt]{bilder/gbsbspsonne2glr.pdf}
    \caption{Ein $C_{n}-Blatt$ mit zwei Knoten in der metrischen Basis, welche die Bedingung von Lemma \ref{Bifurnachbar} erfüllen}
   	 \end{figure}
 \vspace{-4mm}
   	 ~\linebreak
+
+\begin{proof}[Beweis:]~
+Für den ersten Knoten in der metrischen Basis gibt es $2n$ Möglichkeiten, aber nur $n$ unterschiedliche Fälle. Denn wird der erste Knoten aus einem Strahl aufgenommen, so gilt nach Lemma \ref{bifur}, dass der Strahlursprung als Element der metrischen Basis betrachtet werden kann.\\
 Der zweite Knoten muss die Bedingung vom Lemma \ref{Bifurnachbar} erfüllen. Es bleiben noch genau drei mögliche Knoten $v_{\frac{n}{2}}$, $v_{\frac{n-1}{2}}$ und $v_{\frac{n+1}{2}}$ als zweiter Ankerknoten.\\ 
 Der Knoten $v_{\frac{n}{2}}$ kann nicht aufgenommen werden, da zwei gegenüberliegende Knoten einen Kreis gerader Länge nicht trennen.\\
 Durch die Wahl von $v_{\frac{n-1}{2}}$ oder $v_{\frac{n+1}{2}}$ entstehen mindestens zwei Markierungen der Form $a/b$ und $a+1/b+1$ auf dem Kreis. Da jeder Knoten ein Strahlursprung ist, gibt es in dem Graphen einen weiteren Knoten mit der Markierung $a+1/b+1$. Zur Veranschaulichung wird der Graph $S_{6,2}$ betrachtet.
@@ -989,7 +928,10 @@ Daraus folgt, dass die metrische Dimension eines unvollständigen Sonnengraphen 
 Für die metrische Dimension für $n=2k+2$ für $k \in \mathbb{N}$ gilt: $$2=\beta(C_n) \leq \beta(S'_{n,k})\leq \beta(S_{n,k})=3$$
 Daraus folgt, dass die metrische Dimension eines unvollständigen Sonnengraphen $S'_{n,k}$ mit $n=2k+2$ für $k \in \mathbb{N}$ entweder zwei oder drei ist. Um die metrische Dimension genau zu bestimmen werden $\frac{n}{2}$ unterschiedliche Fälle aus der Tabelle \ref{fallunterscheidungungeradesonnen2md} betrachtet.
 \end{bem}
-
+\begin{lem}
+Ist $max\;dist(r_i,r_j)\geq \lceil \frac{n+3}{2}\rceil$ kann der unvollständige Sonnengraph getrennt sein. Ist der Sonnergraph ungerade, so ist er durch zwei Ankerknoten getrennt oder durch drei Ankerknoten, wenn er gerade ist, wenn es keine Strahlen gibt auf allen Knoten $v$ mit der Eigenschaft:\\
+$v$ liegt zwischen den Knoten $r_i$ und $r_{j+\lfloor\frac{n}{2}\rfloor}$ (gezählt auf der Seite wo $r_i$ liegt) \\und $v$ liegt zwischen den Knoten $r_j$ und $r_{i+\lfloor\frac{n}{2}\rfloor}$ (gezählt auf der Seite wo $r_j$ liegt)
+\end{lem}
 \begin{table}[htp]
 \centering
  \renewcommand{\arraystretch}{2}
@@ -1036,12 +978,93 @@ $\frac{n}{2}-1$. Fall&\multirow{3}{121mm}{$n-4$ antipodale Knoten ohne Strahlen 
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
+\section{Metrische Dimension der Freundschaftsgraphen $F_{n}$}
+\vspace{-3mm}
+''Haben je zwei Bekannte einen weiteren gemeinsamen Bekannten und sie sind untereinander bekannt, so gibt es eine Person, welche alle anderen kennt''. Diese Behauptung kann als ein Graphenproblem definiert werden, wobei Knoten Personen und Kanten Bekannschaften repräsentieren. Um es zu lösen wurde von Paul Erdős et al. \cite{Erdos} der Freundschaftsgraph eingeführt. In der Arbeit von Baskoro et. al \cite{amal} wird die metrische Dimension von den Freundschaftgraphen bestimmt. Der Schwerpunkt dieser Arbeit liegt auf der Anzahl der unterschiedlichen metrischen Basen.
+\begin{defi}{\textbf{(Freundschaftsgraph $F_{n,3}$)}}\\
+Der Freundschaftsgraph $F_{n,3}=(V,E)$ besteht aus der Knotenmenge $$V = \{u,v_{1,1},v_{1,2},v_{2,1},v_{2,2},\ldots,v_{n,1},v_{n,2}\}$$ und der Kantenmenge $$E = \{ \{u,v_{1,i}\}~|~ 1 \leq i \leq n \} \cup \{ \{u,v_{i,2}\}~|~ 1 \leq i \leq n \} \cup \{ \{ v_{i,1}, v_{i,2} \} ~|~ 1 \leq i \leq n \}$$
+Die Kanten $\{u,v_{i,1}\},\;\{u,v_{i,2}\}$ und $\{v_{i,1},v_{i,2}\}$ bilden den $i$-ten Kreis $C_3$.
+\end{defi}
+\begin{bsp}~
+\vspace{-4mm}
+\begin{figure}[h!]
+\centering
+ 		 \includegraphics[width=360pt]{bilder/freunschaftsgraph.pdf}
+   \caption{Vier Freundschaftsgraphen}
+   \label{bild:fg}
+\end{figure}
+\vspace{-3mm}
+\end{bsp}
+\begin{lem}
+\label{Freundschaftsgraphen}
+Die metrische Dimension eines Freundschaftsgraphen $F_{n,3}$ ist $n$.
+\end{lem}
+\vspace{-2mm}
+Um diese Behauptung zu beweisen, wird das folgende Lemma benötigt. 
+\begin{lem}
+\label{mindfreundschaftsgraph}
+Sei ein Freundschaftsgraph $F_{n,3}$ gegeben. Jede metrische Basis muss aus dem $i$-ten $C_3$ mindestens einen der folgenden Knoten $\{v_{i,1},v_{i,2}\}$ beinhalten. 
+\end{lem}
+$Beweis:$
+\vspace{-7mm}
+\begin{figure}
+\vspace{-7mm}
+\begin{minipage}[l]{170pt}
+\centering
+\includegraphics[width=90pt]{bilder/freundschaftsgraphbew.pdf}
+\caption{Ein markierter $C_3$}
+\end{minipage}
+\begin{minipage}[r]{250pt}
+Angenommen es gibt einen $C_3$ ohne Ankerknoten. Durch die eindeutige Verbindung zu dem Restgraphen, welche über einen Trennungsknoten läuft, folgt aus Symmetriegründen, dass die Knoten $v_{i,1}$ und $v_{i,2}$ identische Markierungen haben.\\Dies ist ein Widerspruch zu der Definition einer metrischen Basis.\\
+Die metrische Dimension eines Freundschaftsgra-\\phen $F_{n,3}$ist mindestens gleich der Anzahl seiner $C_{3}$,\\mindestens $n$.$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\square$
+\end{minipage}
+\end{figure}
+
+\newpage
+\begin{proof}[Beweis von Lemma \ref{Freundschaftsgraphen}:] \vspace{+1mm} ~ \linebreak
+Nach Lemma \ref{mindfreundschaftsgraph} ist bekannt, dass die metrische Dimension eines Freundschaftsgraphen $F_{n,3}$ mindestens $n$ ist. Angenommen, alle als $v_{2,i}$ markierten Knoten werden in die metrische Basis aufgenommen. Also sind sie getrennt. Der Knoten $v_1$ hat die Distanz eins zu allen Knoten in der metrischen Basis und ist der einzige Knoten mit dieser Eigenschaft. Für jeden Knoten $v_{3,i}$ gibt es genau einen Knoten $v_{2,i}$ mit der Distanz eins. Zu allen anderen Knoten in der metrischen Basis hat jeder Knoten $v_{3,i}$ die Distanz zwei. Alle Markierungen sind eindeutig und der gesamte Graph ist durch die $n$ Knoten getrennt.
+\end{proof}
+\vspace{-14mm}
+~ \linebreak
+\begin{defi}{\textbf{(Freundschaftsgraph $F_n$)}}\\
+%Der $k$-fache Freundschaftsgraph $F_{n,k}=(V,E)$ mit $k\geq 3$ besteht aus der Knotenmenge $$V = \{u,v_{1,1}, \ldots, v_{1,k-1},v_{2,1},\ldots v_{2,k-1},\ldots,v_{n,1},\ldots v_{n,k-1}\}$$ und der Kantenmenge $$E = \{ \{u,v_{1,i}\}~|~ 1 \leq i \leq n \} \cup \{ \{u,v_{i,k-1}\}~|~ 1 \leq i \leq n \}$$$$\cup \{ \{ v_{i,j}, v_{i,j+1} \} ~|~ 1 \leq i \leq n \text{ und }1 \leq j \leq k-2\}$$
+Der Freundschaftsgraph $F_{n}=(V,E)$ mit $k_1,\ldots, k_n \geq 3 $ besteht aus der Knotenmenge $$V = \{u,v_{1,1}, \ldots, v_{1,k_1-1},v_{2,1},\ldots v_{2,k_2-1},\ldots,v_{n,1},\ldots v_{n,k_n-1}\}$$ und der Kantenmenge $$E = \{ \{u,v_{1,i}\}~|~ 1 \leq i \leq n \} \cup \{ \{u,v_{i,k_i-1}\}~|~ 1 \leq i \leq n \}$$$$\cup \{ \{ v_{i,j}, v_{i,j+1} \} ~|~ 1 \leq i \leq n \text{ und }1 \leq j \leq k_i-2\}$$
+Die Kanten $\{u,v_{i,1}\},\;\{u,v_{i,k-1}\}$ und $\{v_{i,j},v_{i,j+1}\}$ für $1 \leq j \leq k_i-2$ bilden den $i$-ten Kreis $C_k$.
+\end{defi}
+
+\begin{lem} \cite{amal}
+\label{verallgFreundschaftsgraphen}
+Die metrische Dimension eines Freundschaftsgraphen $F_{n}$ mit $t_1$ Kreisen der Länge $k=2j+1$ für $j \geq 1$ und $t_2$ Kreisen der Länge $k=2j$ für $j \geq 2$ ist 
+\begin{equation}
+   \beta(F_{n,k})=
+   \begin{cases}
+     t_1 & \text{f\"ur } t_2=0 \\
+     2\cdot t_2-1 & \text{f\"ur } t_1=0 \\
+     t_1+ 2\cdot t_2-1 & sonst
+   \end{cases}
+\end{equation}
+\end{lem}
+\begin{lem}
+Beinhaltet ein Freundschaftgraph mindestens zwei gerade $k_i$ und ist $n\geq 2$, so beinhaltet jede metrische Basis mindestens zwei Knoten aus jedem $i$-ten Kreis mit einem geraden $k_i$, außer in Einem.  
+\end{lem}
+\subsection{Metrische Dimension von allgemeinen Freundschaftgraphen und Bäumen}
+\label{amal}
+\begin{lem}
+Sei ein Freundschaftgraph $F_n$ gegeben mit metrischer Dimension $m$ und ein Baum $T$, welcher kein Weg ist, gegeben mit metrischer Dimension $k$. Verbindet man den mittleren Knoten $u$ mit einem Knoten $v \in T$ und $deg(v)\geq 2$ so ist die metrische Dimension des neuen Graphen $m+k$.
+\end{lem}
+
+\begin{lem}
+Sei ein Freundschaftgraph $F_n$ gegeben mit metrischer Dimension $m$, sei der mittleren Knoten $u$ die Wurzel von einem Baum $T$ mit metrischer Dimension $k$ und einem einfachen Weg $P$ oder der Endknoten von einem einfachen Weg $P$ und so ist die metrische Dimension des neuen Graphen $m+k+1$.
+\end{lem}
+
+
 \begin{comment}
 \section{Vollständigen Graphen mit Strahlen $K^s_{n,i}$}
 \section{Der erweiterte Gittergraph}
 \section{Eine Erweiterung der Radgraphen $W_{n,i}$}
 \end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \vspace{-2mm}
 \chapter{Metrische Dimension von Kaktusgraphen}
 \label{kapkaktus}
@@ -1398,7 +1421,7 @@ Die Werte werden an den Nachbarn gespeichert um eindeutig die Richtung der berec
 In den Zeilen 4-22 wird für jeden Amalgamationsknoten die Liste seiner ZZK in einer Liste von Listen $V.ZZK$ gespeichert. Der Knoten selbst kommt in die Liste, falls die Markierung $Weg[v]=1$ gesetzt ist. Einige ZZK werden aus der Liste von jedem Knoten entfernt. Die Anzahl der ZZK in einer Liste ist kleiner als seine Nachbarschaft, denn aus einer ZZK sind zwei Kanten in der Nachbarschaft von einem Knoten. Die asymptotische Laufzeit ist in $\mathcal{O}(|V|+|E|)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{algorithm}
-\caption{$Kreis(x)$}
+\caption{$K(x)$}
 \begin{algorithmic}[1]
 \vspace{2mm} 
 \IF{($Anker[x]==0$)}{\STATE $MD^+(x)=2$;}
@@ -1416,7 +1439,7 @@ In den Zeilen 4-22 wird für jeden Amalgamationsknoten die Liste seiner ZZK in e
 ~\linebreak
 
 \begin{algorithm}
-\caption{$Sonne(x)$}
+\caption{$S(x)$}
 \begin{algorithmic}[1]
 \vspace{2mm}
 \IF{($Anker[x]==0$)}{
@@ -1425,7 +1448,7 @@ In den Zeilen 4-22 wird für jeden Amalgamationsknoten die Liste seiner ZZK in e
 \IF{($(n\; \textbf{mod} \; 2)==1$ oder $n==4$)} \STATE $MD^+(x)=1$;
 \ELSIF{($(n\; \textbf{mod} \; 2)==0$)} \STATE $MD^+(x)=2$;\ENDIF}
 \ELSIF{($Anker[x]==2$)}
-{\IF{$(n\; \textbf{mod} \; 2)==0$)}{ \STATE $MD^+(x)=1$;}
+{\IF{$(n\; \textbf{mod} \; 2)==0$)}{ \STATE $MD^+(x)=1$;\STATE $insert(x \in MD-)$;}
 \ELSIF{($n==4$)}{\IF{($dist(x)=2$)} \STATE $MD^+(x)=1$; $insert(x \in MD-)$;\ELSE {\STATE $MD^+(x)=0$;} \ENDIF}
 \ELSIF{($(n\; \textbf{mod} \; 2)==1$)}{
 \IF{($dist(x)==\frac{n+1}{2}$ oder $dist(x)==\frac{n+3}{2}$)}{
