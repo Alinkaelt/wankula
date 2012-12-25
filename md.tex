@@ -1243,6 +1243,7 @@ Algorithmus \ref{algberechnungsonne}& Die zusätzliche MD von Sonnen wird bestim
 \caption{Einteilung der Knoten}
 \algsetup{indent=2em}
 \begin{algorithmic}[1]
+\vspace{2mm}
 \STATE Berechne die zweifachen Zusammenhangskomponenten des Graphen $G$;
 \IF{(Anzahl der Kanten $\geq 3$)}{\STATE Speichere sie als eine Komponente $x$ in der Liste $ZZK$;} \ENDIF
 \STATE Zähle die Anzahl der Kanten in jeder zweifachen Zusammenhangskomponente $x$ und speichere die Werte in $x.Kanten$;
@@ -1262,17 +1263,19 @@ Algorithmus \ref{algberechnungsonne}& Die zusätzliche MD von Sonnen wird bestim
 )}{
 \IF{($Klasse[u]==A$ und $deg(u)\geq 4$ und $ZZK[u]==1$)} \STATE Überprüfe mit einer Tiefensuche ob man über Knoten vom Grad zwei zu einem Blatt kommt und setze $Weg[u]=1$. Falls nicht, setze $Weg[u]=0$; \ENDIF}
 \ENDFOR
+\vspace{2mm}
 \end{algorithmic}
 \label{alginit}
 \end{algorithm}
 \vspace{-6mm}
 ~\linebreak
-Algorithmus \ref{alginit} bestimmt zunächst alle zweifachen Zusammenhangskomponenten und speichert sie in einer Liste $ZZK$ von Listen $x$, sofern diese aus mindestens drei Kanten besteht. Die asymptotische Laufzeit von diesem Algorithmus ist $\mathcal{O}(|V|+|E|)$ \footnote{Zum Beispiel der Algorithmus aus \cite{Vorlesung}}. \newline
-In den Zeilen 5-7 wird die Darstellung der zweifachen Zusammenhangskomponenten von Kanten auf Knoten geändert. Dafür würde man über alle zweifachen Zusammenhangskomponenten und über jeweils die Kanten in einer zweifachen Zusammenhangskomponente laufen und die Anzahl von Kanten in $x.Kanten$ zählen. Die inzidenten Knoten zu der Kante werden in eine Zusammenhangskomponente aufgenommen, sofern diese noch nicht drin sind, und die Kante aus der Liste $x$ gelöscht. Jede ZZK kommt in die Liste von jedem Knoten welcher in der ZZK ist. Die unterschiedlichen Knoten $v$ in einer ZZK werden in $x.Knoten$ gezählt und $ZZK[v]=1$ gesetzt. Nach der Definition eines Kaktusgraphen darf keine Kante in zwei Kreisen und somit in zwei zweifachen Zusammenhangskomponenten liegen. Der Algorithmus läuft einmalig über eine Teilmenge der Kanten und hat eine asymptotische Laufzeit von $\mathcal{O}(|V|+|E|)$.\newline\newline Die Anweisungen in den Zeilen 8-11 sind für die Einteilung von Knoten aus ZZK in Klassen zuständig. Für Knoten vom Grad drei wird mittels Tiefensuche ermittelt ob ein Weg nur über Knoten vom Grad zwei erreichbar ist. Sofern dies zutrifft ist die Länge $i\geq 1$ von diesem Weg die Klasse $i$ des betrachteten Knotens. Ansonsten ist seine Klasse $A$. Jeder Knoten wird maximal einmal besucht. Ein weiterer Durchlauf über die restlichen Knoten in ZZK ist notwendig um die restlichen Knoten in Abhängigkeit von ihrem Grad einer Klasse zu zuordnen. Die asymptotische Laufzeit des Abschnittes ist in $\mathcal{O}(|V|+|E|)$.\newline\newline
-In Zeile 12 werden zusätzlich Knoten der Klasse $A$  mit $deg(v)\geq 4$ überprüft ob ein Blatt nur über Knoten vom Grad zwei erreichbar ist. Man iteriert über eine Teilmenge der Knoten und benutzt Tiefensuche. Die asymptotische Laufzeit hier ist ebenfalls in $\mathcal{O}(|V|+|E|)$ und damit linear für den gesamten Algorithmus \ref{alginit}.
+Algorithmus \ref{alginit} bestimmt zunächst alle ZZK und speichert sie in einer Liste $ZZK$ von Listen $x$, sofern diese aus mindestens drei Kanten besteht. Die asymptotische Laufzeit von diesem Algorithmus ist $\mathcal{O}(|V|+|E|)$ \footnote{Zum Beispiel der Algorithmus aus \cite{Vorlesung}}. \newline
+In den Zeilen 5-7 wird die Darstellung der ZZK von Kanten auf Knoten geändert. Dafür würde man über alle ZZK und über jeweils die Kanten in einer ZZK laufen und die Anzahl von Kanten in $x.Kanten$ zählen. Die inzidenten Knoten zu der Kante werden in eine Zusammenhangskomponente aufgenommen, sofern diese noch nicht drin sind, und die Kante aus der Liste $x$ gelöscht. Jede ZZK kommt in die Liste von jedem Knoten welcher in der ZZK ist. Die unterschiedlichen Knoten $v$ in einer ZZK werden in $x.Knoten$ gezählt und $ZZK[v]=1$ gesetzt. Nach der Definition eines Kaktusgraphen darf keine Kante in zwei Kreisen und somit in zwei ZZK liegen. Der Algorithmus läuft einmalig über eine Teilmenge der Kanten und hat eine asymptotische Laufzeit von $\mathcal{O}(|V|+|E|)$.\newline\newline Die Anweisungen in den Zeilen 8-11 sind für die Einteilung von Knoten aus ZZK in Klassen zuständig. Für Knoten vom Grad drei wird mittels Tiefensuche ermittelt ob ein Weg nur über Knoten vom Grad zwei erreichbar ist. Sofern dies zutrifft ist die Länge $i\geq 1$ von diesem Weg die Klasse $i$ des betrachteten Knotens. Ansonsten ist seine Klasse $A$. Jeder Knoten wird maximal einmal besucht. Ein weiterer Durchlauf über die restlichen Knoten in ZZK ist notwendig um die restlichen Knoten in Abhängigkeit von ihrem Grad einer Klasse zu zuordnen. Die asymptotische Laufzeit des Abschnittes ist in $\mathcal{O}(|V|+|E|)$.\vspace{-1mm}\newline\newline
+In Zeile 12 werden zusätzlich Knoten der Klasse $A$  mit $deg(v)\geq 4$ überprüft ob ein Blatt nur über Knoten vom Grad zwei erreichbar ist. Man iteriert über eine Teilmenge der Knoten und benutzt Tiefensuche. Die asymptotische Laufzeit hier ist ebenfalls in $\mathcal{O}(|V|+|E|)$ und damit linear für den gesamten Algorithmus \ref{alginit}.\vspace{-4mm}\newline
 \begin{algorithm}
 \caption{Einteilung der ZZK und Aufruf zur Berechnung der MD}
 \begin{algorithmic}[1]
+\vspace{2mm}
 %\STATE $Anzahl[x]:=K[x]:=S[x]:=0$;
 %\STATE $ZK=ZK$; \COMMENT{Ab hier werden in den Zusammenhangskomponente Knoten an Stelle von Kanten gespeichert}
 \FORALL{($x \in ZZK$%$\setminus{\{x==C\}}$}
@@ -1300,12 +1303,11 @@ In Zeile 12 werden zusätzlich Knoten der Klasse $A$  mit $deg(v)\geq 4$ überpr
 \end{algorithm}
 \vspace{-2mm}
 ~\linebreak
-Algorithmus \ref{algeinteilung} überprüft den Typ einer zweifachen Zusammenhangskomponente und ruft einen entsprechenden Algorithmus zur Berechnung der metrischen Dimension auf. Es gibt zwei \textsc{for}-Schleifen in Zeile 1 und 2 über alle zweifachen Zusammenhangskomponenten und die Knoten in jeder ZZK. 
-Alle ZZK bei einem Kaktusgraphen haben die gleiche Anzahl von Knoten und Kanten. Die asymptotische Laufzeit ist damit in $\mathcal{O}(|V|+|E|)$. Dannach wird für jede ZZK mittels Fallunterscheidung einer von den Algorithmen \ref{algberechnungkreis}, \ref{algberechnungsonne},\ref{algberechnungungeradesonne1}, \ref{algberechnungusonne2}, \ref{algberechnunggeradesonne1} oder \ref{algberechnungungeradesonne0} aufgerufen.
+Algorithmus \ref{algeinteilung} überprüft den Typ einer ZZK und ruft einen entsprechenden Algorithmus zur Berechnung der metrischen Dimension auf. Es gibt zwei \textsc{for}-Schleifen in Zeile 1 und 2 über alle ZZK und die Knoten in jeder ZZK. Alle ZZK bei einem Kaktusgraphen haben die gleiche Anzahl von Knoten und Kanten. Die asymptotische Laufzeit ist damit in $\mathcal{O}(|V|+|E|)$. Dannach wird für jede ZZK mittels Fallunterscheidung einer von den Algorithmen \ref{algberechnungkreis}, \ref{algberechnungsonne},\ref{algberechnungungeradesonne1}, \ref{algberechnungusonne2}, \ref{algberechnunggeradesonne1} oder \ref{algberechnungungeradesonne0} aufgerufen. Haben diese asymptotisch Linearzeit, so hat es auch der Algorithmus \ref{algeinteilung}.
 \newpage
 
 Algorithmus \ref{algsonderfall1} läuft einmal am Anfang über jeden Knoten in jeder ZZK und speichert dabei den maximalen Abstand zwischen zwei Knoten der Klasse $A$.\\
-\vspace{-3mm}
+\vspace{-5mm}
 \begin{algorithm}
 \caption{Amalgamationsknoten bestimmen}
 \begin{algorithmic}[1]
@@ -1334,6 +1336,7 @@ Algorithmus \ref{algsonderfall1} läuft einmal am Anfang über jeden Knoten in j
 %}\ENDIF
 \IF{($|v.ZZK|\leq 1$)}\STATE $delete(v.ZZK)$;\ENDIF
 }\ENDFOR
+\vspace{2mm}
 \end{algorithmic}
 \label{algsonderfall1}
 \end{algorithm}
@@ -1401,18 +1404,19 @@ In den Zeilen 4-22 wird für jeden Amalgamationsknoten die Liste seiner ZZK in e
 ~\linebreak 
 Die Algorithmen \ref{algberechnungkreis} und \ref{algberechnungsonne} berechnen die zusätliche Anzahl der Knoten in der metrische Basis für den Fall das eine zweifache Zusammenhangskomponente vom Typ $S$ oder $K$ ist. Beide Algorithmen bestehen ausschließlich aus \textsc{if}-Abfragen, die in konstanter Zeit durchgeführt werden können.
 \clearpage
-Die Algorithmen \ref{algberechnungungeradesonne1}, \ref{algberechnungusonne2}, \ref{algberechnunggeradesonne1} und \ref{algberechnungungeradesonne0} berechnen die zusätzliche metrische Dimension von ZZK vom Typ $US$.\\ 
+Die Algorithmen \ref{algberechnungungeradesonne1}, \ref{algberechnungusonne2}, \ref{algberechnunggeradesonne1} und \ref{algberechnungungeradesonne0} berechnen die zusätzliche MD von ZZK vom Typ $US$.\\ 
 \vspace{-6mm}
 \begin{algorithm}
 \caption{$USU(x)$}
 \begin{algorithmic}[1] 
+\vspace{2mm}
 \IF{($Anker[x]==0$)} \STATE $MD^+(x)=2$;\ELSIF{($Anker[x]==1$)} \STATE $MD^+(x)=1$;\ELSIF{($Anker[x]\geq \frac{n}{2}-2$)} \STATE $MD^+(x)=0$;\STATE $insert(x \in MD-)$;\ELSIF{($Anker[x]==2$)} \IF{($dist(x)==\frac{n+1}{2}$ oder $dist(x)==\frac{n+3}{2}$)}{\IF{($dist(x)==\frac{n+1}{2}$))} \STATE $insert(x \in MD-)$;\ENDIF \STATE $MD^+(x)=0$;}\ELSIF{(Jeder Knoten $v \in x \setminus \{v_1,v_2,v_{1+\frac{n-1}{2}},v_{1+\frac{n+1}{2}},v_{2+\frac{n-1}{2}},v_{2+\frac{n+1}{2}}\}$) hat\\ $Klasse[v]=0$)}{\STATE $MD^+(x)=0$;} \ELSE{\STATE $MD^+(x)=1$;\STATE $insert(x \in MD-)$;} \ENDIF \ENDIF
 \end{algorithmic}
 \label{algberechnungungeradesonne1}
 \end{algorithm}
 \vspace{-2mm}
 ~\linebreak 
-Algorithmus \ref{algberechnungungeradesonne1} überprüft die "einfachen" Fälle, dabei wird eine zusätzliche \textsc{for}-Schleife benötigt, für den Fall, dass zwei $A$-Knoten vorhanden sind und diese eine ZZK vom Typ $S$ nicht trennen würden. Dafür wird mittels Tiefensuche einmalig eine zweifache Zusammenhangskomponente überprüft ob bestimmte Knoten der Klasse $0$ angehören.\\
+Algorithmus \ref{algberechnungungeradesonne1} überprüft die "einfachen" Fälle, dabei wird eine zusätzliche \textsc{for}-Schleife benötigt, für den Fall, dass zwei $A$-Knoten vorhanden sind und diese eine ZZK vom Typ $S$ nicht trennen würden. Dafür wird mittels Tiefensuche einmalig eine ZZK überprüft ob bestimmte Knoten der Klasse $0$ angehören.\\
 \vspace{-4mm}
 \begin{algorithm}
 \caption{$US(x)$}
@@ -1457,24 +1461,23 @@ Die Funktionsweise der Zeilen 6-13 des Algorithmus \ref{algberechnungungeradeson
 \caption{$USG0(x)$}
 \begin{algorithmic}[1]
 \vspace{2mm} 
-\IF{($Anker[x]==0$ und $n>4$)}{ \STATE Finde maximale zusammenhängende Menge $M$ mit $Klasse[v]=0$;
+\STATE Finde maximale zusammenhängende Menge $M$ mit $Klasse[v]=0$;
 \IF{($|M| \geq \frac{n}{2}-2$)}{ \STATE $MD^+(x)=2$;}\ELSE{
 \STATE Finde alle maximalen gegenüberliegende Menge $M'$ mit $Klasse[v]=0$;
 \STATE Finde das Maximum aller gegenüberliegender Mengen $m'_{max}$;
 \STATE Berechne die verbotene Länge eines Strahls $l_{max}$ für $m'_{max}$;
 \STATE Initialisiere eine Liste von $0$ bis $l_{max}$;
-\STATE Markiere die Knoten außen an zwei gegenüberliegenden Mengen. O.E. sei $s_1$ der rechte Knoten von der ersten Menge und $e_1$ der linke Knoten von der zweiten Menge. Der kürzeste Weg zwischen diesen Knoten ohne die Knoten selbst wird als $I_1$ bezeichnet;
+\STATE Markiere die Knoten außen an zwei gegenüberliegenden Mengen. O.E. sei $s_1$ der rechte Knoten von der ersten Menge und $e_1$ der linke Knoten von der zweiten Menge. Der kürzeste Weg zwischen diesen Knoten ohne die Knoten selbst bezeichne als $I_1$;
 \STATE Speichere alle solche Wege als Intervalle $I_1, \ldots , I_k$ mit dem Startknoten $s_i$ und Endknoten $e_i$ für das Intervall $I_i$;
 \STATE Berechne für jedes Intervall $I_i$ die verbotene Strahllänge $l_i$;
 \STATE Durchlaufe die ZZK mit den Strahlen und hefte jedes Intervall $I_i$ an den $l_i$-ten Eintrag in der Liste beim Betreten von Knoten $s_i$. Laufe in jeden einfachen Weg auf der ZZK und gleichzeitig in der Liste. Entferne jedes Intervall an der Liste wenn das Element in der Liste beim Durchlaufen erreicht wird;
 \IF{(Beim Erreichen von $e_i$ ist das Intervall $I_i$ in der Liste)}{\STATE $MD^+(x)=2$;}\ELSE{ \STATE $MD^+(x)=3$; }\ENDIF 
 }\ENDIF
-}\ENDIF
 \vspace{2mm}
 \end{algorithmic}
 \label{algberechnungungeradesonne0}
 \end{algorithm}
-\vspace{-3mm}
+\vspace{-4mm}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=242pt]{bilder/algsonngeradea02.pdf}
@@ -1483,10 +1486,10 @@ Die Funktionsweise der Zeilen 6-13 des Algorithmus \ref{algberechnungungeradeson
 \end{figure}
 \vspace{-2mm}
 An den Anfang der Liste wird ein Zeiger gestellt, welcher sich bei dem Durchlaufen jedes Strahls bewegt.
-In Zeile 12 gibt es den letzten Durchlauf durch die gesamte Komponente. An jedem Ausgangsknoten $s_i$ wird ein Element $I_i$ an das $l_i$-te Element in der Liste der verbotenen Strahllängen verkettet. Dies kann in konstanter Zeit durchgeführt werden bei einer Implementierung der Liste als Array. Sofern es beim Durchlauf einen Strahl gibt, welcher mindestens so lang ist, wird das Element aus der Verkettung entfernt. Sonst endet der Algorithmus mit den Ausgangs- und Endknoten als Ankerknoten. Sofern dieser Fall nicht eintritt, endet der Algorithmus nach Iteration über alle Knoten in der Komponente.\newline
+In Zeile 12 gibt es den letzten Durchlauf durch die gesamte Komponente. An jedem Ausgangsknoten $s_i$ wird ein Element $I_i$ an das $l_i$-te Element in der Liste der verbotenen Strahllängen verkettet. Dies kann in konstanter Zeit durchgeführt werden bei einer Implementierung der Liste als Array. Sofern es beim Durchlauf einen Strahl gibt, welcher mindestens so lang ist, wird das Element aus der Verkettung entfernt. Sonst endet der Algorithmus mit den Ausgangs- und Endknoten als Ankerknoten. Sofern dieser Fall nicht eintritt, endet der Algorithmus nach Iteration über alle Knoten in der Komponente.\newpage
 In dem Algorithmus \ref{algreplace} werden für eine ZZK alle Knoten mit der Markierung $i$ für $i \geq 0$ mit ggf. den zugehörigen Wegen entfernt. Dieser Algorithmus läuft über jede ZZK und liegt asymptotisch in $\mathcal{O}(|V|+|E|)$.
 Das Einfügen von einem neuen Knoten liegt in $\mathcal{O}(1)$, genauso wie das Einfügen von einer konstanten Anzahl von Kanten oder Knoten. Die maximale zusätzliche MD von einer ZZK ist drei und damit werden pro ZZK maximal fünf neue Knoten eingefügt. Das Verbinden von einem Knoten mit allen $A$-Knoten in einer ZZK liegt in $\mathcal{O}(|V|)$ für alle ZZK.\\
-\vspace{-7mm}
+\vspace{-5mm}
 \begin{algorithm}
 \caption{Ersetze die Zusammenhangskomponenten durch Bäume}
 \begin{algorithmic}[1]
@@ -1504,12 +1507,12 @@ Das Einfügen von einem neuen Knoten liegt in $\mathcal{O}(1)$, genauso wie das 
 \end{algorithmic}
 \label{algreplace}
 \end{algorithm}
-\vspace{-4mm}
+\vspace{-3mm}
 ~\linebreak
-Algorithmus \ref{algsonderfall2} berechnet für jeden Amalgamationsknoten die Größe der zusätzlichen metrischen Dimension um seine Nachbarschaft zu trennen. Dafür werden ZZK mit einem gemeinsamen Knoten untersucht und ggf. mit einer Baumstruktur ergänzt.\\ %Dieser zusätzlich eingefügte Teilgraph stellt sicher, dass die metrische Dimension von dem Kaktusgraphen gleich der metrischen Dimension vom Baum ist.\\
-In den Zeilen 1 und 2 gibt es zwei \textsc{for}-Schleifen welche für jeden Amalgamationsknoten über die zugehörige Menge von zweifachen Zusammenhangskomponenten iterieren. Für jede ZZK in einer Liste von einem Knoten git es eine oder zwei Kanten im Kaktusgraphen. Insgesamt ist die Laufzeit für diese zwei \textsc{for}-Schleifen asymptotisch in $\mathcal{O}(|V|+|E|)$.\\
-In der Zeile 17 wird ein neuer Graph $T$ erstellt, seine Größe ist abhängig von der Anzahl der Amalgamationsknoten und ihrer Nachbarschaft. Auf diesem Graphen, welcher ein Baum ist wird ein maximales Matching bestimmt. Es werden Blätter verwaltet und der Graph wird von außen nach innen vollständig abgebaut, dafür sind maximal zwei Durchläufe über den Baum notwendig und somit linear.\newline
-Mit der Größe des Baumes und des Matchings lässt sich die Anzahl der Knoten bestimmt die noch eingefügt werden in den Graphen. Diese Zahl ist kleiner oder gleich der Anzahl der zweifachen Zusammenhangskomponenten in dem Graphen. Für jeden Knoten muss genau eine Kante eingefügt werden. Die asymptotische Laufzeit ist in $\mathcal{O}(|V|+|E|)$.
+Algorithmus \ref{algsonderfall2} berechnet für jeden Amalgamationsknoten die Größe der zusätzlichen metrischen Dimension um seine Nachbarschaft zu trennen. Dafür werden ZZK mit einem gemeinsamen Knoten untersucht und ggf. mit einer Baumstruktur ergänzt.\vspace{-1mm}\newline\newline %Dieser zusätzlich eingefügte Teilgraph stellt sicher, dass die metrische Dimension von dem Kaktusgraphen gleich der metrischen Dimension vom Baum ist.\\
+In den Zeilen 1 und 2 gibt es zwei \textsc{for}-Schleifen welche für jeden Amalgamationsknoten über die zugehörige Menge von ZZK iterieren. Für jede ZZK in einer Liste von einem Knoten git es eine oder zwei Kanten im Kaktusgraphen. Insgesamt ist die Laufzeit für diese zwei \textsc{for}-Schleifen asymptotisch in $\mathcal{O}(|V|+|E|)$.\vspace{-1mm}\newline\newline
+In der Zeile 17 wird ein neuer Graph $T$ erstellt, seine Größe ist abhängig von der Anzahl der Amalgamationsknoten und ihrer Nachbarschaft. Auf diesem Graphen, welcher ein Baum ist wird ein maximales Matching bestimmt. Es werden Blätter verwaltet und der Graph wird von außen nach innen vollständig abgebaut, dafür sind maximal zwei Durchläufe über den Baum notwendig und somit linear.\vspace{-1mm}\newline\newline
+Mit der Größe des Baumes und des Matchings lässt sich die Anzahl der Knoten bestimmt die noch eingefügt werden in den Graphen. Diese Zahl ist kleiner oder gleich der Anzahl der ZZK in dem Graphen. Für jeden Knoten muss genau eine Kante eingefügt werden. Die asymptotische Laufzeit ist in $\mathcal{O}(|V|+|E|)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{algorithm}
 \caption{MD der Nachbarschaft von Amalgamationsknoten bestimmen}
