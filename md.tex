@@ -1068,41 +1068,53 @@ Jeder Graph mit höchstens einem Kreis gehört zu der Graphklasse der Kaktusgrap
 \newpage
 \section{Vorbereitung}
 \vspace{-4mm}
-In diesem Abschnitt werden die Begriffe und Definitionen, welche in diesem Kapitel zur Berechnung der metrischen Dimension eines Kaktusgraphen verwendet werden, zusammengefasst.
-\newline\newline
-Alle Kanten im Graphen werden in zwei Mengen partitioniert. Jede Kante $e$ aus einer Zusammenhangskomponente wird mit $ZZK[e]=1$ markiert. Ist ein Knoten $v$ mit einer Kante $e$ inzident die mit $ZZK[e]=1$ markiert ist, so ist es auch der Knoten $v$ mit $ZZK[v]=1$, und sonst mit $ZZK[v]=0$.\newline\newline
-In einem Kaktusgraphen sind alle ZZK Kreise. Laut Definition eines Kaktusgraphen darf eine Kante in maximal einem Kreis vorkommen. Die Endknoten dieser Kanten werden in drei Klassen unterteilt.
+In diesem Abschnitt werden Definitionen, welche in diesem Kapitel zur Berechnung der metrischen Dimension eines Kaktusgraphen verwendet werden, zusammengefasst.
+\vspace{-2mm}\newline\newline
+Alle Kanten im Graphen werden in zwei Mengen partitioniert. Jede Kante $e$ aus einer Zusammenhangskomponente wird mit $ZZK[e]=1$ markiert. Ist ein Knoten $v$ mit einer Kante $e$ inzident die mit $ZZK[e]=1$ markiert ist, so ist es auch der Knoten $v$ mit $ZZK[v]=1$, und sonst mit $ZZK[v]=0$.\vspace{-2mm}\newline\newline
+Laut Definition sind in einem Kaktusgraphen alle ZZK Kreise, wobei eine Kante in maximal einem Kreis vorkommen darf. Die Endknoten dieser Kanten werden in drei Klassen unterteilt.
 \begin{defi}[Klasse von einem Knoten]~\newline
-Ein Knoten welcher in mindestens einer zweifachen Zusammenhangskomponente ist, bekommt eine Klasse:
+Ein Knoten welcher in mindestens einer ZZK ist, bekommt eine Klasse:
 \begin{itemize}
 \item[\textbf{0}] Dieser Knoten hat nur Nachbaren aus der gleichen ZZK.
 \item[\textbf{i}] Dieser Knoten hat drei Nachbarn, ein Nachbar liegt an einem einfachen Weg der Länge $i$ mit $i \geq 1$.
 \item[\textbf{A}] Dieser Knoten hat mindestens drei Nachbaren und er gehört nicht zur Klasse $i$. Diese Knoten werden auch als $A$-Knoten bezeichnet.
 \end{itemize}
-\end{defi}
+\end{defi}\vspace{-1mm}
 Ist an einem Knoten $v$ der Klasse $A$ ein induzierter einfacher Weg, so bekommt er die Markierung $Weg[v]=1$.
+
 \begin{defi}[Komponente]~\newline
-Als \textbf{Komponente} in einem Kaktusgraphen werden bezeichnet:
+Als \textbf{Komponente} in einem Kaktusgraphen werden bezeichnet:\vspace{-1mm}
 \begin{itemize}
-\item ZZK mit ggf. induzierten einfachen Wegen an Knoten der Klasse $i$
+\item ZZK mit ggf. induzierten einfachen Wegen an Knoten der Klasse $i$\vspace{-1mm}
 \item maximale Teilgraphen inkl. Trennungsknoten welche Bäume, aber keine Wege sind 
 \end{itemize}
 \end{defi}
+\vspace{-1mm}
 \begin{defi}[Typ von einer ZZK]~\newline
-Eine zweifache Zusammenhangskomponente beinhaltet immer einen Kreis und kann an den Knoten einfache Wege haben. Die folgenden Aussagen gelten für nicht $A$-Knoten. 
+Eine ZZK beinhaltet immer einen Kreis und kann an den Knoten einfache Wege haben. Die folgenden Aussagen gelten ohne Beachtung der $A$-Knoten.\vspace{-1mm} 
 \begin{itemize}
-\item[\textbf{K}] Jeder Knoten hat nur Nachbarn aus der gleichen ZZK. (Nur Typ $0$)
-\item[\textbf{S}] Jeder Knoten hat drei Nachbarn, ein Nachbar liegt an einem induzierten einfachen Weg. (Nur Typ $i$)
+\item[\textbf{K}] Jeder Knoten hat nur Nachbarn aus der gleichen ZZK. (Nur Typ $0$)\vspace{-1mm}
+\item[\textbf{S}] Jeder Knoten hat drei Nachbarn, ein Nachbar liegt an einem induzierten einfachen Weg. (Nur Typ $i$)\vspace{-1mm}
 \item[\textbf{US}] Es gibt jeweils mindestens einen Knoten von Typ $0$ und von Typ $i$.
 \end{itemize}
 \end{defi}
+\vspace{-1mm}
 \begin{defi}[Amalgamationsknoten]~\newline
-Ein \textbf{Amalgamationsknoten} ist ein Knoten $v$ mit $deg(v)\geq 4$ und 
+Ein \textbf{Amalgamationsknoten} ist ein Knoten $v$ mit $deg(v)\geq 4$ und \vspace{-1mm}
 \begin{itemize}
-\item $ZZK[v]=1$ und $Weg[v]=1$
+\item $ZZK[v]=1$ und $Weg[v]=1$\vspace{-1mm}
 \item oder $v \in x$ und $v \in y$ mit $x,y$ ZZK und $x \neq y$.
 \end{itemize}
 \end{defi}
+\vspace{-1mm}
+\begin{defi}[Maximales Matching]~\newline
+\vspace{-7mm}
+\MP{{Maximales Matching}}
+{Ein ungerichteter Baum $G=(V,E)$.}
+{Ein maximales Matching $k$ oder die maximale Anzahl $k$ an Kanten,\\&so dass an jedem Knoten maximal eine Kante gewählt wurde.}
+\end{defi}
+\vspace{-5mm}
+%Das Maximal Matching ist ein bekanntes NP-vollständiges Problem, welches für Bäume in Linearzeit gelöst wird.
 \newpage
 \section{Der Algorithmus zur Berechnung der metrischen Dimension von Kakturgraphen}
 \textbf{Idee:} Ein Kaktusgraph wird in einen Baum mit gleicher metrischer Dimension umgewandelt, welche dann mit einem bekannten Linearzeit-Algorithmus bestimmt wird.\newline\newline
@@ -1553,6 +1565,7 @@ Es kann keinen Knoten mit der gleichen Markierung wie Knoten $u$ geben.
 \item Der Knoten $v$ liegt in einer Komponente $y$ die einen gemeinsamen Knoten $w$ mit der Komponente $x$ hat. Es gilt $u \neq w \neq v$. Nach Vorraussetung sind $v$ und $x$ nicht in der Nachbarschaft von $w$ und die Nachbarschaft von $w$ ist getrennt. Dies ist ein Widerspruch zu Lemma \ref{nachbartrennungsknoten} $\lightning$.
 \end{itemize}  
 \end{enumerate}
+\vspace{-2mm}
 \end{proof}
 \begin{comment}
 \subsection{Die Korrektheit der Aufteilung}
@@ -1570,9 +1583,9 @@ Es wird überprüft ob an diesem Knoten neben seinen Nachnarn in der ZZK nur ein
 \end{itemize}
 \end{bem}
 \end{comment}
-\vspace{-10mm}
+\vspace{-12mm}
 \subsection{Die Korrektheit der Berechnung der metrischen Dimension einzelner Komponenten}
-\label{korrkomp}
+\label{korrkomp}\vspace{-3mm}
 Alle zweifachen Zusammenhangskomponenten von Typ $K,S$ oder $US$ werden als Kreise, Sonnen oder unvollständige Sonnen aufgefasst. Die $A$-Knoten sind feste Ankerknoten. Es wurde gezeigt, dass Trennungsknoten unter bestimmten Vorraussetzungen als Ankerknoten aufgefasst werden können. Es wird überprüft ob die Ankerknoten eine vollständige metrische Basis für den Teilgraphen bilden oder durch weitere Ankerknoten ergänzt werden müssen.
 \begin{itemize}
 \item[Typ $K$]
@@ -1595,7 +1608,7 @@ Bei den Algorithmus zur Berechnung des Kaktusgraphen werden aber Komponenten an 
 \end{itemize}
 \begin{lem}
 Durch den Austausch von Komponenten im Algorithmus \ref{algreplace} ändert sich die metrische Dimension der Bäume nicht.
-\end{lem}
+\end{lem}\vspace{-6mm}
 \begin{proof}[Beweis:]
 Die Berechnung der metrischen Dimension bei Bäumen erfolgt mittels Summierung von Wegen an Knoten $v$ mit $deg(v)\geq 3$. Um das Ergebnis dieser Summe zu beeinflussen, gibt es zwei Möglichkeiten:
 \begin{itemize}
@@ -1608,35 +1621,37 @@ Da sich nur was an Knoten der Klasse $A$ ändert, kann dieser Fall nicht eintret
    \includegraphics[width=340pt]{bilder/algorithmus.pdf}
 	\caption{Unterschiedliche Bäume mit denen die Komponenten ersetzt werden}
   	 \end{figure}
+  	 \vspace{-3mm}
 Es gibt mindestens eine Komponente die ersetzt wird, sonst gäbe es keinen $A$-Knoten. Wenn es nur einen $A$-Knoten gibt, wird die Komponente durch den Baum von Typ $2$ oder höher ersetzt. Keine Komponente kann mit einem Ankerknoten getrennt werden. Es gibt einen Knoten von mindestens Grad drei. Wenn es mindestens zwei $A$-Knoten in der Komponente gibt, beinhaltet sie ebenfalls einen Knoten von mindestens Grad drei. In beiden Fällen ist an dem $A$-Knoten aus dem Baum kein neuer einfacher Weg enstanden.
 \end{itemize}
+\vspace{-1mm}
 \end{proof}
-\vspace{-8mm}
+\vspace{-12mm}
 \subsection{Die Korrektheit der Erkennung und Berechnung der metrischen Dimension bei Amalgamationsknoten}
 \label{korramal}
-Jeder Knoten $v$ in mindestens einer Zusammenhangskomponente mit $deg(v)\geq 4$ ist ein Amalgamationsknoten.\\
-Jede Komponente in welcher der Amalgamationsknoten ist, gehört zu der Menge der Komponenten die überprüft werden muss. Nur bei Amalgamationsknoten wird ein einfacher Weg ebenfalls als eine Komponente betrachtet. Doch nicht für jede Komponente muss ein Ankerknoten in die metrische Basis aufgenommen werden.
-Die genauen Vorraussetzungen für die Berechnung der metrischen Dimension bei Amalgamationsknoten sind in Kapitel \ref{amal} aufgelistet.\\Sofern in einer Komponente die Nachbarschaft des Amalgamationsknotens getrennt ist,wird die Komponente aus der Menge am Amalgamationsknoten entfernt. Ist maximal eine Komponente in der Menge eines Amalgamationsknoten so wird dieser für die Berechnung nicht mehr beachtet. Es werden nur Amalgamationsknoten mit mindestens zwei Komponenten mit nicht getrennter Nachbarschaft untersucht.
+Jeder Knoten $v$ in mindestens einer Zusammenhangskomponente mit $deg(v)\geq 4$ ist ein Amalgamationsknoten. Jede Komponente in welcher der Amalgamationsknoten ist, gehört zu der Menge der Komponenten die überprüft werden muss. Nur bei Amalgamationsknoten wird ein einfacher Weg ebenfalls als eine Komponente betrachtet. Doch nicht für jede Komponente muss ein Ankerknoten in die metrische Basis aufgenommen werden.
+Die genauen Vorraussetzungen für die Berechnung der metrischen Dimension bei Amalgamationsknoten sind in Kapitel \ref{amal} aufgelistet.\\Sofern in einer Komponente die Nachbarschaft des Amalgamationsknotens getrennt ist, wird die Komponente aus der Menge am Amalgamationsknoten entfernt. Ist maximal eine Komponente in der Menge eines Amalgamationsknoten so wird dieser für die Berechnung nicht mehr beachtet. Es werden nur Amalgamationsknoten mit mindestens zwei Komponenten mit nicht getrennter Nachbarschaft untersucht.
 \begin{lem}
 Für eine Komponente mit mindestens zwei $A$-Knoten reicht ein zusätzlicher Knoten aus um die Knoten in der Komponente und die Nachbarschaft von den Amalgamationsknoten in der Komponente zu trennen.
 \end{lem}
+\vspace{-4mm}
 \begin{proof}[Beweis:]
 Eine Komponente kann nur dann in die Menge der Amalgamationsknoten aufgenommen werden, wenn es keinen Ankerknoten gibt, oder die maximale Entfernung zu einem $A$-Knoten den Wert $\frac{n}{2}$ übersteigt. Somit kann es in einer Komponente maximal zwei Amalgamationsknoten geben. Da $A$ Knoten für Teilgraphen als Ankerknoten aufgefasst werden, tritt der erste Fall nicht auf. Setzt man einen Ankerknoten in den längsten Weg zwischen zwei $A$-Knoten, so ist die maximale Entfernung zwischen den $A$ Knoten in dieser Komponente maximal $\frac{n-1}{2} < \frac{n}{2}$.
 \end{proof}
-Nach Kapitel \ref{amal} muss für jeden Amalgamationsknoten für jede relevante Komponente bis auf Eine ein Ankerknoten gesetzt werden. Werden in bestimmten Komponenten Ankerknoten gesetzt, so können zwei Amalgamationsknoten davon gleichzeitig profitieren. Wird der Ankerknoten in die falsche Komponente gesetzt so erhält man insgesamt keine metrische Basis, denn die Vorraussetzung der Minimalität wird verletzt.
+\vspace{-3mm}
+Nach Kapitel \ref{amal} muss für jeden Amalgamationsknoten für jede relevante Komponente bis auf Eine ein Ankerknoten gesetzt werden. Werden in bestimmten Komponenten Ankerknoten gesetzt, so können zwei Amalgamationsknoten davon gleichzeitig profitieren. Wird der Ankerknoten in die falsche Komponente gesetzt so erhält man insgesamt keine metrische Basis, denn die Vorraussetzung der Minimalität wird verletzt.\\
+Gibt es keine Komponente mit zwei Amalgamationsknoten ist die Lösung einfach. Gibt es mindestens eine Komponente, so ist die Lösung komplizierter. In der Abbildung \ref{amalbild} ist ein Graph mit fünf Amalgamationsknoten (blau) dargestellt. An jedem davon sind zwei Komponenten. Setzt man einen Ankerknoten (gelb) in den $C_6$ so wie in dem Bild in der Mitte, so benötigt man vier Ankerknoten. Links reichen drei Ankerknoten aus.
 
 \begin{figure}[h!]
 		\centering 		 
    \includegraphics[width=350pt]{bilder/amalknoten.pdf}
 	\caption{Beispiel für Amalgamationsknoten}
+  	 \label{amalbild}
   	 \end{figure}
+  	 \vspace{-2mm}
   	 ~\linebreak
-Es wird also eine maximale Menge von Komponenten gesucht, bei denen kein Ankerknoten gesetzt werden braucht, sodass für jeden Amalgamationsknoten in jeder relevanten Komponente bis auf Einer ein Ankerknoten gesetzt wurde. Dafür wird der Graph modifiziert und das folgende Problem gelöst:
-\vspace{-1mm}
-\MP{{Maximales Matching}}
-{Ein ungerichteter Baum $G=(V,E)$.}
-{Ein maximales Matching $k$ oder die maximale Anzahl $k$ an Kanten,\\&so dass an jedem Knoten maximal eine Kante gewählt wurde.}
-
+Wird der Graph (evtl. nicht zusammenhängend) bestehend nur aus nicht gerennten Komponenten an den Amalgamationsknoten betrachtet, so wird eine maximale Menge von Komponenten gesucht, bei denen kein Ankerknoten gesetzt werden braucht. Es muss dabei die Voraussetzung erfüllt werden, dass für jeden Amalgamationsknoten in jeder Komponente bis auf Eine ein Ankerknoten gesetzt wurde. Modifiziert man den Graphen so, dass aus den Komponenten Kanten werden, so muss dafür das Problem Maximal Matching gelöst werden.\newline
+Die Anzahl der Komponenten ohne das maximal Matching ist die Anzahl der Ankerknoten $MD.A$ die in dem Graphen noch gesetzt werden muss. Dies geschieht an einem Knoten. Um die metrische Dimension um $MD.A$ zu erhöhen, muss die Anzahl der einfachen Wege an einem Knoten nach Lemma \ref{baum} $MD.A+1$ sein. Also wird überprüft ob es einen einfachen Weg an dem Knoten gibt und $MD.A$ oder $MD.A+1$ Blätter eingefügt.
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
