@@ -24,7 +24,7 @@
 %\else
 %\pdfoutput=1 % we are running pdflatex
 %\pdfcompresslevel=9 % compression level for text and image;
-%\pdftrue \fi
+%\pdftrue \fi[cleardoublepage=plain]
 
 \documentclass[11pt,a4paper,pointlessnumbers, \zweiseitig]{scrreprt}
 
@@ -104,6 +104,7 @@
 
 %\makeindex
 % Umgebungen f"ur S�tze usw.
+\clearpage{\pagestyle{empty}\cleardoublepage}
 \newtheorem{bem}{Bemerkung}
 \newtheorem{definition}{Definition}
 \newtheorem{bezeichnungen}{Bezeichnungen}
@@ -250,6 +251,7 @@
 
 }
 
+\thispagestyle{empty}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\clearpage
 %\begin{titlepage}
@@ -257,6 +259,8 @@
 %\end{titlepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
+~
+\newpage
 \begin{titlepage}
 \vspace*{\fill}
 
@@ -277,9 +281,12 @@ Düsseldorf, den \abgabedatum \hspace*{2cm} & \underline{\hspace{6cm}}\\
 & \bearbeiter
 \end{tabular}
 
+\thispagestyle{empty}
 \vspace*{\fill}
 \end{titlepage}
-
+~
+\thispagestyle{empty}
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Leerseite bei zweiseitigem Druck
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -288,7 +295,9 @@ Düsseldorf, den \abgabedatum \hspace*{2cm} & \underline{\hspace{6cm}}\\
 %~\end{titlepage}}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\thispagestyle{empty}
 \clearpage
 \begin{titlepage}
 
-\section*{\ifthenelse{\equal{\sprache}{deutsch}}{Zusammenfassung}{Abstract}}
+\thispagestyle{empty}
