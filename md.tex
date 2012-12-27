@@ -49,7 +49,7 @@
 %Die metrische Dimension \ldots\\
 %
 \section*{\ifthenelse{\equal{\sprache}{deutsch}}{Danksagung}{Acknowledgments}}
-An dieser Stelle möchte ich mich besonders bei meinem Professor Dr. Egon Wanke bedanken, der mich während meiner Masterarbeit umfangreich betreut und unterstützt hat. Weiterhin danke ich Stefan Hoffmann für seine begleitende Hilfestellung. Mein ganz besonderer Dank gilt Philipp Hagemeister, Sven Hager und Philipp Körner, die mir bei Formulierungen und auch bei der Korrektur der Masterarbeit sehr weitergeholfen haben. 
+An dieser Stelle möchte ich mich besonders bei meinem Professor Dr. Egon Wanke bedanken, der mich während meiner Masterarbeit umfangreich betreut und unterstützt hat. Weiterhin danke ich Stefan Hoffmann für seine begleitende Hilfestellung. Mein ganz besonderer Dank gilt Philipp Hagemeister, Sven Hager und Philipp Körner, die mir bei Formulierungen und auch bei der Korrektur der Masterarbeit sehr weiter geholfen haben. 
 \clearpage 
 %Die metrische Dimension \ldots\\
 
@@ -60,14 +60,11 @@ An dieser Stelle möchte ich mich besonders bei meinem Professor Dr. Egon Wanke 
 \thispagestyle{empty}
 \section*{\ifthenelse{\equal{\sprache}{deutsch}}{Zusammenfassung}{Abstract}}
 
-Viele algorithmische Probleme können auf Graphen zurückgeführt werden. Einige dieser Probleme sind für allgemeine Graphen nicht effizient lösbar, können aber auf eingeschränkten Graphen oft schnell gelöst werden. Dies macht die Erforschung von Graphen sowohl aus theoretischer als auch aus praktischer Sicht interessant und die Erforschung von Problemen auf speziellen Graphen gewinnt an Bedeutung. Ein Teil dieser Probleme beschäftigt sich mit Distanzen in Graphen, unter anderem dem Finden der metrischen Dimension.\newline\newline
-Von einer ausgesuchten Teilmenge der Knoten werden die Distanzen zu jedem Knoten im Graphen bestimmt. Gesucht ist die kleinste Knotenmenge, so dass keine zwei Knoten im Graphen die gleichen Distanzen besitzen. Die Größe dieser Menge bezeichnet man als metrische Dimension. Die Bestimmung der metrischen Dimension eines Graphens ist NP-vollständig, selbst wenn der Graph planar ist.\newline\newline 
-Andererseits konnte bei vielen Graphklassen konstante oder parameterabhängige metrischer Dimension gezeigt werden.\newline\newline 
-Im Allgemeinen hat es sich als schwierig erwiesen Aussagen über Teilgraphen oder Kompositionen von unterschiedlichen Graphen mit bekannter metrischer Dimension zu machen. Algorithmisch kann die metrische Dimension in Linearzeit von Bäumen und in Polynomialzeit von außenplanaren Graphen bestimmt werden.\newline\newline
-In dieser Arbeit werden einige Zusammenhänge bewiesen und zwei bestimmte Graphklassen ausführlich betrachtet.\newline\newline 
-Die erste Graphklasse, Freundschaftsgraphen aus \glqq{The resolving graph of amalgamation of cycles}\grqq$\;$\cite{amal}, wird verallgemeinert, wobei nicht nur Kreise sondern auch Bäume und Wege an einem bestimmten Knoten erlaubt werden.\newline Die zweite Graphklasse, die Sonnengraphen aus \glqq{On $k$-dimensional graphs and their bases}\grqq$\;$\cite{bases}, werden mit beliebig langen Wegen an Stelle von Wegen der Länge eins betrachtet. Außerdem werden Teilgraphen von Sonnengraphen analysiert, welche eine kleinere metrische Dimension als die Sonnengraphen selbst haben können.\newline\newline 
-Diese zwei Graphklassen und einige Zusammenhänge ermöglichen es einen Linearzeit-Algorithmus für Kaktusgraphen zu entwerfen. Bei Kaktusgraphen dürfen Kreise keine gemeinsamen Kanten haben, dadurch ist die Struktur von solchen Graphen sehr eingeschränkt. Diese Eigenschaft nutzt der Algorithmus aus.\newline\newline Durch dieses Ergebnis kann von unterschiedlichen Graphen und nicht nur von Bäumen die metrische Dimension mit linearen Zeitaufwand bestimmt werden.
-
+Viele algorithmische Probleme können auf Graphen zurückgeführt werden. Dies macht die Erforschung von Graphen sowohl aus theoretischer als auch aus praktischer Sicht interessant. Einige dieser Probleme sind für allgemeine Graphen nicht effizient lösbar, können aber oft auf eingeschränkten Graphen schnell gelöst werden. Daher gewinnt die Erforschung von Problemen auf speziellen Graphen an Bedeutung. 
+Ein Teil dieser Probleme beschäftigt sich mit Distanzen in Graphen, unter anderem dem Bestimmen der metrischen Dimension.\newline\newline
+Die metrische Dimension eines Graphen ist die Größe einer kleinsten Knotenmenge. In dem Graphen darf es kein Knotenpaar geben, dass zu allen Knoten aus dieser Menge die gleichen Distanzwerte hat. Es darf keine kleinere Knotenmenge geben, die diese Eigenschaft erfüllt.\newline\newline 
+Die Bestimmung der metrischen Dimension eines beliebigen Graphen ist NP-vollständig, selbst wenn der Graph planar ist. Im Allgemeinen hat es sich außerdem als schwierig erwiesen Aussagen über Teilgraphen oder Kompositionen von unterschiedlichen Graphen mit bekannter metrischer Dimension zu machen. Es gibt jedoch bekannte Graphklassen mit konstanter oder parameterabhängiger metrischer Dimension.\newline\newline Bisher kann die metrische Dimension von Bäumen in Linearzeit und von außenplanaren Graphen in Polynomialzeit bestimmt werden.\newline\newline In dieser Arbeit werden einige Zusammenhänge bewiesen und zwei bestimmte Graphklassen ausführlich betrachtet. Die erste Graphklasse, Freundschaftsgraphen aus \glqq{The resolving graph of amalgamation of cycles}\grqq$\;$\cite{amal}, wird verallgemeinert, wobei nicht nur Kreise sondern auch Bäume und Wege an einem bestimmten Knoten erlaubt werden.\newline Die zweite Graphklasse, Sonnengraphen aus \glqq{On $k$-dimensional graphs and their bases}\grqq$\;$\cite{bases}, wird mit beliebig langen Wegen an Stelle von Wegen der Länge eins betrachtet. Außerdem werden Teilgraphen von Sonnengraphen analysiert, welche eine kleinere metrische Dimension als die Sonnengraphen selbst haben können.\newline\newline 
+Diese zwei Graphklassen und einige Zusammenhänge ermöglichen es einen Linearzeit-Algorithmus für Kaktusgraphen zu entwerfen. Bei Kaktusgraphen dürfen Kreise keine gemeinsamen Kanten haben, dadurch ist die Struktur von solchen Graphen sehr eingeschränkt. Diese Eigenschaft nutzt der Algorithmus aus.\newline\newline Durch dieses Ergebnis wurde die Menge der Graphen für welche die metrische Dimension in Linearzeit bestimmt werden kann erweitert.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% ENDE ZUSAMMENFASSUNG %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -166,11 +163,11 @@ Sei der Graph $G_2=(V_2,E_2)$ gegeben. Zwischen Knoten $w$ und $x$ gibt es mehre
   	 \vspace{-2mm}
   	 ~\linebreak
 Zwei Knoten $u$ und $v$ eines Graphen $G$ heißen \emph{verbunden} in $G$, wenn $u = v$ ist oder es einen Weg in $G$ von $u$ nach $v$ gibt. Ist jedes Knotenpaar in $G$ verbunden, so heißt $G$ \emph{zusammenhängend}.\\Gibt es zwischen jedem Knotenpaar zwei (bzw. $k$) knotendisjunkte Wege, so bezeichnet man den Graphen als \emph{zweifach ($k$-fach) zusammenhängend}.\\Eine \emph{$k$-fache Zusammenhangskomponente (ZK)} von $G$ ist ein maximaler (bzgl. der Knotenmenge) $k$-fach zusammenhängender, induzierter Teilgraph von $G$.\newline\newline
-Sei ein zusammenhängender Graph $G=(V,E)$ gegeben. Ist der Graph $G$ durch das Entfernen von einem Knoten $v \in V$ nicht mehr zusammenhängend so ist der Knoten $v$ ein \emph{Trennungsknoten (Separationsknoten)}.\\Gibt es eine Kante $e \in E$, sodass durch das Entfernen der Kante der Graph nicht mehr zusammenhängend ist, so ist die Kante $e$ eine \emph{Brücke}.
+Sei ein zusammenhängender Graph $G=(V,E)$ gegeben. Ist der Graph $G$ durch das Entfernen von einem Knoten $v \in V$ nicht mehr zusammenhängend so ist der Knoten $v$ ein \emph{Separationsknoten (Trennungsknoten)}.\\Gibt es eine Kante $e \in E$, sodass durch das Entfernen der Kante der Graph nicht mehr zusammenhängend ist, so ist die Kante $e$ eine \emph{Brücke}.
 
 \begin{figure}[h!]
 \begin{minipage}{260pt}
-Sei der Graph $G_3=(V_3,E_3)$ gegeben. Der Knoten $x$ ist ein Trennungsknoten. Die Kante $e=\{v,u\}$ ist eine Brücke. Die Nachbarschaft $\mathcal{N}(u)\setminus \{v\}\cup\{u\}$\\ist eine $3$-fache Zusammenhangskomponente und\\Nachbarschaft $\mathcal{N}(x)\setminus \{v\}\cup\{x\}$ ist eine $2$-fache Zusammenhangskomponente.
+Sei der Graph $G_3=(V_3,E_3)$ gegeben. Der Knoten $x$ ist ein Separationsknoten. Die Kante $e=\{v,u\}$ ist eine Brücke. Die Nachbarschaft $\mathcal{N}(u)\setminus \{v\}\cup\{u\}$\\ist eine $3$-fache Zusammenhangskomponente und\\Nachbarschaft $\mathcal{N}(x)\setminus \{v\}\cup\{x\}$ ist eine $2$-fache Zusammenhangskomponente.
 \end{minipage}
 \begin{minipage}{160pt}
 		\centering 		 
@@ -471,7 +468,7 @@ Werden bei einem Graph Knoten oder Kanten entfernt, so ist die Verkleinerung der
 %%%%%%%%%%%%%%%%%%%%Löschen von Knoten vergößert MD%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Der Einfluß des Entfernen von Knoten oder Kanten auf die metrische Dimension}
+\subsection{Der Einfluss des Entfernen von Knoten oder Kanten auf die metrische Dimension}
 \begin{lem}
 Die metrische Dimension eines Teilgraphen ist nicht durch die metrische Dimension des ursprünglichen Graphen beschränkt. Durch das Entfernen von Kanten kann die metrische Dimension eines Graphen steigen.
 \end{lem}
@@ -521,30 +518,30 @@ Sei $G=(V,E)$ ein gegebener Graph. Seien $u,v$ und $w$ Knoten in $G$ und sei $\{
 \begin{lem}
 \cite{bases}
 \label{einelementreichtnicht}
-Sei ein beliebiger Graph $G=(V,E)$ gegeben. Der Graph $G'$ ensteht durch das Hinzufügen eines Knotens und das Verbinden von diesem Knoten mit genau einem anderen Knoten in $G$. Für die metrische Dimension von $G'$ gilt:
+Sei ein beliebiger Graph $G=(V,E)$ gegeben. Der Graph $G'$ entsteht durch das Hinzufügen eines Knotens und das Verbinden von diesem Knoten mit genau einem anderen Knoten in $G$. Für die metrische Dimension von $G'$ gilt:
 $$\beta(G)\leq \beta(G')\leq \beta(G)+1$$ 
 \end{lem}
 \begin{lem}
 \label{wegtrennungsknoten}
 \label{first_theorem}
-Sei ein beliebiger Graph $G=(V,E)$ mit metrischer Basis $R=\{r_1, \ldots, r_k\}$ gegeben. Sei $(v,u) \in E$ eine Kante in $G$ und $v$ ein Trennungsknoten, welcher $G$ in zwei nichtleere Graphen $G'=(V',E')$ und $G'' =(V'',E'' )$ spaltet und sei der Knoten $u \in V'' $. Dann gilt die folgende Aussage:\newline
+Sei ein beliebiger Graph $G=(V,E)$ mit metrischer Basis $R=\{r_1, \ldots, r_k\}$ gegeben. Sei $(v,u) \in E$ eine Kante in $G$ und $v$ ein Separationsknoten, welcher $G$ in zwei nicht leere Graphen $G'=(V',E')$ und $G'' =(V'',E'' )$ spaltet und sei der Knoten $u \in V'' $. Dann gilt die folgende Aussage:\newline
 Ist $r_i \notin G''$ für $1 \leq i \leq k$ dann ist $G'' $ ein Weg.
 \end{lem}
 \begin{proof}[Beweis:]
 Angenommen $G'' $ ist kein Weg. Es gibt dann drei Fälle:
 \begin{enumerate}
 \item Angenommen der Knoten $v$ sei mit einem weiteren Knoten $w$, $w \neq u$, aus dem Graphen $G'' $ verbunden. Da es keine Ankerknoten in $G'' $ gibt haben die Knoten $u$ und $w$ die gleichen metrischen Koordinaten und sind nicht getrennt. Somit ist $u$ der einzige adjazente Knoten mit $v$ aus $G''$.
-\item Angenommen $G''$ beinhaltet keinen Knoten mit Grad eins. Jeder Knoten hat mindestens zwei Nachbarn und damit auch der Knoten $u$. Da der Teilgraph keine Ankerknoten beinhaltet, haben die beiden Nachbaren von $u$ die gleichen metrischen Koordinaten und der Teilgraph ist nicht getrennt.
+\item Angenommen $G''$ beinhaltet keinen Knoten mit Grad eins. Jeder Knoten hat mindestens zwei Nachbarn und damit auch der Knoten $u$. Da der Teilgraph keine Ankerknoten beinhaltet, haben die beiden Nachbarn von $u$ die gleichen metrischen Koordinaten und der Teilgraph ist nicht getrennt.
 \item Der Knoten $u$ hat $deg(u)=1$ in dem Graphen $G''$. Der Knoten $v$ ist in dem Graphen $G$ nur mit dem Knoten $u$ aus Teilgraph $G''$ verbunden, dadurch hat der Knoten $u$ eine eindeutige Markierung. Es gibt einen Knoten $w$ mit $deg(w) \geq 3$, ansonsten wäre $G''$ ein Weg. Sei $p$ ein kürzester Weg von $u$ nach $w$ und $w_1$ und $w_2$ zwei Nachbarknoten von $w$, die nicht auf $p$ liegen. Da es keine weiteren trennenden Knoten in $G''$ gibt, haben die Knoten $w_1$ und $w_2$ dieselbe Markierung.   
 \end{enumerate}
 \vspace{-4mm}
 \end{proof}
 \begin{bem}
-Vor allem folgt aus Lemma \ref{wegtrennungsknoten}, dass ein Teilgraph, welcher durch das Entfernen von einem Trennungsknoten entsteht und kein Weg ist, mindestens einen Ankerknoten beinhaltet.
+Vor allem folgt aus Lemma \ref{wegtrennungsknoten}, dass ein Teilgraph, welcher durch das Entfernen von einem Separationsknoten entsteht und kein Weg ist, mindestens einen Ankerknoten beinhaltet.
 \end{bem}
 \begin{lem}
 \label{second_theorem}
-Gegeben sei ein Graph bestehend aus zwei nichtleeren Teilgraphen $G_R$ und $G_L$, welche durch genau eine Kante verbunden sind. Sofern jeder Teilgraph mind. ein Element aus der metrischen Basis beinhaltet, so ist jedes Knotenpaar $x,y$ mit der Eigenschaft $x \in G_R$ und $y \in G_L$ getrennt.
+Gegeben sei ein Graph bestehend aus zwei nicht leeren Teilgraphen $G_R$ und $G_L$, welche durch genau eine Kante verbunden sind. Sofern jeder Teilgraph mind. ein Element aus der metrischen Basis beinhaltet, so ist jedes Knotenpaar $x,y$ mit der Eigenschaft $x \in G_R$ und $y \in G_L$ getrennt.
 \end{lem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEWEIS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{-4mm}
@@ -570,11 +567,11 @@ Gegeben sei ein Graph bestehend aus zwei nichtleeren Teilgraphen $G_R$ und $G_L$
   \begin{bem}
   \label{aussagetrennungsgraphen}
   Die Aussage lässt sich wie folgt verallgemeinern:\\
-  Die beiden Teilgraphen $G_L$ und $G_R$ können nicht nur durch eine Kante oder durch einen Weg verbunden sein, sondern durch einen beliebigen Teilgraphen $G_M$, wenn es jeweils einen Trennungsknoten zwischen den Teilgraphen $G_L$ und $G_M$, und $G_R$ und $G_M$ gibt.
+  Die beiden Teilgraphen $G_L$ und $G_R$ können nicht nur durch eine Kante oder durch einen Weg verbunden sein, sondern durch einen beliebigen Teilgraphen $G_M$, wenn es jeweils einen Separationsknoten zwischen den Teilgraphen $G_L$ und $G_M$, und $G_R$ und $G_M$ gibt.
   \end{bem}
 \begin{lem}
 \label{Bifurnachbar}
-Seien ein Graph $G=(V,E)$ und eine Menge $R \subset V$ mit $R=\{r_1, \ldots , r_n\}$, sowie außerwählte Knoten $v,x,y$ mit $dist_G(v,x)=dist_G(v,y)$ gegeben. Ist $v$ der Bifurkator von $r_i,x,y$ für $1 \leq i \leq n$ so ist $R$ keine metrische Basis von dem Graphen $G$.
+Seien ein Graph $G=(V,E)$ und eine Menge $R \subset V$ mit $R=\{r_1, \ldots , r_n\}$, sowie auserwählte Knoten $v,x,y$ mit $dist_G(v,x)=dist_G(v,y)$ gegeben. Ist $v$ der Bifurkator von $r_i,x,y$ für $1 \leq i \leq n$ so ist $R$ keine metrische Basis von dem Graphen $G$.
 \end{lem}
 \begin{proof}[Beweis:]
 Angenommen $R$ ist eine metrische Basis des Graphen $G$ und der Knoten $v$ besitze die Markierung $a_1/\ldots /a_n$. Sei die $dist_G(v,x)=b$. Da $v$ der Bifurkator ist liegt er auf einem kürzesten Weg und so ist die Markierung vom Knoten $x$ $a_1+b/\ldots /a_n+b$. Nach der Voraussetzung ist $dist_G(v,x)=dist_G(v,y)$, damit hat der Knoten $y$ die Markierung $a_1+b/\ldots /a_n+b$ und die Knoten $x$ und $y$ sind nicht getrennt. Dies ist ein Widerspruch zur Definition der metrischen Basis. $\lightning$
@@ -590,7 +587,7 @@ Nach Definition liegt ein Bifurkator auf einem kürzesten Weg von $r$ zu $u$ und
 \end{proof}
 \begin{lem}
 \label{trennungsknoten}
-Sei ein beliebiger Graph $G=(V,E)$ gegeben. Seien $G_1$ und $G_2$ zwei Teilgraphen von $G$ die durch einen Trennungsknoten $x$ verbunden sind. Jedes Knotenpaar aus $G_2$, welches von einem Ankernoten aus $G_1$ getrennt wird, wird auch von dem Knoten $x$ getrennt. Es gilt dasselbe für die Knotenpaare in $G_1$ und Ankerknoten in $G_2$.
+Sei ein beliebiger Graph $G=(V,E)$ gegeben. Seien $G_1$ und $G_2$ zwei Teilgraphen von $G$ die durch einen Separationsknoten $x$ verbunden sind. Jedes Knotenpaar aus $G_2$, welches von einem Ankernoten aus $G_1$ getrennt wird, wird auch von dem Knoten $x$ getrennt. Es gilt dasselbe für die Knotenpaare in $G_1$ und Ankerknoten in $G_2$.
 \end{lem}
 \begin{proof}[Beweis:]
 Der Knoten $x$ ist ein Bifurkator zwischen jedem Knotenpaar in $G_2$ und jedem Ankerknoten in $G_1$ und umgekehrt. Damit folgt die Aussage nach Lemma \ref{bifur}.
@@ -608,7 +605,7 @@ Jeder Knoten auf dem Weg $p_i$ hat den gleichen Bifurkator für den Knoten $r_j$
 \end{proof}
 \begin{lem}
 \label{nachbartrennungsknoten}
-Sei ein beliebiger Graph $G=(V,E)$ gegeben. Seien $G_L$ und $G_R$ zwei Teilgraphen, die keine Wege sind, von $G$ die durch genau einen Trennungsknoten $v_s$ verbunden sind. Gibt es ein nicht getrenntes Knotenpaar $\{v_L,v_R\}$ mit der Eigenschaft, dass $v_L\in G_L$ und $v_R \in G_R$ und $v_L, v_R \notin \mathcal{N}(v_s)$.\newline
+Sei ein beliebiger Graph $G=(V,E)$ gegeben. Seien $G_L$ und $G_R$ zwei Teilgraphen, die keine Wege sind, von $G$ die durch genau einen Separationsknoten $v_s$ verbunden sind. Gibt es ein nicht getrenntes Knotenpaar $\{v_L,v_R\}$ mit der Eigenschaft, dass $v_L\in G_L$ und $v_R \in G_R$ und $v_L, v_R \notin \mathcal{N}(v_s)$.\newline
 Dann ist das Knotenpaar $u_L,u_R \in \mathcal{N}(v_s)$, mit der Eigenschaften $u_L$ liegt auf dem kürzesten-Weg von $v_s$ zu $v_L$ und $u_R$ liegt auf dem kürzesten-Weg von $v_s$ zu $v_R$, nicht getrennt.
 \end{lem}
 \begin{proof}[Beweis:]~\newline
@@ -638,7 +635,7 @@ Der Beweis für Fall 2 folgt analog.
 Es kann gezeigt werden, dass die Aussage auch für Teilgraphen ohne Ankerknoten gilt.
 \begin{lem}
 \label{nachbartrennungsknoten2}
-Sei ein beliebiger Graph $G=(V,E)$ gegeben. Seien $G_L$, $G_R$, die keine Wege sind, und ein Weg $p$ drei Teilgraphen von $G$ die durch genau einen Trennungsknoten $v_s$ verbunden sind. Gibt es ein nicht getrenntes Knotenpaar $\{v_L,v_R\}$ mit der Eigenschaft, dass $v_L\in p$ und $v_R \in G_R$ und $v_L, v_R \notin \mathcal{N}(v_s)$, dann ist das Knotenpaar $u_L,u_R \in \mathcal{N}(v_s)$ mit der Eigenschaft, dass $u_L$ auf dem kürzesten-Weg von $v_s$ zu $v_L$ und $u_R$ auf dem kürzesten-Weg von $v_s$ zu $v_R$ liegt, nicht getrennt.
+Sei ein beliebiger Graph $G=(V,E)$ gegeben. Seien $G_L$, $G_R$, die keine Wege sind, und ein Weg $p$ drei Teilgraphen von $G$ die durch genau einen Separationsknoten $v_s$ verbunden sind. Gibt es ein nicht getrenntes Knotenpaar $\{v_L,v_R\}$ mit der Eigenschaft, dass $v_L\in p$ und $v_R \in G_R$ und $v_L, v_R \notin \mathcal{N}(v_s)$, dann ist das Knotenpaar $u_L,u_R \in \mathcal{N}(v_s)$ mit der Eigenschaft, dass $u_L$ auf dem kürzesten-Weg von $v_s$ zu $v_L$ und $u_R$ auf dem kürzesten-Weg von $v_s$ zu $v_R$ liegt, nicht getrennt.
 \end{lem}
 \par
 \begin{proof}[Beweis:] Angenommen die Knoten $u_L,u_R$ mit den obigen Eigenschaften seien getrennt.
@@ -669,17 +666,17 @@ Daraus folgt, dass:
 %%%%%%%%%%%%%%%%%%%%Knotenkontraktion von Trennungsknoten vergrößert nicht%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Der Einfluß von Knotenkontraktion von Trennungsknoten vom Grad zwei auf die metrische Dimension}
+\subsection{Der Einfluss von Knotenkontraktion von Separationsknoten vom Grad zwei auf die metrische Dimension}
 Gegeben seien zwei Graphen $G_1=(V_1,E_1)$ und $G_2=(V_2,E_2)$ und zwei Knoten $u,v$ mit $u \in V_1$ und $v\in V_2$.
 Der zusammenhängende Graph $G$ entsteht durch das Verbinden der Knoten $u$ und $v$ durch einen Weg $p$ der Länge $n \geq 1$. Bei einer metrischen Basis $R_k$ mit $k \geq 2$ befindet sich mindestens ein Ankerknoten in jedem Teilgraph $G_1$ und $G_2$. Nach Lemma \ref{keinknotenvonwegindermd} können nur Knoten aus den Teilgraphen $G_1$ und $G_2$ Ankerknoten sein. In diesem Abschnitt werden nur solche Graphen $G$ betrachtet.
 \begin{lem}
 \label{lem2}
 \label{sepvertex}
-Durch die Kontraktion von Trennungsknoten vom Grad zwei kann die metrische Dimension eines Graphen $G$ nicht vergrößert werden.
+Durch die Kontraktion von Separationsknoten vom Grad zwei kann die metrische Dimension eines Graphen $G$ nicht vergrößert werden.
 \end{lem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEWEIS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{proof}[Beweis:]
-Sei ein Graph $G$ mit einer metrischen Basis $R_k$ und einem Trennungsknoten $v_s$ mit $deg(v_s)=2$ gegeben. Die zwei Teilgraphen welche durch das Entfernen von $v_s$ entstehen bezeichne man als $G_R$ und $G_L$.
+Sei ein Graph $G$ mit einer metrischen Basis $R_k$ und einem Separationsknoten $v_s$ mit $deg(v_s)=2$ gegeben. Die zwei Teilgraphen welche durch das Entfernen von $v_s$ entstehen bezeichne man als $G_R$ und $G_L$.
 \begin{figure}[ht]
 \centering
 \includegraphics*[width = 250pt]{bilder/proof4,2.pdf}
@@ -701,13 +698,13 @@ Betrachte nun die Fälle einzeln:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{lem}
 \label{sepvertex2}
-Durch die Kontraktion von Kanten, sofern ein inzidenter Knoten ein Trennungsknoten vom Grad zwei ist, kann die metrische Dimension eines Graphen $G$ nicht verkleinert werden.
+Durch die Kontraktion von Kanten, sofern ein inzidenter Knoten ein Separationsknoten vom Grad zwei ist, kann die metrische Dimension eines Graphen $G$ nicht verkleinert werden.
 \end{lem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEWEIS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{proof}[Beweis:]
-Sei ein Graph $G$ mit einer metrischen Basis $R_k$ und einem Trennungsknoten $v_s$ mit $deg(v_s)=2$ gegeben. Die zwei Teilgraphen welche durch das Entfernen von $v_s$ entstehen bezeichne man als $G_R$ und $G_L$.
+Sei ein Graph $G$ mit einer metrischen Basis $R_k$ und einem Separationsknoten $v_s$ mit $deg(v_s)=2$ gegeben. Die zwei Teilgraphen welche durch das Entfernen von $v_s$ entstehen bezeichne man als $G_R$ und $G_L$.
 Der Graph $G'$ resultiert durch die Kontraktion der Kante an $v_s$ und einem beliebigen Nachbarn. Da der Knoten $v_s$ auf dem Weg $p$ liegt ist er nach Voraussetzung kein Ankerknoten.\newline
-Angenommen die metrische Dimension in $G'$ ist kleiner als in $G$, dann existiert ein\\Knotenpaar $x,y$, welches in $G'$ getrennt wird, aber nicht in $G$.\\Also gibt es mindestens einen Knoten in der metrischen Basis $R_K$ des Graphens $G'$, welcher $x,y$ trennt. Sei dies der Knoten $r_k$. Dieser Knoten trennt $x,y$ nicht in dem Graphen $G$. 
+Angenommen die metrische Dimension in $G'$ ist kleiner als in $G$, dann existiert ein\\Knotenpaar $x,y$, welches in $G'$ getrennt wird, aber nicht in $G$.\\Also gibt es mindestens einen Knoten in der metrischen Basis $R_K$ des Graphen $G'$, welcher $x,y$ trennt. Sei dies der Knoten $r_k$. Dieser Knoten trennt $x,y$ nicht in dem Graphen $G$. 
 Betrachte nun die Fälle einzeln:
 \begin{itemize}
 \item Falls alle drei Knoten in dem gleichen Teilgraphen sind, so ist $v_s$ in keinem kürzesten Weg enthalten und $x,y$ getrennt, sofern sie zuvor getrennt waren.
@@ -717,17 +714,17 @@ Betrachte nun die Fälle einzeln:
 \end{itemize}
 \end{proof}
 \begin{bem}
-Nach den Lemmata \ref{sepvertex} und \ref{sepvertex2} folgt, dass neben der Kontraktion von Kanten die Erweiterung von Knoten auf einem Weg $p$ zwischen zwei Teilgraphen keinen Einfluß auf die metrische Dimension hat, sofern die Teilgraphen Ankerknoten besitzen. Insbesondere folgt für die Bestimmung der metrischen Dimension, dass Wege zwischen Teilgraphen, die Ankerknoten besitzen, zu einer Kante kontrahiert werden können, ohne dabei die metrische Dimension des Graphen zu verändern.
+Nach den Lemmata \ref{sepvertex} und \ref{sepvertex2} folgt, dass neben der Kontraktion von Kanten die Erweiterung von Knoten auf einem Weg $p$ zwischen zwei Teilgraphen keinen Einfluss auf die metrische Dimension hat, sofern die Teilgraphen Ankerknoten besitzen. Insbesondere folgt für die Bestimmung der metrischen Dimension, dass Wege zwischen Teilgraphen, die Ankerknoten besitzen, zu einer Kante kontrahiert werden können, ohne dabei die metrische Dimension des Graphen zu verändern.
 \end{bem}
 \begin{lem}
-Ist in einem Teilgraphen kein Ankerknoten enthalten, so kann durch die Kontraktion Kanten, sofern ein inzidenter Knoten ein Trennungsknoten vom Grad zwei ist, die metrische Dimension eines Graphen verkleinert werden.
+Ist in einem Teilgraphen kein Ankerknoten enthalten, so kann durch die Kontraktion Kanten, sofern ein inzidenter Knoten ein Separationsknoten vom Grad zwei ist, die metrische Dimension eines Graphen verkleinert werden.
 \end{lem}
 \begin{proof}[Beweis:] ~ \newline
 \vspace{-7mm}
 \begin{figure}[!h]
 \centering
 \includegraphics[width=290pt]{bilder/gegbspsepvertex.pdf}
-\caption{Graph $G$ (rechts) und Graph $G'$ nach der Kontraktion der Kante an blauem Trennungsknoten (links)}
+\caption{Graph $G$ (rechts) und Graph $G'$ nach der Kontraktion der Kante an blauem Separationsknoten (links)}
 \end{figure} 
 \vspace{-8mm}
 ~\linebreak
@@ -768,7 +765,7 @@ Sei ein getrennter Kreis $G=(V,E)$ mit Wegen der Länge eins und seine metrische
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Metrische Dimension von kreisähnlichen Graphklassen}
 \vspace{-5mm}
-In diesem Kapitel geht es um Erweiterungen von bekannten Graphklassen. Als erstes werden der Sonnengraph mit der unvollständigen Variante und dannach der Freundschaftsgraph und seine Verallgemeinerung untersucht.
+In diesem Kapitel geht es um Erweiterungen von bekannten Graphklassen. Als erstes werden der Sonnengraph mit der unvollständigen Variante und danach der Freundschaftsgraph und seine Verallgemeinerung untersucht.
 Von den verallgemeinerten Freundschaftsgraphen und beiden Sonnengraphen wird die metrische Dimension bestimmt unter der Voraussetzung, dass bestimmte Ankerknoten fest vorgegeben sind. Die Resultate werden beim Algorithmus zur Bestimmung der metrischen Dimension von Kaktusgraphen in Kapitel \ref{kapkaktus} und beim Beweis der metrischen Dimension der $C_j$-Bäume in Kapitel \ref{kapcjbaume} benötigt.
 \vspace{-6mm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -785,7 +782,7 @@ In der Arbeit \glqq{On k-dimensional graphs and their bases}\grqq$\;$\cite{bases
    \caption{Sonnengraph $S_{12,3}$}
    \label{bild:sonnengraph}
 \end{floatingfigure}
-Sei ein Kreis $C_n$ für $n \geq 3$ mit der Knotenmenge $|V|=\{ c_1, \ldots , c_n \}$ und $n$ Weggraphen $P_{k-1}$ für $k \geq 2$ gegeben. Die Knoten mit Grad eins auf dem $i-$ten Weg werden als $v_{i,1}$ und $v_{i,k-1}$ bezeichnet. Durch das Hinzufügen von $n$ neuen Kanten der Form $\{v_{i,1},c_i\}$ für $1 \leq i \leq n$ ensteht der zusammenhängende Sonnengraph $S_{n,k}$.\\
+Sei ein Kreis $C_n$ für $n \geq 3$ mit der Knotenmenge $|V|=\{ c_1, \ldots , c_n \}$ und $n$ Weggraphen $P_{k-1}$ für $k \geq 2$ gegeben. Die Knoten mit Grad eins auf dem $i-$ten Weg werden als $v_{i,1}$ und $v_{i,k-1}$ bezeichnet. Durch das Hinzufügen von $n$ neuen Kanten der Form $\{v_{i,1},c_i\}$ für $1 \leq i \leq n$ entsteht der zusammenhängende Sonnengraph $S_{n,k}$.\\
 Alle als $v_{i,k-1}$ bezeichneten Knoten werden Endknoten genannt, als $c_i$ bezeichnete Knoten werden Ursprungsknoten genannt und eine Knotenmenge mit den Knoten $\{c_i,v_{i,1}, \ldots ,v_{i,k-1}\}$ für $1 \leq i \leq n$ als Strahl. (vgl. Abbildung \ref{bild:sonnengraph})\\
 Für $n=1$ ist der Graph der Sterngraph aus Definition \ref{defstern}. Als Sonnengraph $S_n$ bezeichne man einen Graphen mit $n$ Strahlen beliebiger Länge $i$ mit $i \geq 1$. Ist $n=2m+1$ so nennt man den Sonnengraphen ungerade, ist $n=2m+2$ mit $m \in \mathbb{N}^+$ so bezeichnet man den Sonnengraphen als gerade.
 \par
@@ -870,7 +867,7 @@ Ein ungerader Sonnengraphen $S_n$ mit $n\geq 3$ ist getrennt wenn der maximale A
 \end{lem}
 \begin{comment}
 \begin{proof}[Beweis:]
-Angenommen zwei Knoten sind nicht getrennt. Bei einem ungeraden Sonnengraph sind zwei Knoten nur dann ungetrennt wenn sie einen gemeinsamen Bifurkator haben. Bei Strahlen der Länge eins
+Angenommen zwei Knoten sind nicht getrennt. Bei einem ungeraden Sonnengraph sind zwei Knoten nur dann nicht trennt wenn sie einen gemeinsamen Bifurkator haben. Bei Strahlen der Länge eins
 \end{proof}
 \end{comment}
 \begin{lem}
@@ -881,7 +878,7 @@ Ein gerader Sonnengraphen $S_n$ mit $n\geq 6$ ist getrennt wenn der maximale Abs
 Ist in einem ungeraden Sonnengraphen $S_n$ mit $n\geq 3$ mindestens ein Ankerknoten oder sind in einem gerade Sonnengraphen $S_m$ mit $m\geq 6$ mindestens zwei Ankerknoten so reicht die Aufnahme von einem weiteren Knoten in die metrische Basis um den Graphen zu trennen. 
 \end{lem}
 \begin{proof}[Beweis:]
-Der größte Abstand ohne Ankerknoten bei einem ungeraden Sonnengraphen mit mindestens einem Ankerknoten ist $n-1$. Setzt man den Knoten genau in die Mitte von diesem Weg, so schrupft die maximal Distanz zwischen Ankerknoten aus $\frac{n-1}{2}<\frac{n+3}{2}$.\newline\newline
+Der größte Abstand ohne Ankerknoten bei einem ungeraden Sonnengraphen mit mindestens einem Ankerknoten ist $n-1$. Setzt man den Knoten genau in die Mitte von diesem Weg, so schrumpft die maximal Distanz zwischen Ankerknoten aus $\frac{n-1}{2}<\frac{n+3}{2}$.\newline\newline
 Die maximale Distanz zwischen mindestens zwei Ankerknoten auf einem geraden Sonnengraphen ist $n-2$, dies ist der Fall wenn es genau zwei Ankerknoten gibt und diese nebeneinander liegen. Positioniert man den Knoten genau in die Mitte des Weges, so ist die neue maximale Distanz $\frac{n-2}{2}<\frac{n}{2}+1$.
 \end{proof}
 \begin{folg}
@@ -898,7 +895,7 @@ Sind in ein einem geraden Sonnengraphen in mindestens $\frac{n}{2}-1$ Strahlen A
 \subsection{Metrische Dimension unvollständiger Sonnengraphen}  	
 \label{chap_usonne} 
 \begin{defi}{\textbf{(Unvollständiger Sonnengraph $S'_{n,k}$)}}\\
-Sei ein Kreis $C_n$ für $n \geq 3$ mit der Knotenmenge $|V|=\{ c_1, \ldots , c_n \}$ und $n'$ Weggraphen $P_{k'}$ mit $1 \leq n' \leq n-1$ für $2 \leq k' \leq k$ gegeben. Die Knoten mit Grad eins auf dem $i-$ten Weg werden als $v_{i,1}$ und $v_{i,k-1}$ bezeichnet. Durch das Hinzufügen von $n'$ neuen Kanten der Form $\{v_{i,1},c_i\}$ für $1 \leq i \leq n$ ensteht der zusammenhängende Sonnengraph $S'_{n',k'}$. Gibt es mindestens zwei Strahlen mit unterschiedlicher Länge, so wird der unvollständige Sonnengraph als $S'_n$ bezeichnet. 
+Sei ein Kreis $C_n$ für $n \geq 3$ mit der Knotenmenge $|V|=\{ c_1, \ldots , c_n \}$ und $n'$ Weggraphen $P_{k'}$ mit $1 \leq n' \leq n-1$ für $2 \leq k' \leq k$ gegeben. Die Knoten mit Grad eins auf dem $i-$ten Weg werden als $v_{i,1}$ und $v_{i,k-1}$ bezeichnet. Durch das Hinzufügen von $n'$ neuen Kanten der Form $\{v_{i,1},c_i\}$ für $1 \leq i \leq n$ entsteht der zusammenhängende Sonnengraph $S'_{n',k'}$. Gibt es mindestens zwei Strahlen mit unterschiedlicher Länge, so wird der unvollständige Sonnengraph als $S'_n$ bezeichnet. 
 \end{defi}
 \begin{bem}
 \label{bemsonne}
@@ -1008,7 +1005,7 @@ $Beweis:$
 \caption{Ein markierter $C_3$}
 \end{minipage}
 \begin{minipage}[r]{250pt}
-Angenommen es gibt einen $C_3$ ohne Ankerknoten. Durch die eindeutige Verbindung zu dem Restgraphen, welche über einen Trennungsknoten läuft, folgt aus Symmetriegründen, dass die Knoten $v_{i,1}$ und $v_{i,2}$ identische Markierungen haben.\\Dies ist ein Widerspruch zu der Definition einer metrischen Basis.\\
+Angenommen es gibt einen $C_3$ ohne Ankerknoten. Durch die eindeutige Verbindung zu dem Restgraphen, welche über einen Separationsknoten läuft, folgt aus Symmetriegründen, dass die Knoten $v_{i,1}$ und $v_{i,2}$ identische Markierungen haben.\\Dies ist ein Widerspruch zu der Definition einer metrischen Basis.\\
 Die metrische Dimension eines Freundschaftsgra-\\phen $F_{n,3}$ ist mindestens gleich der Anzahl seiner $C_{3}$,\\mindestens $n$.$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\square$
 \end{minipage}
 \end{figure}
@@ -1047,11 +1044,11 @@ Sei ein Freundschaftgraph $F_n$ mit $n\geq 2$ gegeben. Angenommen alle Knoten in
 \end{lem}
 \vspace{-4mm}
 \begin{proof}[Beweis:]
-Angenommen der Freundschaftsgraph $F_n$ ist nicht getrennt. Der Knoten $u$ ist ein Trennungsknoten und die enstehenden Teilgraphen sind keine Wege und so kann $u$ lokal, in jedem Teilgraphen mit dem Knoten $u$, als Ankerknoten aufgefasst werden. Die MD von einem Kreis ist zwei, ein beliebiger Knoten kann als Ankerknoten gesetzt werden, ausgenommen der gegenüberliegende Knoten für einen geraden Kreis (Oberdimension eines Kreises \cite{upper}). Da die Kreise nach Voraussetzung getrennt sind ist mindestens ein Ankerknoten in jedem Kreis enthalten. Nach Lemma \ref{nachbartrennungsknoten} gilt bei einem ungetrennten Knotenpaar in unterschiedlichen Teilgraphen, dass zwei Nachbarn vom Trennungsknoten in den jeweiligen Teilgraphen nicht getrennt sind.\newline
-Dieser Fall tritt auf sofern mindestens zwei Knoten von allen Ankerknoten die gleichen Distanzen haben. Sei die Distanz von dem nähesten Ankerknoten $r$ in dem gleichen Teilgraphen und einem ungetrennten Knoten $v$ in dem gleichen Teilgraphen $a+1$. Der Trennungsknoten $u$ hat die Distanz $a$, und der Weg über diesen Knoten ist entweder gleich oder kürzer. Der Kreis hat die Größe $n=a+1+dist(u,r)\geq 2a+2$ und $dist(u,r)\geq \frac{n}{2}+1 > \frac{n+1}{2}$. Da es mindestens ein nicht getrenntes Paar gibt, muss die Distanz in mindestens zwei Teilgraphen $dist(u,r)> \frac{n+1}{2}$ sein.$\lightning$
+Angenommen der Freundschaftsgraph $F_n$ ist nicht getrennt. Der Knoten $u$ ist ein Separationsknoten und die entstehenden Teilgraphen sind keine Wege und so kann $u$ lokal, in jedem Teilgraphen mit dem Knoten $u$, als Ankerknoten aufgefasst werden. Die MD von einem Kreis ist zwei, ein beliebiger Knoten kann als Ankerknoten gesetzt werden, ausgenommen der gegenüberliegende Knoten für einen geraden Kreis (Oberdimension eines Kreises \cite{upper}). Da die Kreise nach Voraussetzung getrennt sind ist mindestens ein Ankerknoten in jedem Kreis enthalten. Nach Lemma \ref{nachbartrennungsknoten} gilt bei einem nicht getrennten Knotenpaar in unterschiedlichen Teilgraphen, dass zwei Nachbarn vom Separationsknoten in den jeweiligen Teilgraphen nicht getrennt sind.\newline
+Dieser Fall tritt auf sofern mindestens zwei Knoten von allen Ankerknoten die gleichen Distanzen haben. Sei die Distanz von dem nähesten Ankerknoten $r$ in dem gleichen Teilgraphen und einem nicht getrennten Knoten $v$ in dem gleichen Teilgraphen $a+1$. Der Separationsknoten $u$ hat die Distanz $a$, und der Weg über diesen Knoten ist entweder gleich oder kürzer. Der Kreis hat die Größe $n=a+1+dist(u,r)\geq 2a+2$ und $dist(u,r)\geq \frac{n}{2}+1 > \frac{n+1}{2}$. Da es mindestens ein nicht getrenntes Paar gibt, muss die Distanz in mindestens zwei Teilgraphen $dist(u,r)> \frac{n+1}{2}$ sein.$\lightning$
 \end{proof}
 \begin{defi}{\textbf{(Verallgemeinerter Freundschaftsgraph $F'_n$)}}\\
-Sei ein Freundschaftgraph $F_n$ und ein Baum $T_m$ (oder Weg $P_m$) mit $m \geq 2$ und einem ausgesuchten Knoten $u$ gegeben. Ein verallgemeinerter Freundschaftsgraph $F'_{n}=(V,E)$ ensteht durch verbinden der Knoten $u$ mit einer Kante und Kontraktion von dieser.
+Sei ein Freundschaftgraph $F_n$ und ein Baum $T_m$ (oder Weg $P_m$) mit $m \geq 2$ und einem ausgesuchten Knoten $u$ gegeben. Ein verallgemeinerter Freundschaftsgraph $F'_{n}=(V,E)$ entsteht durch verbinden der Knoten $u$ mit einer Kante und Kontraktion von dieser.
 \end{defi}
 \vspace{-2mm}
 \begin{lem}
@@ -1059,7 +1056,7 @@ Sei ein verallgemeinerter Freundschaftgraph $F'_n$ mit $n\geq 1$ mit einem Baum 
 \end{lem}
 \vspace{-3mm}
 \begin{proof}[Beweis:]
-Nach Vorraussetzung müssen die Knoten untereinander in der Komponente aber getrennt sein, dies ist nach Lemma \ref{wegtrennungsknoten} nur möglich wenn der Teilgraph ein einfacher Weg ist. Ist kein Ankerknoten in dem Teilgraphen so kann ein Knoten nach Lemma \ref{nachbartrennungsknoten2} nur dann nicht getrennt sein wenn der Nachbar vom Trennungsknoten ebenfalls nicht getrennt ist.  Es muss einen zweiten Knoten geben, damit es ein ungetrenntes Knotenpaar gibt. Dieser ist nach Lemma \ref{nachbartrennungsknoten} ein Nachbar von dem Knoten $u$ und in einem Kreis, denn falls es noch Bäume oder Wege gibt, müssen diese nach Lemma \ref{baum} Ankerknoten beinhalten. Nach Lemma \ref{fg} muss in dem Kreis $dist(u,r)>\frac{n+1}{2}$ gelten. $\lightning$
+Nach Vorraussetzung müssen die Knoten untereinander in der Komponente aber getrennt sein, dies ist nach Lemma \ref{wegtrennungsknoten} nur möglich wenn der Teilgraph ein einfacher Weg ist. Ist kein Ankerknoten in dem Teilgraphen so kann ein Knoten nach Lemma \ref{nachbartrennungsknoten2} nur dann nicht getrennt sein wenn der Nachbar vom Separationsknoten ebenfalls nicht getrennt ist.  Es muss einen zweiten Knoten geben, damit es ein ungetrenntes Knotenpaar gibt. Dieser ist nach Lemma \ref{nachbartrennungsknoten} ein Nachbar von dem Knoten $u$ und in einem Kreis, denn falls es noch Bäume oder Wege gibt, müssen diese nach Lemma \ref{baum} Ankerknoten beinhalten. Nach Lemma \ref{fg} muss in dem Kreis $dist(u,r)>\frac{n+1}{2}$ gelten. $\lightning$
 \end{proof}
 \vspace{-2mm}
 Werden nicht nur Kreise sondern Sonnen und unvollständige Sonnen an dem Knoten $u$ erlaubt und sind die Knoten in diesen Teilgraphen paarweise getrennt, so gelten die folgenden Aussagen für einen Graphen mit mindestens zwei Teilgraphen:\vspace{1mm}
@@ -1074,14 +1071,14 @@ Werden nicht nur Kreise sondern Sonnen und unvollständige Sonnen an dem Knoten 
 \vspace{-2mm}
 \begin{proof}[Beweis:]
 \begin{itemize}
-\item Um die zwei Nachbarn in dem Teilgraphen von allen Knoten zu trennen, muss nach Lemma \ref{fg} $dist(u,r)\leq \frac{n}{2}$ gelten. Diese Vorraussetzung wird nur für den gegenüberliegenden Knoten von $u$ erfüllt. Dieser Knoten mit dem Trennungsknoten als Ankerknoten trennen keinen geraden Kreis.
-\item  Setzt man einen Ankerknoten $r$ mit der Distanz $dist(u,r)= \frac{n+1}{2}$ so sind die Knoten $v,w$ getrennt. Der Trennungsknoten $u$ wird lokal als Ankerknoten aufgefasst. Ein ungerader Kreis ist durch zwei Ankerknoten getrennt. Für den ungeraden Sonnengraphen gilt $\frac{n+1}{2}< \frac{n+3}{2}$. Nach Lemma \ref{ungerade_sonne} ist er getrennt und der ungerade unvollständige Sonnenraph damit auch nach Lemma \ref{bemsonne}.
+\item Um die zwei Nachbarn in dem Teilgraphen von allen Knoten zu trennen, muss nach Lemma \ref{fg} $dist(u,r)\leq \frac{n}{2}$ gelten. Diese Vorraussetzung wird nur für den gegenüberliegenden Knoten von $u$ erfüllt. Dieser Knoten mit dem Separationsknoten als Ankerknoten trennen keinen geraden Kreis.
+\item  Setzt man einen Ankerknoten $r$ mit der Distanz $dist(u,r)= \frac{n+1}{2}$ so sind die Knoten $v,w$ getrennt. Der Separationsknoten $u$ wird lokal als Ankerknoten aufgefasst. Ein ungerader Kreis ist durch zwei Ankerknoten getrennt. Für den ungeraden Sonnengraphen gilt $\frac{n+1}{2}< \frac{n+3}{2}$. Nach Lemma \ref{ungerade_sonne} ist er getrennt und der ungerade unvollständige Sonnenraph damit auch nach Lemma \ref{bemsonne}.
 \item Setze den Knoten mit $dist(u,r)= \frac{n}{2}$ und einen beliebig weiteren als Ankerknoten. Für geraden Sonnengraphen gilt $\frac{n}{2}< \frac{n}{2}+1$. Damit ist nach Lemma \ref{gerade_sonne} der Teilgraph getrennt und der ungerade unvollständige Sonnenraph auch nach Lemma \ref{bemsonne}.
 \end{itemize}
 \vspace{-2mm}
 \end{proof}
 \vspace{-3mm}
-Außer bei einem geraden Kreis trennt ein (oder zwei) Ankerknoten gleichzeitig die Knoten im Teilgraphen und die Nachbarknoten des Trennungsknotens im Teilgraphen. Damit ist die Reihenfolge in der die Knoten getrennt werden unwichtig.
+Außer bei einem geraden Kreis trennt ein (oder zwei) Ankerknoten gleichzeitig die Knoten im Teilgraphen und die Nachbarknoten des Separationsknotens im Teilgraphen. Damit ist die Reihenfolge in der die Knoten getrennt werden unwichtig.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \vspace{-2mm}
@@ -1139,7 +1136,7 @@ Ist an einem Knoten $v$ der Klasse $A$ ein induzierter einfacher Weg, so bekommt
 Als \textbf{Komponente} in einem Kaktusgraphen werden bezeichnet:\vspace{-1mm}
 \begin{itemize}
 \item ZZK mit ggf. induzierten einfachen Wegen an Knoten der Klasse $i$\vspace{-1mm}
-\item maximale Teilgraphen inkl. Trennungsknoten welche Bäume, aber keine Wege sind 
+\item maximale Teilgraphen inkl. Separationsknoten welche Bäume, aber keine Wege sind 
 \end{itemize}
 \end{defi}
 \vspace{-1mm}
@@ -1196,7 +1193,7 @@ Dadurch gibt es eine Trennung der Knoten innerhalb der Komponenten. Um die Trenn
       \label{kaktus1}
   	 \end{figure} 
 \newpage
-In Abbildung \ref{kaktus1} wurde der Algorithmus \ref{alginit} ausgeführt und die zweifachen Zusammenhangskomponenten $\{1, \ldots, 7\}$ des Kaktusgraphen $G_k$ wurden in einer Liste von Listen gespeichert. Jeder Knoten wurde einer der Klassen $\{0,i,A\}$ mit $i \geq 1$ zugewiesen. Übersichtshalber wurde die Markierung $0$ in der Abbildung \ref{kaktus1} ausgelassen.
+In Abbildung \ref{kaktus1} wurde der Algorithmus \ref{alginit} ausgeführt und die zweifachen Zusammenhangskomponenten $\{1, \ldots, 7\}$ des Kaktusgraphen $G_k$ wurden in einer Liste von Listen gespeichert. Jeder Knoten wurde einer der Klassen $\{0,i,A\}$ mit $i \geq 1$ zugewiesen. Der Übersichtlichkeit halber wurde die Markierung $0$ in der Abbildung \ref{kaktus1} ausgelassen.
 \vspace{-3mm} 	   	 
  	   	 \begin{figure}[h!]
 		\centering
@@ -1224,7 +1221,7 @@ In der Abbildung \ref{kaktus2} wurden an den Knoten der Klasse $A$ mit dem Algor
    \caption{ZZK wurden ersetzt und die ungetrennten Amalgamationsknoten markiert}
    \label{kaktus4}
   	 \end{figure}
-\newpage In Abbildung \ref{kaktus4} wurden alle ZZK durch Bäume ersetzt mit dem Algorithmus \ref{algreplace}. Weiterhin wurden die Amalgamationsknoten überprüft, so dass nur noch Amalgamationsknoten mit mindestens zwei ungetrennten Nachbarn in der Menge sind.\newline
+\newpage In Abbildung \ref{kaktus4} wurden alle ZZK durch Bäume ersetzt mit dem Algorithmus \ref{algreplace}. Weiterhin wurden die Amalgamationsknoten überprüft, so dass nur noch Amalgamationsknoten mit mindestens zwei nicht getrennten Nachbarn in der Menge sind.\newline
 \vspace{-1mm}
   	   	 \begin{figure}[h!]
 		\centering
@@ -1234,7 +1231,7 @@ In der Abbildung \ref{kaktus2} wurden an den Knoten der Klasse $A$ mit dem Algor
   	 \end{figure}
   	 \vspace{-3mm}
   	 ~\linebreak 
-Der Algorithmus \ref{algsonderfall2} bestimmt die minimale Anzahl an Knoten, welche noch aufgenommen werden müssen. Dafür wird ein neuer Graph $T$ erschaffen und ein maximales Matching für diesen Graphen bestimmt. In diesem Beispiel gibt es zwei Amalgamationsknoten mit jeweils zwei ungetrennten Komponenten. Der Baum $T$ ist in Abbildung \ref{matching} dargestellt. Es gibt drei Kanten und das maximale Matching besteht aus zweien. Ein zusätzliches Element muss also in die metrischen Basis aufgenommen werden um beide Nachbarschaften der Amalgamationsknoten zu trennen.
+Der Algorithmus \ref{algsonderfall2} bestimmt die minimale Anzahl an Knoten, welche noch aufgenommen werden müssen. Dafür wird ein neuer Graph $T$ erschaffen und ein maximales Matching für diesen Graphen bestimmt. In diesem Beispiel gibt es zwei Amalgamationsknoten mit jeweils zwei nicht getrennten Komponenten. Der Baum $T$ ist in Abbildung \ref{matching} dargestellt. Es gibt drei Kanten und das maximale Matching besteht aus zwei. Ein zusätzliches Element muss also in die metrischen Basis aufgenommen werden um beide Nachbarschaften der Amalgamationsknoten zu trennen.
 \vspace{-1mm}
   	   	 \begin{figure}[h!]
 		\centering
@@ -1445,7 +1442,7 @@ In den Zeilen 4-22 wird für jeden Amalgamationsknoten die Liste seiner ZZK in e
 \ELSE{\STATE $MD^+(x)=1$; $insert(x \text{ in }  MD-)$;}\ENDIF
 }\ENDIF} 
 \ELSIF{($3 \leq Anker[x]<\frac{n-3}{2}$)}{\IF{($dist[x]\leq \lfloor\frac{n+3}{2}\rfloor$)}{\STATE $MD^+(x)=0$;}\ELSE{\STATE $MD^+(x)=1$; $insert(x \text{ in }  MD-)$;}\ENDIF
-}\ELSIF{($Anker[x]\geq \frac{n-3}{2}$ und $(n\; \textbf{mod} \; 2)==0$)} \STATE $MD^+(x)=0$;
+}\ELSIF{($Anker[x]\geq \frac{n-2}{2}$ und $(n\; \textbf{mod} \; 2)==0$)} \STATE $MD^+(x)=0$;
 \ELSIF{($Anker[x]\geq \frac{n-3}{2}$ und $(n\; \textbf{mod} \; 2)==1$ und $n>5$)}{ \STATE $MD^+(x)=0$;}\ENDIF
 \vspace{2mm}
 \end{algorithmic}
@@ -1558,7 +1555,7 @@ Das Einfügen von einem neuen Knoten liegt in $\mathcal{O}(1)$, genauso wie das 
 \vspace{-2mm}
 ~\linebreak
 Algorithmus \ref{algsonderfall2} berechnet für jeden Amalgamationsknoten die Größe der zusätzlichen metrischen Dimension um seine Nachbarschaft zu trennen. Dafür werden ZZK mit einem gemeinsamen Knoten untersucht und ggf. mit einer Baumstruktur ergänzt.\vspace{-1mm}\newline\newline %Dieser zusätzlich eingefügte Teilgraph stellt sicher, dass die metrische Dimension von dem Kaktusgraphen gleich der metrischen Dimension vom Baum ist.\\
-In den Zeilen 1 und 2 gibt es zwei \textsc{for}-Schleifen welche für jeden Amalgamationsknoten über die zugehörige Menge von ZZK iterieren. Für jede ZZK in einer Liste von einem Knoten git es eine oder zwei Kanten im Kaktusgraphen. Insgesamt ist die Laufzeit für diese zwei \textsc{for}-Schleifen asymptotisch in $\mathcal{O}(|V|+|E|)$.\vspace{-1mm}\newline\newline
+In den Zeilen 1 und 2 gibt es zwei \textsc{for}-Schleifen welche für jeden Amalgamationsknoten über die zugehörige Menge von ZZK iterieren. Für jede ZZK in einer Liste von einem Knoten gibt es eine oder zwei Kanten im Kaktusgraphen. Insgesamt ist die Laufzeit für diese zwei \textsc{for}-Schleifen asymptotisch in $\mathcal{O}(|V|+|E|)$.\vspace{-1mm}\newline\newline
 In der Zeile 17 wird ein neuer Graph $T$ erstellt, seine Größe ist abhängig von der Anzahl der Amalgamationsknoten und ihrer Nachbarschaft. Auf diesem Graphen, welcher ein Baum ist wird ein maximales Matching bestimmt. Es werden Blätter verwaltet und der Graph, welcher ein Baum ist, wird von außen nach innen vollständig abgebaut, dafür sind maximal zwei Durchläufe über den Baum notwendig. Somit ist die Laufzeit dieses Schritts linear.\vspace{-1mm}\newline\newline
 Mit der Größe des Baumes und des Matchings lässt sich die Anzahl der Knoten bestimmen die noch in den Graphen eingefügt werden. Diese Zahl ist kleiner oder gleich der Anzahl der ZZK in dem Graphen. Für jeden Knoten muss genau eine Kante eingefügt werden. Die asymptotische Laufzeit ist in $\mathcal{O}(|V|+|E|)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1601,16 +1598,16 @@ Seien $u,v \in V$ zwei Knoten in einem Kaktusgraphen welche nicht getrennt sind.
 \begin{enumerate}
 \item Fall: Ein Knoten liegt in keiner Komponente, also auf einem einfachen Weg. Sei dies o.B.d.A. der Knoten $u$. Der Weg ist entweder zwischen zwei Komponenten oder an einem Amalgamationsknoten.
 \begin{itemize}
-\item Der Knoten $u$ liegt auf einem Weg zwischen zwei Komponenten. Damit ist $u$ ein Trennungsknoten. Die durch das Löschen des Knoten $u$ entstehende Teilgraphen $G'$ und $G''$ beinhalten jeweils mindestens eine Komponente. Nach Definition ist eine Komponente kein Weg und nach Lemma \ref{wegtrennungsknoten} beinhaltet jeder Teilgraph der kein Weg ist und durch die Entfernung von einem Knoten ensteht mindestens einen Ankerknoten. Sei $r_i \in G'$ und $r_j \in G''$ zwei Ankerknoten, dann gilt für jeden Knoten $v \in G'$:
+\item Der Knoten $u$ liegt auf einem Weg zwischen zwei Komponenten. Damit ist $u$ ein Separationsknoten. Die durch das Löschen des Knoten $u$ entstehende Teilgraphen $G'$ und $G''$ beinhalten jeweils mindestens eine Komponente. Nach Definition ist eine Komponente kein Weg und nach Lemma \ref{wegtrennungsknoten} beinhaltet jeder Teilgraph der kein Weg ist und durch die Entfernung von einem Knoten entsteht mindestens einen Ankerknoten. Sei $r_i \in G'$ und $r_j \in G''$ zwei Ankerknoten, dann gilt für jeden Knoten $v \in G'$:
 $$ dist(v,r_j)>dist(u,r_j)\text{ und } dist(v,r_i)<dist(u,r_i)$$
 Und für jeden Knoten $w \in G'' $:
 $$ dist(w,r_j)<dist(u,r_j)\text{ und } dist(w,r_i)>dist(u,r_i)$$
 Es kann keinen Knoten mit der gleichen Markierung wie Knoten $u$ geben.
-\item Der Knoten $u$ liegt in einem Weg an einem Amalgamationsknoten $v_A$. Nach der Definiton des Amalgamationsknotens liegt dieser Knoten $v_A$ noch in mindestens zwei Komponenten, welche jeweils mindestens einen Ankerknoten beinhaltet. Nach Lemma \ref{trennungsknoten} kann der Amalgamationsknoten lokal als Ankerknoten für den Weg betrachtet werden. Ein Weg ist getrennt wenn ein Endknoten ein Ankerknoten ist, was hier der Fall ist.\\Ein Knoten mit der gleichen Markierung wie der Knoten $u$ muss also in einer Komponente liegen. Die Nachbarschaft des Amalgamationsknotens $v_A$ ist nach Voraussetzung getrennt und nach Lemma \ref{nachbartrennungsknoten2} sind alle Knotenpaare getrennt, wobei der eine Knoten auf einem einfachen Weg und der andere Knoten in einer Komponente liegen und einen gemeinsamen Knoten haben.  
+\item Der Knoten $u$ liegt in einem Weg an einem Amalgamationsknoten $v_A$. Nach der Definition des Amalgamationsknotens liegt dieser Knoten $v_A$ noch in mindestens zwei Komponenten, welche jeweils mindestens einen Ankerknoten beinhaltet. Nach Lemma \ref{trennungsknoten} kann der Amalgamationsknoten lokal als Ankerknoten für den Weg betrachtet werden. Ein Weg ist getrennt wenn ein Endknoten ein Ankerknoten ist, was hier der Fall ist.\\Ein Knoten mit der gleichen Markierung wie der Knoten $u$ muss also in einer Komponente liegen. Die Nachbarschaft des Amalgamationsknotens $v_A$ ist nach Voraussetzung getrennt und nach Lemma \ref{nachbartrennungsknoten2} sind alle Knotenpaare getrennt, wobei der eine Knoten auf einem einfachen Weg und der andere Knoten in einer Komponente liegen und einen gemeinsamen Knoten haben.  
 \end{itemize}  
 \item Fall: Ein Knoten liegt in einer Komponente $x$, sei dies O.B.d.A. der Knoten $u$. Der Knoten $v$ liegt nach Annahme nicht in dieser Komponente. 
 \begin{itemize}
-\item Der Knoten $v$ liegt in einer Komponente $y$ die keinen gemeinsamen Knoten mit der Komponente $x$ hat. Zwischen den Komponenten $x$ und $y$ ist ein einfacher Weg oder mindestens eine Komponente mit je einem Trennungsknoten an der Komponente $x$ bzw. $y$. Nach Lemma \ref{first_theorem} und der Verallgemeinerung sind alle Knotenpaare getrennt.
+\item Der Knoten $v$ liegt in einer Komponente $y$ die keinen gemeinsamen Knoten mit der Komponente $x$ hat. Zwischen den Komponenten $x$ und $y$ ist ein einfacher Weg oder mindestens eine Komponente mit je einem Separationsknoten an der Komponente $x$ bzw. $y$. Nach Lemma \ref{first_theorem} und der Verallgemeinerung sind alle Knotenpaare getrennt.
 \item Der Knoten $v$ liegt in einer Komponente $y$ die einen gemeinsamen Knoten $w$ mit der Komponente $x$ hat. Es gilt $u \neq w \neq v$. Nach Voraussetzung sind $v$ und $x$ nicht in der Nachbarschaft von $w$ und die Nachbarschaft von $w$ ist getrennt. Dies ist ein Widerspruch zu Lemma \ref{nachbartrennungsknoten}. $\lightning$
 \end{itemize}  
 \end{enumerate}
@@ -1628,14 +1625,14 @@ Zuordnung der ZZK zu den drei Klassen $\{0,i,A\}$ mit $i \geq 1$
 \item Alle Knoten mit Grad zwei sind der Klasse $0$ zugeordnet.
 \item Alle Knoten mit Grad $\geq 4$ sind der Klasse $A$ zugeordnet.
 \item Es fehlt die Zuordnung der Knoten mit Grad drei, dazu dient die Tiefensuche in Algorithmus \ref{alginit}.
-Es wird überprüft ob an diesem Knoten neben seinen Nachnarn in der ZZK nur ein einfacher Weg ist. Dann ist die Länge des Weges die Klasse $i$ des Knotens. Oder wenn es kein einfacher Weg ist, so ist die Klasse vom Knoten $A$.
+Es wird überprüft ob an diesem Knoten neben seinen Nachbarn in der ZZK nur ein einfacher Weg ist. Dann ist die Länge des Weges die Klasse $i$ des Knotens. Oder wenn es kein einfacher Weg ist, so ist die Klasse vom Knoten $A$.
 \end{itemize}
 \end{bem}
 \end{comment}
 \vspace{-12mm}
 \subsection{Die Korrektheit der Berechnung der metrischen Dimension einzelner Komponenten}
 \label{korrkomp}\vspace{-3mm}
-Alle zweifachen Zusammenhangskomponenten von Typ $K,S$ oder $US$ werden als Kreise, Sonnen oder unvollständige Sonnen aufgefasst. Die $A$-Knoten sind feste Ankerknoten. Es wurde gezeigt, dass Trennungsknoten unter bestimmten Voraussetzungen als Ankerknoten aufgefasst werden können. Es wird überprüft ob die Ankerknoten eine vollständige metrische Basis für den Teilgraphen bilden oder durch weitere Ankerknoten ergänzt werden müssen.
+Alle zweifachen Zusammenhangskomponenten von Typ $K,S$ oder $US$ werden als Kreise, Sonnen oder unvollständige Sonnen aufgefasst. Die $A$-Knoten sind feste Ankerknoten. Es wurde gezeigt, dass Separationsknoten unter bestimmten Voraussetzungen als Ankerknoten aufgefasst werden können. Es wird überprüft ob die Ankerknoten eine vollständige metrische Basis für den Teilgraphen bilden oder durch weitere Ankerknoten ergänzt werden müssen.
 \begin{itemize}
 \item[Typ $K$]
 Die metrische Dimension von einem Kreis ist zwei. In der Arbeit \glqq{Resolvability and the upper dimension of graphs}\grqq$\;$\cite{upper} wird die Oberdimension von Kreisen behandelt. Die Oberdimension ist die minimale Anzahl von Knoten so dass jede Menge eine metrische Basis ist.\newline
@@ -1670,7 +1667,7 @@ Die Berechnung der metrischen Dimension bei Bäumen erfolgt mittels Summierung v
 	\caption{Unterschiedliche Bäume mit denen die Komponenten ersetzt werden}
   	 \end{figure}
   	 \vspace{-3mm}
-Es gibt mindestens eine Komponente die ersetzt wird, sonst gäbe es keinen $A$-Knoten. Wenn es nur einen $A$-Knoten gibt - wird die Komponente durch den Baum von Typ $2$ oder höher ersetzt. Keine Komponente kann mit einem Ankerknoten getrennt werden. Es gibt einen Knoten von mindestens Grad drei. Wenn es mindestens zwei $A$-Knoten in der Komponente gibt, beinhaltet sie ebenfalls einen Knoten von mindestens Grad drei. In beiden Fällen ist an dem $A$-Knoten aus dem Baum kein neuer einfacher Weg enstanden.
+Es gibt mindestens eine Komponente die ersetzt wird, sonst gäbe es keinen $A$-Knoten. Wenn es nur einen $A$-Knoten gibt - wird die Komponente durch den Baum von Typ $2$ oder höher ersetzt. Keine Komponente kann mit einem Ankerknoten getrennt werden. Es gibt einen Knoten von mindestens Grad drei. Wenn es mindestens zwei $A$-Knoten in der Komponente gibt, beinhaltet sie ebenfalls einen Knoten von mindestens Grad drei. In beiden Fällen ist an dem $A$-Knoten aus dem Baum kein neuer einfacher Weg entstanden.
 \end{itemize}
 \vspace{-1mm}
 \end{proof}
@@ -1727,7 +1724,7 @@ Die $C_3-Bäume$ beinhalten nur Knoten vom Grad eins, zwei und drei, außerdem h
 	\caption{Entwicklung von einem Baum zum $C_{3}$-Baum}
   	 \end{figure}
 \end{bsp}
-Gegeben sei der abgebildete Baum $T_9$ mit neun Knoten. Dieser Baum enthält zwei Knoten von Grad drei, welche jeweils wie in der Definition beschrieben durch einen $C_3$ ersetzt werden. Um die Berechnung der metrischen Dimension des enstandenen Graphen zu erleichtern, werden alle Knoten vom Grad zwei kontrahiert.
+Gegeben sei der abgebildete Baum $T_9$ mit neun Knoten. Dieser Baum enthält zwei Knoten von Grad drei, welche jeweils wie in der Definition beschrieben durch einen $C_3$ ersetzt werden. Um die Berechnung der metrischen Dimension des entstandenen Graphen zu erleichtern, werden alle Knoten vom Grad zwei kontrahiert.
 \begin{lem}
 Sei $C_{3,j}$ ein beliebiges $C_{3}$-Blatt. Jede metrische Basis muss mindestens einer der folgenden Knoten $\{v_{j,1},v_{j,2},v_{j,3},v_{j,4}\}$ beinhalten.
 \end{lem}
@@ -1740,7 +1737,7 @@ Sei $C_{3,j}$ ein beliebiges $C_{3}$-Blatt. Jede metrische Basis muss mindestens
 \includegraphics[width=100pt]{bilder/beweis.pdf}}
 \caption{Ein markiertes $C_{3}$-Blatt}
 \end{floatingfigure}
-Angenommen keiner dieser Knoten ist\\in der metrischen Basis. Durch die eindeutige Verbindung zu dem Restgraphen, welche über einen Trennungsknoten läuft, folgt aus\\Symmetriegründen dass die Knoten $v_{j,3}$ und $v_{j,4}$, sowie $v_{j,1}$ und $v_{j,2}$ identische Markierungen haben.\\Dies ist ein Widerspruch zu der Definition einer metrischen Basis.\\
+Angenommen keiner dieser Knoten ist\\in der metrischen Basis. Durch die eindeutige Verbindung zu dem Restgraphen, welche über einen Separationsknoten läuft, folgt aus\\Symmetriegründen dass die Knoten $v_{j,3}$ und $v_{j,4}$, sowie $v_{j,1}$ und $v_{j,2}$ identische Markierungen haben.\\Dies ist ein Widerspruch zu der Definition einer metrischen Basis.\\
 Damit ist die metrische Dimension eines Graphen $G$ mit mindestens zwei $C_{3,j}$\\mindestens gleich der Anzahl von seinen $C_{3}$-Blätter.
 \end{proof}
 \par
@@ -1751,12 +1748,12 @@ Die metrische Dimension (MD) eines Graphen $G$ mit mindestens zwei $C_{3,j}$ ist
 %Um diese Eigenschaft zu beweisen werden zwei Sätze über die Struktur solcher $C_{3}-$$Bäume$ benötigt.
 \begin{lem}
 \label{bkb}
-Jeder Knoten eines $C_{3}$-Baumes, welcher kein Blatt ist, ist ein Trennungsknoten.
+Jeder Knoten eines $C_{3}$-Baumes, welcher kein Blatt ist, ist ein Separationsknoten.
 \end{lem}
 
 
 \begin{proof}[Beweis:]
-Angenommen es gibt einen Knoten $u$, welcher kein Blatt ist und kein Trenunngsknoten. Da der Graph nur aus Knoten von Grad drei und Grad eins besteht ist der Knotengrad von $u$ drei. Dies bedeutet $u$ hat genau drei Nachbaren $v,w,x$. Da der Knoten $u$ nach Annahme kein Trennungsknoten ist, gibt es einen Weg zwischen jedem Paar seiner Nachbarknoten.
+Angenommen es gibt einen Knoten $u$, welcher kein Blatt ist und kein Trenunngsknoten. Da der Graph nur aus Knoten von Grad drei und Grad eins besteht ist der Knotengrad von $u$ drei. Dies bedeutet $u$ hat genau drei Nachbarn $v,w,x$. Da der Knoten $u$ nach Annahme kein Separationsknoten ist, gibt es einen Weg zwischen jedem Paar seiner Nachbarknoten.
 \begin{itemize}
 \item Fall I: Ein Nachbarknoten ist ein Blatt.\\ Es kommt direkt zum Widerspruch, da durch das Löschen von $u$ sich der Knotengrad des Blattes um eins verkleinert und damit null wird, also $u$ ein getrennter einzelner Knoten ist.
 \item Fall II: Alle Nachbarknoten haben den Grad drei.\\
@@ -1777,9 +1774,9 @@ Der gesamte Graph besteht nur aus Knoten vom Grad drei oder Grad eins. In die me
 \item Fall I. Die Knoten $u$ und $v$ haben unterschiedliche Distanzen vom Knoten $r_1$ aus der metrischen Basis. Der Knoten $r_1$ trennt die Knoten $u$ und $v$.
 \item Fall II. Die Knoten $u$ und $v$ haben die gleiche Distanz vom Knoten $r_1$ aus der metrischen Basis und die Knoten $u$ und $v$ liegen im selben $C_{3,j}$.\\
 O.B.d.A. sei $b_1$ der ausgewählte Knoten $r_1$ oder $b_1$ auf allen kürzesten Wegen des Knotens $r_1$ zu jedem Knoten in dem $C_{3,j}$. Es gibt zwei nicht getrennte Knotenpaare durch den Knoten $r_1$, das Knotenpaar $\{b_2,b_3\}$ oder das Knotenpaar $\{c_2,c_3\}$.\\
-Angenommen $b_2$ und $b_3$ sind Blätter (daraus folgt das $b_1$ kein Blatt sein kann), so wird o.B.d.A. $b_3$ in die metrische Basis aufgenommen und so ist seine Markierung o.B.d.A. an der ersten Position $0$ und er ist der einzige Knoten mit dieser Markierung. Sein einziger Nachbar $c_3$, bekommt die Markierung $1$ an der ersten Position, damit ist dieser Knoten auch eindeutig markiert. Die anderen zwei Knoten $c_1$ und $c_2$ auf dem $C_3$ bekommen die Markierung $2$ an der ersten Position und ihre zwei Nachbaren $b_1$ und $b_2$, die Markierung $3$ an der ersten Position. Somit kriegen die Knotenpaare $b_2$ und $b_3$ und $c_2$ und $c_3$ unterschiedliche Markierungen und sind getrennt.\\ 	 
-Sei nun $b_3$ kein Blatt, damit ist er Teil eines anderen $C_{3,j}$, welcher zwei $C_{3,j}$-Kinder besitzt. Sind beide $C_{3,j}$- Kinder keine Blätter, so sind sie Teile eines anderen $C_{3,j}$. Damit ist $b_3$ nach Lemma \ref{bkb} ein Trennungsknoten. Der Graph ohne die Knoten $b_1$ und $b_2$ beinhaltet mindestens vier Knoten, die anderen Knoten auf diesem $C_{3,j}$ und ihre zwei $C_{3,j}$- Kinder und nach Lemma \ref{bkb2} mindestens ein Element aus der metrischen Basis.\\
-Da der Knoten $b_3$ ein Trennungsknoten ist, ist die Distanz von diesem Knoten zu $b_3$ ist echt kleiner als zu jedem anderen Knoten in dem ausgewählten $C_{3,j}$. Die Markierung von $b_3$ sei o.B.d.A. an der ersten Position $a$. Sein einziger Nachbar $c_3$ bekommt die Markierung $a+1$ an der ersten Position. Die anderen zwei Knoten $c_1$ und $c_2$ auf dem $C_3$ bekommen die Markierung $a+2$ an der ersten Position und ihre zwei Nachbaren $b_1$ und $b_2$, die Markierung $a+3$ an der ersten Position. Somit erhalten die Knotenpaare $b_2$ und $b_3$ und $c_2$ und $c_3$ unterschiedliche Markierungen und sind getrennt.
+Angenommen $b_2$ und $b_3$ sind Blätter (daraus folgt das $b_1$ kein Blatt sein kann), so wird o.B.d.A. $b_3$ in die metrische Basis aufgenommen und so ist seine Markierung o.B.d.A. an der ersten Position $0$ und er ist der einzige Knoten mit dieser Markierung. Sein einziger Nachbar $c_3$, bekommt die Markierung $1$ an der ersten Position, damit ist dieser Knoten auch eindeutig markiert. Die anderen zwei Knoten $c_1$ und $c_2$ auf dem $C_3$ bekommen die Markierung $2$ an der ersten Position und ihre zwei Nachbarn $b_1$ und $b_2$, die Markierung $3$ an der ersten Position. Somit kriegen die Knotenpaare $b_2$ und $b_3$ und $c_2$ und $c_3$ unterschiedliche Markierungen und sind getrennt.\\ 	 
+Sei nun $b_3$ kein Blatt, damit ist er Teil eines anderen $C_{3,j}$, welcher zwei $C_{3,j}$-Kinder besitzt. Sind beide $C_{3,j}$- Kinder keine Blätter, so sind sie Teile eines anderen $C_{3,j}$. Damit ist $b_3$ nach Lemma \ref{bkb} ein Separationsknoten. Der Graph ohne die Knoten $b_1$ und $b_2$ beinhaltet mindestens vier Knoten, die anderen Knoten auf diesem $C_{3,j}$ und ihre zwei $C_{3,j}$- Kinder und nach Lemma \ref{bkb2} mindestens ein Element aus der metrischen Basis.\\
+Da der Knoten $b_3$ ein Separationsknoten ist, ist die Distanz von diesem Knoten zu $b_3$ ist echt kleiner als zu jedem anderen Knoten in dem ausgewählten $C_{3,j}$. Die Markierung von $b_3$ sei o.B.d.A. an der ersten Position $a$. Sein einziger Nachbar $c_3$ bekommt die Markierung $a+1$ an der ersten Position. Die anderen zwei Knoten $c_1$ und $c_2$ auf dem $C_3$ bekommen die Markierung $a+2$ an der ersten Position und ihre zwei Nachbarn $b_1$ und $b_2$, die Markierung $a+3$ an der ersten Position. Somit erhalten die Knotenpaare $b_2$ und $b_3$ und $c_2$ und $c_3$ unterschiedliche Markierungen und sind getrennt.
 \begin{figure}[h!]
 		\centering
  		 \includegraphics[width=400pt]{bilder/bew2.pdf}
@@ -1787,7 +1784,7 @@ Da der Knoten $b_3$ ein Trennungsknoten ist, ist die Distanz von diesem Knoten z
   	 \end{figure}
 
 \item Fall III. Die Knoten $u$ und $v$ haben die gleiche Distanz vom Knoten $r_1$ aus der metrischen Basis und die Knoten $u$ und $v$ liegen in unterschiedlichen $C_{3,j}$.\\
-Der Knoten $u$ hat entweder den Grad eins und ist ein Blatt, welches ein Nachbar eines $C_3$ ist, oder den Grad drei und ist Teil eines festen $C_{3}$. Da der Graph zusammenhängend ist, gibt es in beiden Fällen eine Kante $\{x,y\}$ in dem gleichen $C_{3,j}$ mit der Eigenschaft $x$ Teil von diesem $C_{3}$, $y$ nicht und $dist(v,y) < dist(v,x)$. Durch die zweite Anforderung kann $y$ kein Blatt sein. Nach Lemma \ref{bkb} sind $x$ und $y$ zwei Trennungsknoten, und die beiden nicht zusammenhängenden Graphen, welche durch das Entfernen des jeweiligen Knoten entstehen, beinhalten nach Lemma \ref{bkb2} mindestens ein Element aus der metrischen Basis.\\
+Der Knoten $u$ hat entweder den Grad eins und ist ein Blatt, welches ein Nachbar eines $C_3$ ist, oder den Grad drei und ist Teil eines festen $C_{3}$. Da der Graph zusammenhängend ist, gibt es in beiden Fällen eine Kante $\{x,y\}$ in dem gleichen $C_{3,j}$ mit der Eigenschaft $x$ Teil von diesem $C_{3}$, $y$ nicht und $dist(v,y) < dist(v,x)$. Durch die zweite Anforderung kann $y$ kein Blatt sein. Nach Lemma \ref{bkb} sind $x$ und $y$ zwei Separationsknoten, und die beiden nicht zusammenhängenden Graphen, welche durch das Entfernen des jeweiligen Knoten entstehen, beinhalten nach Lemma \ref{bkb2} mindestens ein Element aus der metrischen Basis.\\
 Der Teilgraph $G_L$ links von der Kante $\{x,y\}$ beinhaltet den Knoten $u$ und mindestens einen Knoten aus der metrischen Basis $r_3$, der Teilgraph $G_R$ an der anderen Seite der Kante $\{x,y\}$ beinhaltet den Knoten $v$ und mindestens einen Knoten aus der metrischen Basis $r_2$. Nach Lemma \ref{first_theorem} sind die Knoten $u$ und $v$ getrennt.
 \end{itemize}
 \end{proof}
@@ -1808,7 +1805,7 @@ Für alle $3 \leq i \leq j$ und $i \in \mathbb{N}$ sei $$V'=\{v_k|v_k \in V \wed
 \end{defi}
 
 \begin{bsp}
-In der Abbildung \ref{c_jbaum} werden drei Knoten von dem Baum durch Kreise ersetzt. Der rechte Knoten wird durch einen Kreis ersetzt, wobei die Ordnung des Kreises gleich der Anzahl seiner Nachbaren ist. Die zwei anderen Kreise haben mehr Knoten, als Nachbaren, so dass jeweils ein Knoten nur Nachbaren im Kreis hat. Die Ankerknoten wurden im Baum und im $C_j$-Baum eingezeichnet.\\
+In der Abbildung \ref{c_jbaum} werden drei Knoten von dem Baum durch Kreise ersetzt. Der rechte Knoten wird durch einen Kreis ersetzt, wobei die Ordnung des Kreises gleich der Anzahl seiner Nachbarn ist. Die zwei anderen Kreise haben mehr Knoten, als Nachbarn, so dass jeweils ein Knoten nur Nachbarn im Kreis hat. Die Ankerknoten wurden im Baum und im $C_j$-Baum eingezeichnet.\\
 \vspace{-4mm}
 \begin{figure}[h!]
 		\centering 		 
@@ -1833,7 +1830,7 @@ Da alle Knoten in einem $C_j$-Baum maximal den Grad drei haben gibt es keine Ama
 \end{bem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Vergleich der MD zwischen Bäumen und $C_j$-Bäumen}
-Bei $C_3$-Bäumen war die metrische Dimension gleich der metrischen Dimension vom Baum. In der Abbildung \ref{c_jbaum} ist die metrische Dimension deutlich kleiner bei dem $C_j$-Baumen. In dem folgenden Beispiel sind zwei Graphenpaare dargestellt. Bei dem einen ist die metrische Dimension vom Baum zwei und von dem entsprechenden $C_j$-Baum parameterabhängig und bei dem Anderen umgekehrt.\\
+Bei $C_3$-Bäumen war die metrische Dimension gleich der metrischen Dimension vom Baum. In der Abbildung \ref{c_jbaum} ist die metrische Dimension deutlich kleiner bei dem $C_j$-Bäumen. In dem folgenden Beispiel sind zwei Graphenpaare dargestellt. Bei dem einen ist die metrische Dimension vom Baum zwei und von dem entsprechenden $C_j$-Baum parameterabhängig und bei dem Anderen umgekehrt.\\
 \begin{bsp} (a) Sei ein Baum $G=(V,E)$ mit $|V|=2nk+2$ wie in Abbildung \ref{c_jbaum} gegeben.
 
 \begin{figure}[ht]
@@ -1845,7 +1842,7 @@ Bei $C_3$-Bäumen war die metrische Dimension gleich der metrischen Dimension vo
 \vspace{-5mm}
 ~\linebreak
 Der Graph besteht aus $k$ Knoten mit $k\geq 3$ auf einem Pfad. Zwei Knoten sind Vorgänger von $2n$ Blättern mit $n\geq 2$ und $k-2$ Knoten sind Vorgänger von jeweils $2n-1$ Blättern. Die metrische Dimension dieses Baumes ist $2nk+2n-2k+2$.\\
-Bei dem $C_j$-Baum wurden alle Knoten durch $C_{4n+1}$ ersetzt. Dabei bleiben $2n$ Knoten ohne Blätter und die zwei Nachbarknoten werden mit jeweils einer Kante mit einem weiteren $C_j$ verbunden. Die Distanz von diesen Knoten ist $2n$. Nach Lemma \ref{usg} benötigt ein solcher Teilgraph keine weiteren Ankerknoten. Beide Knoten außen werden durch jeweils einen $C_{2n+1}$ ersetzt und jeder Nachbar von dem ursprünglichen Knoten wird mit genau einem Knoten auf dem Kreis verbunden. Dieser Teilgraph benötigt nach Lemma \ref{usg} einen Ankerknoten. Die metrische Dimension des enstandenen $C_j$-Baumes ist zwei.\newline\newline
+Bei dem $C_j$-Baum wurden alle Knoten durch $C_{4n+1}$ ersetzt. Dabei bleiben $2n$ Knoten ohne Blätter und die zwei Nachbarknoten werden mit jeweils einer Kante mit einem weiteren $C_j$ verbunden. Die Distanz von diesen Knoten ist $2n$. Nach Lemma \ref{usg} benötigt ein solcher Teilgraph keine weiteren Ankerknoten. Beide Knoten außen werden durch jeweils einen $C_{2n+1}$ ersetzt und jeder Nachbar von dem ursprünglichen Knoten wird mit genau einem Knoten auf dem Kreis verbunden. Dieser Teilgraph benötigt nach Lemma \ref{usg} einen Ankerknoten. Die metrische Dimension des entstandenen $C_j$-Baumes ist zwei.\newline\newline
 (b) Sei der Baum $G=(V,E)$ mit $2k+2$ Knoten und $k\geq 2$ wie in Abbildung \ref{baumcj} gegeben.
 \begin{figure}[ht]
 \centering
@@ -1855,7 +1852,7 @@ Bei dem $C_j$-Baum wurden alle Knoten durch $C_{4n+1}$ ersetzt. Dabei bleiben $2
 \end{figure}
 \vspace{-3mm}
 ~\linebreak
-Die metrischer Dimension ist zwei. Der $C_j$-Baum ensteht durch das Ersetzen von Knoten mit Grad drei durch den $C_6$. Verbinde drei nebeneinanderliegende Knoten auf dem Kreis mit den Nachbarn des ursprünglichen Knotens, so dass die Blätter oder das Blatt immer außen ist. Der $C_6$-Baum hat $7k+2$ Knoten und seine metrische Dimension ist $k+2$. Ohne die $k$ zusätzlichen Ankerknoten wären die rotmarkierten Knoten in Abbildung \ref{baumcj} paarweise nicht getrennt.
+Die metrischer Dimension ist zwei. Der $C_j$-Baum entsteht durch das Ersetzen von Knoten mit Grad drei durch den $C_6$. Verbinde drei nebeneinander liegende Knoten auf dem Kreis mit den Nachbarn des ursprünglichen Knotens, so dass die Blätter oder das Blatt immer außen ist. Der $C_6$-Baum hat $7k+2$ Knoten und seine metrische Dimension ist $k+2$. Ohne die $k$ zusätzlichen Ankerknoten wären die rot markierten Knoten in Abbildung \ref{baumcj} paarweise nicht getrennt.
 \end{bsp}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1863,15 +1860,15 @@ Die metrischer Dimension ist zwei. Der $C_j$-Baum ensteht durch das Ersetzen von
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Zusammenfassung}
 \vspace{-5mm}
-In dieser Arbeit wurde unter anderem ein Linearzeit-Algorithmus zur Berechnung der metrischen Dimension für Kaktusgraphen entwickelt. Damit wurden die Graphen mit algorithmisch bestimmbarer metrischer Dimension in der Komplexitätslasse \textbf{Lin} erweitert.\vspace{-1.5mm}\newline\newline
-Durch die eingeschränkte Struktur von Kaktusgraphen ist es möglich die Berechnung der metrischen Dimension des gesamten Graphen in Teilgraphen aufzuteilen, welche über die Trennungsknoten entstehen. Es konnte gezeigt werden, dass ein Trennungsknoten als Ankerknoten in einem Teilgraphen aufgefasst werden kann, sofern der andere Teilgraph kein Weg ist. Ist ein Teilgraph ein Weg so wird er nicht getrennt betrachtet, sondern zusammen mit dem anderen Teilgraph als ein Sonnengraph.\newline Weiterhin werden die Nachbarschaften der Trennungsknoten untersucht, welche durch eine Graphklasse, die Freundschaftsgraphen, als kleinstes Beispiel simuliert werden konnte. Es wurde bewiesen, dass nur die Nachbarschaften von Trennungsknoten untersucht werden müssen um die Trennung des gesamten Graphen zu gewährleisten. \vspace{-1.5mm}\newline\newline
+In dieser Arbeit wurde ein Linearzeit-Algorithmus zur Berechnung der metrischen Dimension für Kaktusgraphen entwickelt. Damit wurden die Graphen mit algorithmisch bestimmbarer metrischer Dimension in der Komplexitätsklasse \textbf{Lin} erweitert.\vspace{-1.5mm}\newline\newline
+Durch die eingeschränkte Struktur von Kaktusgraphen ist es möglich die Berechnung der metrischen Dimension des gesamten Graphen in Teilgraphen aufzuteilen, welche über die Separationsknoten entstehen. Es konnte gezeigt werden, dass ein Separationsknoten als Ankerknoten in einem Teilgraphen aufgefasst werden kann, sofern der andere Teilgraph kein Weg ist. Ist ein Teilgraph ein Weg so wird er nicht getrennt betrachtet, sondern zusammen mit dem anderen Teilgraph als ein Sonnengraph.\newline Weiterhin werden die Nachbarschaften der Separationsknoten untersucht, welche durch eine Graphklasse, die Freundschaftsgraphen, als kleinstes Beispiel simuliert werden konnte. Es wurde bewiesen, dass nur die Nachbarschaften von Separationsknoten untersucht werden müssen um die Trennung des gesamten Graphen zu gewährleisten. \vspace{-1.5mm}\newline\newline
 Die beiden Graphklassen wurden in dem Kapitel zuvor untersucht. Außerdem wurde eine weitere Graphklasse, die $C_j$-Bäume, eingeführt, dessen metrische Dimension mit Hilfe des Algorithmus berechnet werden kann.
 \vspace{-5mm}
 \section{Ähnliche Arbeiten}
 \vspace{-3mm}
 \subsection{Andere Dimensionen von Graphen}
 \vspace{-2mm}
-Insbesondere in den letzten zwei Dekaden wurde intensiv an der Thematik geforscht und zahlreiche Abwandlungen des Problems eingefüht, so u.A. die Oberdimension, die trennende Zahl und die Partitionsdimension.\newline
+Insbesondere in den letzten zwei Dekaden wurde intensiv an der Thematik geforscht und zahlreiche Abwandlungen des Problems eingeführt, so u.A. die Oberdimension, die trennende Zahl und die Partitionsdimension.\newline
 Die ersten beiden wurden in \glqq{Resolvability and the upper dimension of graphs}\grqq$\;$\cite{upper} eingeführt. Die Oberdimension eines Graphen ist die größte Menge an Knoten, so dass kein Knoten überflüssig ist und die Menge eine trennende Menge ist. Die trennende Zahl ist die Größe der kleinsten Menge an Knoten, so dass bei beliebiger Wahl von Knoten aus dem Graphen, jede Menge dieser Größe eine trennende Menge ist. Sie zu kennen ist nützlich bei Algorithmen, da aus einer Anzahl der Knoten geschlossen werden kann, dass der Graph getrennt ist, ohne die Position der Knoten zu kennen.
 \vspace{-1.5mm}\newline\newline 
 In der Arbeit \glqq{On the partition dimension of a graph}\grqq$\;$\cite{partit} wurde aus der metrischen Dimension die Partitionsdimension (PD) entwickelt. Während bei der metrischen Dimension nur einzelne Knoten in die Basis aufgenommen werden, dürfen bei der PD Mengen von Knoten aufgenommen werden. Weiterhin muss die gesuchte Partition jeden Knoten trennen und den gesamten Graphen in Mengen aufteilen. Die PD des Graphen $pd(G)$ ist die kleinste Anzahl von Mengen. Die Distanz eines Knotens zu einer Menge ist immer die kürzeste Distanz zu einem Knoten aus der Menge.\newline
@@ -1882,11 +1879,11 @@ Die metrische Dimension um eins erhöht ist eine obere Schranke für die PD\cite
 Die Autoren von der Arbeit \glqq{On the Complexity of Metric Dimension}\grqq$\;$\cite{aussenplanar} geben einen Algorithmus zur Bestimmung der metrischen Dimension von einem außenplanaren Graphen in Polynomialzeit an. Der Algorithmus arbeitet mit dem verallgemeinertem Dualbaum des Graphen und überprüft mittels dynamischer Programmierung bestimmte Eigenschaften von Teilbäumen. 
 \vspace{-1mm}
 \newline\newline
-Die metrische Dimension von blätterlosen und nicht antipodalen Block-Kaktusgraphen wird in der Arbeit \glqq{Metric Dimension of antipodal and pendant-free block-cactus graphs}\grqq$\;$\cite{cactusblock} analysiert. Die Kaktusgraphen werden durch vollständige Graphen zusätzlich zu Kreisen erweitert, aber auch starkt eingeschränkt, in dem Wege und Bäume an Kreisknoten verboten werden. In geraden Kreisen werden gegenüberliegende Trennungsknoten nicht erlaubt. Dadurch gibt es noch weniger Fallunterscheidungen. Insbesondere werden in der Arbeit nur Anforderungen an die Anzahl der Ankerknoten in bestimmten Teilgraphen gestellt.
+Die metrische Dimension von blätterlosen und nicht antipodalen Block-Kaktusgraphen wird in der Arbeit \glqq{Metric Dimension of antipodal and pendant-free block-cactus graphs}\grqq$\;$\cite{cactusblock} analysiert. Die Kaktusgraphen werden durch vollständige Graphen zusätzlich zu Kreisen erweitert, aber auch stark eingeschränkt, in dem Wege und Bäume an Kreisknoten verboten werden. In geraden Kreisen werden gegenüberliegende Separationsknoten nicht erlaubt. Dadurch gibt es noch weniger Fallunterscheidungen. Insbesondere werden in der Arbeit nur Anforderungen an die Anzahl der Ankerknoten in bestimmten Teilgraphen gestellt.
 \vspace{-5mm}
 \section{Offene Fragen und zukünftige Forschung}
 \vspace{-2mm}
-Der Algorithmus zur Berechnung der metrischen Dimension von Kaktusgraphen könnte durch das Zulassen von vollständigen Graphen, Gittern, vollständig biparteten Graphen oder auch Radgraphen als zweifache Zusammenhangskomponenten erweitert werden. Dafür müsste die metrische Dimension von diesen Graphen mit Wegen erforscht werden.\\ Die Gittergraphen mit Wegen der Länge eins an den Knoten wurden in \glqq{Corrections to the article: The metric dimension of graph with pendant edges}\grqq$\;$\cite{grid} erforscht, die metrische Dimension von solchen Graphen ist drei. Es ist hier notwendig zunächst das Ergebnis auf beliebige Wege zu erweitern und dann die Graphen zu finden, welche mit Wegen versehen sind, aber noch die metrische Dimension zwei haben. Die anderen Graphen erfordern eine detailierte Untersuchung.
+Der Algorithmus zur Berechnung der metrischen Dimension von Kaktusgraphen könnte durch das Zulassen von vollständigen Graphen, Gittern, vollständig bipartiten Graphen oder auch Radgraphen als zweifache Zusammenhangskomponenten erweitert werden. Dafür müsste die metrische Dimension von diesen Graphen mit Wegen erforscht werden.\\ Die Gittergraphen mit Wegen der Länge eins an den Knoten wurden in \glqq{Corrections to the article: The metric dimension of graph with pendant edges}\grqq$\;$\cite{grid} erforscht, die metrische Dimension von solchen Graphen ist drei. Es ist hier notwendig zunächst das Ergebnis auf beliebige Wege zu erweitern und dann die Graphen zu finden, welche mit Wegen versehen sind, aber noch die metrische Dimension zwei haben. Die anderen Graphen erfordern eine detaillierte Untersuchung.
 \vspace{-1.5mm}\newline\newline
 Ein denkbares Ziel wäre die Erweiterung des Linearzeit-Algorithmus auf außenplanare Graphen. Dazu würden zunächst alle möglichen zweifachen Zusammenhangskomponenten mit Brücken analysiert werden, so wie die Auswirkungen von Komponenten über zwei Knoten aufeinander. Ein Anfang wären die maximalen außenplanaren Graphen, da es weniger unterschiedliche Fälle gibt.
 \vspace{-1.5mm}\newline\newline
