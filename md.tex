@@ -17,7 +17,7 @@
 
 % Geben Sie das Datum des Beginns and Ende der Bachelorarbeit ein
 \newcommand{\beginndatum}{28. Juni 2012}
-\newcommand{\abgabedatum}{27. Dezember 2012}
+\newcommand{\abgabedatum}{28. Dezember 2012}
 
 % Geben Sie die Namen des Erst- and Zweitgutachters an
 \newcommand{\erstgutachter}{Prof. Dr. Egon Wanke}
@@ -49,7 +49,7 @@
 %Die metrische Dimension \ldots\\
 %
 \section*{\ifthenelse{\equal{\sprache}{deutsch}}{Danksagung}{Acknowledgments}}
-An dieser Stelle möchte ich mich besonders bei meinem Professor Dr. Egon Wanke bedanken, der mich während meiner Masterarbeit umfangreich betreut und unterstützt hat. Weiterhin danke ich Stefan Hoffmann für seine begleitende Hilfestellung. Mein ganz besonderer Dank gilt Philipp Hagemeister, Sven Hager und Philipp Körner, die mir bei Formulierungen und auch bei der Korrektur der Masterarbeit sehr weiter geholfen haben. 
+An dieser Stelle möchte ich mich besonders bei meinem Professor Dr. Egon Wanke bedanken, der mich während meiner Masterarbeit umfangreich betreut und unterstützt hat. Weiterhin danke ich Stefan Hoffmann für seine begleitende Hilfestellung.\newline Mein ganz besonderer Dank gilt Philipp Hagemeister, Sven Hager, Philipp Körner und Christian Lange, die mir bei Formulierungen und auch bei der Korrektur der Masterarbeit sehr weiter geholfen haben. 
 \clearpage 
 %Die metrische Dimension \ldots\\
 
@@ -62,8 +62,8 @@ An dieser Stelle möchte ich mich besonders bei meinem Professor Dr. Egon Wanke 
 
 Viele algorithmische Probleme können auf Graphen zurückgeführt werden. Dies macht die Erforschung von Graphen sowohl aus theoretischer als auch aus praktischer Sicht interessant. Einige dieser Probleme sind für allgemeine Graphen nicht effizient lösbar, können aber oft auf eingeschränkten Graphen schnell gelöst werden. Daher gewinnt die Erforschung von Problemen auf speziellen Graphen an Bedeutung. 
 Ein Teil dieser Probleme beschäftigt sich mit Distanzen in Graphen, unter anderem dem Bestimmen der metrischen Dimension.\newline\newline
-Die metrische Dimension eines Graphen ist die Größe einer kleinsten Knotenmenge. In dem Graphen darf es kein Knotenpaar geben, dass zu allen Knoten aus dieser Menge die gleichen Distanzwerte hat. Es darf keine kleinere Knotenmenge geben, die diese Eigenschaft erfüllt.\newline\newline 
-Die Bestimmung der metrischen Dimension eines beliebigen Graphen ist NP-vollständig, selbst wenn der Graph planar ist. Im Allgemeinen hat es sich außerdem als schwierig erwiesen Aussagen über Teilgraphen oder Kompositionen von unterschiedlichen Graphen mit bekannter metrischer Dimension zu machen. Es gibt jedoch bekannte Graphklassen mit konstanter oder parameterabhängiger metrischer Dimension.\newline\newline Bisher kann die metrische Dimension von Bäumen in Linearzeit und von außenplanaren Graphen in Polynomialzeit bestimmt werden.\newline\newline In dieser Arbeit werden einige Zusammenhänge bewiesen und zwei bestimmte Graphklassen ausführlich betrachtet. Die erste Graphklasse, Freundschaftsgraphen aus \glqq{The resolving graph of amalgamation of cycles}\grqq$\;$\cite{amal}, wird verallgemeinert, wobei nicht nur Kreise sondern auch Bäume und Wege an einem bestimmten Knoten erlaubt werden.\newline Die zweite Graphklasse, Sonnengraphen aus \glqq{On $k$-dimensional graphs and their bases}\grqq$\;$\cite{bases}, wird mit beliebig langen Wegen an Stelle von Wegen der Länge eins betrachtet. Außerdem werden Teilgraphen von Sonnengraphen analysiert, welche eine kleinere metrische Dimension als die Sonnengraphen selbst haben können.\newline\newline 
+Die metrische Dimension eines Graphen ist die Größe einer kleinsten Knotenmenge mit der Eigenschaft, dass es in dem Graphen kein Knotenpaar geben darf, welches zu allen Knoten aus dieser Menge die gleichen Distanzwerte hat. Weiterhin darf es keine kleinere Knotenmenge geben, die diese Eigenschaft erfüllt.\newline\newline 
+Die Bestimmung der metrischen Dimension eines beliebigen Graphen ist NP-vollständig, selbst wenn der Graph planar ist. Im Allgemeinen hat es sich außerdem als schwierig erwiesen, Aussagen über Teilgraphen oder Kompositionen von unterschiedlichen Graphen mit bekannter metrischer Dimension zu machen. Es gibt jedoch bekannte Graphklassen mit konstanter oder parameterabhängiger metrischer Dimension.\newline\newline Bisher kann die metrische Dimension lediglich von Bäumen in Linearzeit und von außenplanaren Graphen in Polynomialzeit bestimmt werden.\newline\newline In dieser Arbeit werden einige Eigenschaften gezeigt und zwei bestimmte Graphklassen ausführlich betrachtet. Die erste Graphklasse, die Freundschaftsgraphen, wird verallgemeinert, wobei nicht nur Kreise sondern auch Bäume und Wege an einem bestimmten Knoten erlaubt werden.\newline Die zweite Graphklasse, die Sonnengraphen, wird mit beliebig langen Wegen an Stelle von Wegen der Länge eins betrachtet. Außerdem werden Teilgraphen von Sonnengraphen analysiert, welche eine kleinere metrische Dimension als Sonnengraphen selbst haben können.\newline\newline 
 Diese zwei Graphklassen und einige Zusammenhänge ermöglichen es einen Linearzeit-Algorithmus für Kaktusgraphen zu entwerfen. Bei Kaktusgraphen dürfen Kreise keine gemeinsamen Kanten haben, dadurch ist die Struktur von solchen Graphen sehr eingeschränkt. Diese Eigenschaft nutzt der Algorithmus aus.\newline\newline Durch dieses Ergebnis wurde die Menge der Graphen für welche die metrische Dimension in Linearzeit bestimmt werden kann erweitert.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% ENDE ZUSAMMENFASSUNG %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -80,7 +80,7 @@ Diese zwei Graphklassen und einige Zusammenhänge ermöglichen es einen Linearze
 
 \chapter{Einleitung}
 \vspace{-3mm}
-In einem mehrdimensionalem Raum befindet sich ein Agent (Schiff in Abbildung \ref{schiff}). In diesem Raum gibt es weder eine Richtung noch hat der Agent Sicht über den Raum. Seine Aufgabe ist es seine Position zu erfahren. Er kann via Signalen mit Stationen kommunizieren, welche irgendwo in diesem Raum verteilt sind, und diese Informationen sollten seine Position liefern. Aus Kostengründen muss die Anzahl der Stationen minimal gehalten werden, und zur Lösung des Problems muss jede Position in dem Raum eindeutig sein.\newline\newline 
+In einem mehrdimensionalem Raum befindet sich ein Agent (Schiff in Abbildung \ref{schiff}). In diesem Raum gibt es weder eine Richtung noch hat der Agent Sicht über den Raum. Seine Aufgabe ist es, seine Position zu erfahren. Er kann via Signalen mit Stationen kommunizieren, welche in dem Raum verteilt sind, und diese Informationen sollten seine Position liefern. Aus Kostengründen muss die Anzahl der Stationen minimal gehalten werden und zur Lösung des Problems muss jede Position in dem Raum eindeutig sein.\newline\newline 
 \vspace{-14mm}
 \newline
 \begin{figure}[h]
@@ -89,14 +89,14 @@ In einem mehrdimensionalem Raum befindet sich ein Agent (Schiff in Abbildung \re
 \caption{Beispiel für ein Schiff, welches seine Position bei Stationen anfragt}
 \label{schiff}
 \end{figure}
-\vspace{-3mm}
+\vspace{-4mm}
 ~\linebreak
-Von dieser Problematik motiviert veröffentlichte Slater im Jahre 1975 den Artikel \glqq{Leaves of Trees}\grqq$\;$\cite{slater} in dem es um seine Forschung an dem Langstreckennavigationssystem \glqq{U.S. Sonar}\grqq$\;$und Küstenwache \glqq{Loran}\grqq$\;$ging. Er stellte den Raum durch einen Graphen dar, den Agenten als einen Knoten und die Sendestationen als eine ausgewählte Menge von Knoten, welche er als ein \glqq{locating set}\grqq$\;$ bezeichnete. Die Kennung eines Knotens sollte  die Distanzen der kürzesten Wege zu jedem ausgewählten Knoten sein.\vspace{-1mm}\newline\newline Unabhängig führten Harary und Melter in ihrer Arbeit \glqq{On the metric dimension of a graph}\grqq$\;$\cite{harary} im Jahre 1976 dasselbe Problem ein. Sie benannten die minimale Mengen von Knoten, durch welche jeder Knoten eine eindeutige Kennung bekommt, als eine metrische Basis und die Anzahl dieser Knoten als die metrische Dimension eines Graphen.\vspace{-1mm}\newline\newline
-Drei Jahre später gab es das erste Ergebnis zur Komplexität des Problems in dem Buch von Garey und Johnson: \glqq{Computers and Intractability: A Guide to the Theory of NP-Completeness}\grqq$\;$\cite{book}. Eine Bemerkung in dem Buch sagte aus, dass durch eine Reduktion von dem Problem 3DM gezeigt werden kann, dass das Problem ob ein gegebener Graph eine metrische Dimension kleiner $k$ hat NP-vollständig ist. Im Jahre 1993 wurde die metrische Dimension  von Mark Johnson in seiner Arbeit \glqq{Structure-activity maps for visualizing the graph variables arising in drug design}\grqq$\;$\cite{drug} für den Umgang mit großen chemischen Daten entdeckt. Zu weiteren praktischen Anwendungen seitdem gehören u.a. Netzwerkerkennung z.B. aus \glqq{Network Discovery and Verification}\grqq$\;$\cite{netzwerk}, Umgang mit hierarchischen Datenstrukturen z.B. aus \glqq{Metric bases in digital geometry}\grqq$\;$\cite{hier} und die weiteren Arbeiten von Slater zur Lokalisierung als praktische Anwendungen der metrischen Dimension. Es gibt außerdem einen Zusammenhang zwischen dem Münzwiegeproblem, Mastermind Spielen und der Bestimmung der metrischen Dimension von Hyperwürfeln in \glqq{On Metric Generators of Graphs}\grqq$\;$\cite{tannier}.\newpage
+Von dieser Problematik motiviert veröffentlichte Slater im Jahre 1975 den Artikel \glqq{Leaves of Trees}\grqq$\;$\cite{slater} in dem es um seine Forschung an dem Langstreckennavigationssystem \glqq{U.S. Sonar}\grqq$\;$und Küstenwache \glqq{Loran}\grqq$\;$ging. Er stellte den Raum durch einen Graphen dar, den Agenten als einen Knoten und die Sendestationen als eine ausgewählte Menge von Knoten, welche er als ein \glqq{locating set}\grqq$\;$ bezeichnete. Die Kennung eines Knotens sollte die Distanzen der kürzesten Wege zu jedem ausgewählten Knoten sein.\vspace{-1mm}\newline\newline Unabhängig von Slater führten Harary und Melter in ihrer Arbeit \glqq{On the metric dimension of a graph}\grqq$\;$\cite{harary} im Jahre 1976 dasselbe Problem ein. Sie bezeichneten die minimalen Mengen von Knoten, durch welche jeder Knoten eine eindeutige Kennung bekommt, mit metrische Basis und die Anzahl dieser Knoten als die metrische Dimension eines Graphen.\vspace{-2mm}\newline\newline
+Drei Jahre später gab es das erste Ergebnis zur Komplexität des Problems in dem Buch \glqq{Computers and Intractability: A Guide to the Theory of NP-Completeness}\grqq$\;$\cite{book}. Eine Bemerkung in dem Buch sagte aus, dass durch eine Reduktion von dem Problem 3DM gezeigt werden kann, dass das Problem ob ein gegebener Graph eine metrische Dimension kleiner $k$ hat NP-vollständig ist. Im Jahre 1993 wurde die metrische Dimension von Mark Johnson in seiner Arbeit \glqq{Structure-activity maps for visualizing the graph variables arising in drug design}\grqq$\;$\cite{drug} für den Umgang mit großen chemischen Daten entdeckt. Zu weiteren praktischen Anwendungen gehören u.a. Netzwerkerkennung z.B. aus \glqq{Network Discovery and Verification}\grqq$\;$\cite{netzwerk}, Umgang mit hierarchischen Datenstrukturen z.B. aus \glqq{Metric bases in digital geometry}\grqq$\;$\cite{hier} und die weiteren Arbeiten von Slater zur Lokalisierung als praktische Anwendungen der metrischen Dimension. Es gibt außerdem einen Zusammenhang zwischen dem Münzwiegeproblem, Mastermind Spielen und der metrischen Dimension von Hyperwürfeln in \glqq{On Metric Generators of Graphs}\grqq$\;$\cite{tannier}.\newpage
 
-Seit der Einführung der metrischen Dimension wurde diese von zahlreichen Graphklassen bestimmt z.B. von Kreisen \cite{landmarks}, Radgraphen \cite{wheel}, vollständig bipartiten Graphen \cite{upper}, Gittern \cite{landmarks}, Honeycomb Netzwerken \cite{honey}, kreisartige Netzwerken \cite{circulant} und Cayley Digraphen\cite{cayley}.\vspace{-1mm}\newline\newline Hervorzuheben sind auch die vollständigen Charakteresierung von bestimmten metrischen Dimensionen, wie z.B. Wege als einzige Graphen mit metrischer Dimension eins\cite{landmarks}, oder vollständige Graphen mit metrischer Dimension $|V|-1$ \cite{upper}. 
+Seit der Einführung der metrischen Dimension wurde diese von zahlreichen Graphklassen bestimmt z.B. von Kreisen \cite{landmarks}, Radgraphen \cite{wheel}, vollständig bipartiten Graphen \cite{upper}, Gittern \cite{landmarks}, Honeycomb Netzwerken \cite{honey}, kreisartigen Netzwerken \cite{circulant} und Cayley Digraphen\cite{cayley}.\vspace{-1.5mm}\newline\newline Hervorzuheben sind auch die vollständigen Charakterisierung von bestimmten metrischen Dimensionen, wie z.B. Wegen als einzige Graphen mit metrischer Dimension eins\cite{landmarks} oder vollständigen Graphen mit metrischer Dimension $|V|-1$ \cite{upper}. 
 Eine vollständige Charakterisierung gibt es ebenfalls von Graphen mit metrischen Dimension $|V|-2$ \cite{upper} und $|V|-3$ (\cite{n-31,n-32}).\\
-Neben einer weiteren Reduktion von der metrischer Dimension allgemeiner Graphen auf 3SAT in \glqq{Landmarks in graphs}\grqq$\;$\cite{landmarks}, konnte gezeigt werden, dass das Problem der metrischen Dimension u.A. für planare Graphen in \glqq{On the Complexity of Metric Dimension}\grqq$\;$\cite{aussenplanar} und bipartite Graphen in \glqq{An efficient representation of Benes networks and its applications}\grqq$\;$\cite{bipartitnp} ebenfalls NP-vollständig ist. 
+Es wurde eine weitere Reduktion der metrischer Dimension allgemeiner Graphen von 3SAT in \glqq{Landmarks in graphs}\grqq$\;$\cite{landmarks} angegeben. Außerdem konnte gezeigt werden, dass das Problem der metrischen Dimension u.a. für planare Graphen in \glqq{On the Complexity of Metric Dimension}\grqq$\;$\cite{aussenplanar} und bipartite Graphen in \glqq{An efficient representation of Benes networks and its applications}\grqq$\;$\cite{bipartitnp} ebenfalls NP-vollständig ist. 
 Neben dem Linearzeit-Algorithmus für Bäume aus \glqq{On the metric dimension of a graph}\grqq$\;$\cite{harary} und \glqq{Landmarks in graphs}\grqq$\;$\cite{landmarks} konnte in \glqq{On the Complexity of the Metric Dimension}\grqq$\;$\cite{aussenplanar} gezeigt werden, dass sich die metrische Dimension von außenplanaren Graphen in Polynomialzeit berechnen lässt.\vspace{-1mm}\newline\newline
 In dieser Arbeit wird die Lücke zwischen einer Linearzeit-Lösung und einer Polynomialzeit-Lösung verfeinert durch die Angabe eines Linearzeit-Algorithmus zur Berechnung der metrischen Dimension für Kaktusgraphen. Kaktusgraphen sind außenplanare Graphen, wobei Kreise maximal einen gemeinsamen Knoten haben dürfen. Trotz der eingeschränkten Struktur sind sie allgemeiner als Bäume.
 \vspace{-3mm}
@@ -108,8 +108,8 @@ In dieser Arbeit wird die Lücke zwischen einer Linearzeit-Lösung und einer Pol
 \end{figure}
 \vspace{-2mm}
 ~\linebreak
-Die ersten beiden Kapitel dienen als Einführung in die Terminologie von Graphentheorie und metrischer Dimension. Es werden bekannte Ergebnisse und wichtige Zusammenhänge dargestellt.\\In Kapitel 3 werden Teilgraphen mit deutlich größerer metrischer Dimension als der Graph selbst betrachtet. Anschließend werden verschiedene Eigenschaften von Graphen bezüglich metrischer Dimension bewiesen.\\ 
-Das vierte Kapitel konzentriert sich auf zwei besondere Graphklassen, die Freundschafts- und Sonnengraphen, welche auf unterschiedliche Arten untersucht werden.\\Der Kern der Arbeit ist der Algorithmus zur Berechnung der Kaktusgraphen und die Analyse seiner Laufzeit und Korrektheit in Kapitel 5.\\In Kapitel 6 wird eine Graphklasse, die $C_j$- Bäume, welche eingeschränkte Kaktusgraphen sind, eingeführt und analysiert. Am Ende gibt es eine Zusammenfassung, einen Ausblick und einen Vergleich mit anderen Arbeiten zur metrischen Dimension spezieller Graphklassen.
+Diese Arbeit ist wie folgt aufgebaut: Die ersten beiden Kapitel dienen als Einführung in die Terminologie von Graphentheorie und metrischer Dimension. Es werden bekannte Ergebnisse und wichtige Zusammenhänge dargestellt.\\In Kapitel 3 werden Teilgraphen mit deutlich größerer metrischer Dimension als der Graph selbst betrachtet. Anschließend werden verschiedene Eigenschaften von Graphen bezüglich metrischer Dimension bewiesen.\\ 
+Das vierte Kapitel konzentriert sich auf zwei besondere Graphklassen, die Freundschafts- und Sonnengraphen, welche auf unterschiedliche Arten untersucht werden. Der Kern der Arbeit ist der Algorithmus zur Berechnung der Kaktusgraphen und die Analyse seiner Laufzeit und Korrektheit in Kapitel 5.\\In Kapitel 6 wird eine Graphklasse, die $C_j$- Bäume, eingeführt und analysiert. Als Abschluss folgt eine Zusammenfassung, ein Ausblick und ein Vergleich mit anderen Arbeiten zur metrischen Dimension spezieller Graphklassen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -125,7 +125,7 @@ Die gesamten Operationen werden auf den natürlichen Zahlen durchgeführt, welch
 \subsection{Grundlagen}
 Ein \emph{Graph} $G = (V, E)$ besteht aus einer endlichen Menge von \emph{Knoten} $V = \{v_1 ,\ldots, v_n\}$ und einer endlichen Menge $E$ von \emph{Kanten}. In einem ungerichteten Graphen ist jede Kante $e$ eine Menge $\{u, v\}$ bestehend aus zwei Knoten $u, v \in V$:\vspace{-1mm}
 $$E \subseteq \{\{u, v\}\; |\; u, v \in V, u \neq v\}$$
-In graphischen Darstellungen werden Knoten als Punkte und Kanten als Linien, welche zwei Punkte verbinden, gezeichnet. Solche Abbildungen werden alternativ als Einbettungen in der Ebene bezeichnet. Obwohl ein Graph im Allgemeinen mehrere graphische Darstellungen besitzt, ist er durch die Angabe einer Abbildung oder durch die Angabe der Knoten- und Kantenmengen eindeutig definiert.\vspace{-1mm}\newline\newline
+In graphischen Darstellungen werden Knoten als Punkte und Kanten als Linien, welche zwei Punkte verbinden, gezeichnet. Solche Abbildungen werden alternativ als Einbettungen in die Ebene bezeichnet. Obwohl ein Graph im Allgemeinen mehrere graphische Darstellungen besitzt, ist er durch die Angabe einer Abbildung oder durch die Angabe der Knoten- und Kantenmengen eindeutig definiert.\vspace{-1mm}\newline\newline
 Die Anzahl von Knoten $|V|$ in einem Graphen $G$ ist die \emph{Ordnung} von $G$ und die Anzahl der Kanten $|E|$ die \emph{Größe} von $G$. Zwei Knoten $u$ und $v$ bezeichnet man als \emph{adjazent} im Graphen $G=(V,E)$, wenn eine Kante $\{u, v\} \in E$ existiert.\\Die Menge der Knoten, die zu einem gegebenen Knoten $v$ adjazent ist, ist seine \emph{Nachbarschaft} $\mathcal{N}(v)$. Ein Knoten $u \in V$ und eine Kante $e \in E$ sind \emph{inzident}, sofern gilt: \vspace{-1mm} $$e \in \{\{a,b\}\;|\;a=u \vee b=u\}$$ \vspace{-4mm}~\linebreak
 Die Anzahl inzidenter Kanten eines Knotens $v$ wird \emph{Grad $\deg(v)$ des Knotens} $v$ bezeichnet.\\
 \vspace{-8mm}
@@ -147,7 +147,7 @@ Dieser Graph hat die Ordnung sieben und die Größe zehn. Die Knoten $v_1$ und $
 Ein Graph $G'=(V',E')$ heißt \emph{Teilgraph} $G'\subseteq G$ eines Graphen $G=(V,E)$, wenn $V'\subseteq V$ und $E'\subseteq E$. Gehört jede Kante, die zwei Knoten von $G'$ in $G$ verbindet, zu $G'$, so heißt $G'$ der von $V'$ \emph{induzierte Teilgraph} von $G$. 
 %Unter dem \emph{Löschen einer Kante} $e$ von $G$ versteht man die Bildung des Teilgraphen $G \backslash e = (V, E')$ mit $E'=E  \backslash e$. Unter dem \emph{Löschen eines Knotens} $v$ von $G$ versteht man die Bildung des Teilgraphen $G \backslash v = (V', E')$ mit $V'=V  \backslash v$ und $E'=E \backslash \{\{u, w\}\;|\; u=v \vee w = v\}$.\vspace{-2mm}
 \subsection{Kürzeste Wege und Zusammenhangskomponenten}
-Ein \emph{Weg} $p$ in $G$ von Knoten $u$ nach Knoten $w$ ist eine Folge von Knoten $$p=(v_1,\ldots,v_j)$$ mit $v_1=u$ und $v_j=w$ mit $\{v_{i-1},v_i\}\in E$ für $1 <i \leq j$. Der Knoten $u$ wird als \emph{Startknoten} bezeichnet und der Knoten $w$ als \emph{Endknoten}.\\Einen Weg $p$ nennt man \emph{einfach}, wenn alle Knoten $v_1,\ldots,v_j$ paarweise verschieden sind. Zwei Wege sind \emph{knotendisjunkt} sofern alle Knoten auf diesen Wegen, ausgenommen Start- und Endknoten, paarweise verschieden sind. Die \emph{Länge} eines Weges $p$ von Knoten $u$ nach Knoten $w$ entspricht der Anzahl seiner Kanten.\vspace{-1mm}\newline\newline
+Ein \emph{Weg} $p$ in $G$ von Knoten $u$ nach Knoten $w$ ist eine Folge von Knoten $$p=(v_1,\ldots,v_j)$$ mit $v_1=u$ und $v_j=w$ mit $\{v_{i-1},v_i\}\in E$ für $1 <i \leq j$. Der Knoten $u$ wird als \emph{Startknoten} bezeichnet und der Knoten $w$ als \emph{Endknoten}.\\Einen Weg $p$ nennt man \emph{einfach}, wenn alle Knoten $v_1,\ldots,v_j$ paarweise verschieden sind. Zwei Wege sind \emph{knotendisjunkt}, sofern alle Knoten auf diesen Wegen - ausgenommen Start- und Endknoten - paarweise verschieden sind. Die \emph{Länge} eines Weges $p$ von Knoten $u$ nach Knoten $w$ entspricht der Anzahl seiner Kanten.\vspace{-1mm}\newline\newline
 Die \emph{Distanz} $dist(u,w)$ zweier Knoten $u,w$ eines Graphen $G$ ist die \emph{Länge des kürzesten Weges} in $G$ zwischen $u$ und $w$, falls mindestens ein solcher Weg existiert, ansonsten ist die kürzeste Weglänge $\infty$. Der \emph{Durchmesser} $diam(G)$ eines Graphen ist\\die maximale Distanz aller Knotenpaare aus $G$.
 
 \begin{figure}[h!]
@@ -177,7 +177,7 @@ Sei der Graph $G_3=(V_3,E_3)$ gegeben. Der Knoten $x$ ist ein Separationsknoten.
   	 \end{figure}
   	\newpage
 \subsection{Kontraktion, Erweiterung und der Bifurkator}
-Sei ein Graph $G=(V,E)$ gegeben. Unter einer \emph{Kontraktion} von $e \in E$ mit $e=\{u,v\}$ versteht man die Bildung des neuen Graphen $G'=(V',E')$ mit $V'=V \setminus{\{u,v\}} \cup w$ und $E'=\{E\setminus\{\{w,x\}\;|\;(w=(u \vee v)) \vee (x=(u\vee v))\} \cup\\ \{\{w,x\}\;|\;w=(u \vee v) \vee (x\neq u)\vee(x \neq v)\} \cup \{\{w,x\}\;|\;(w\neq u) \vee (w \neq v) \vee x=(u\vee v)\} \}$\newline\newline
+Sei ein Graph $G=(V,E)$ gegeben. Unter einer \emph{Kontraktion} von $e \in E$ mit $e=\{u,v\}$ versteht man die Bildung des neuen Graphen $G'=(V',E')$ mit $V'=V \setminus{\{u,v\}} \cup w$ und $E'=\{E\setminus\{\{w,x\}\;|\;(w=(u \vee v)) \vee (x=(u\vee v))\} \cup\\ \{\{w,x\}\;|\;w=(u \vee v) \vee (x\neq u)\vee(x \neq v)\} \cup \{\{w,x\}\;|\;(w\neq u) \vee (w \neq v) \vee x=(u\vee v)\} \}$.\newline\newline
 Eine \emph{Erweiterung} von $e \in E$ mit $e=\{u,v\}$ um $w \notin V$ ist die Bildung eines neuen Graphen $G'=(V',E')$ mit $V'=V \cup w$ und $E'=\{E \setminus \{u,v\} \cup (\{u,w\} \wedge \{w,v\})\}$\newline
 \vspace{-4mm}
 \begin{figure}[ht]
@@ -193,11 +193,11 @@ Sei ein Graph $G=(V,E)$ gegeben. Für die Knoten $z,x$ und $y$ besteht die Menge
 \end{figure}
 \vspace{-2mm}  	
 ~\linebreak
-Alle Knoten in der Menge $B$ für die Knoten $z,x$ und $y$ haben den gleichen Bifurkator.
-\vspace{-3mm}
+Knoten in der Menge $B$ für die Knoten $z,x$ und $y$ haben den gleichen Bifurkator.
+\vspace{-7mm}
 \subsection{Laufzeit und NP-Vollständigkeit}
-Ein Maß für die Güte eines Algorithmus ist seine Laufzeit. Die \emph{Rechenzeit (Laufzeit)} eines Programms ist die Anzahl der elementaren Schritte. Als elementarer Schritt kann eine Anweisung in einer Turingmaschine \cite{turing} oder eine Zuweisung, eine arithmetische Operation, ein Vergleich, ein Lese- oder Schreibvorgang angesehen werden.\newline\newline
-Die Messung erfolgt immer in Abhängigkeit der Größe der Eingabe. Die Laufzeit wird in einer asymptotischen Notation beschrieben, um von Konstanten und additiven Faktoren zu abstrahieren.
+Ein Maß für die Güte eines Algorithmus ist seine Laufzeit. Die \emph{Rechenzeit (Laufzeit)} eines Programms ist die Anzahl der elementaren Schritte. Als elementarer Schritt kann eine eine Zuweisung, eine arithmetische Operation, ein Vergleich, ein Lese- oder Schreibvorgang angesehen werden.\vspace{-1mm}\newline\newline
+Die Messung erfolgt immer in Abhängigkeit der Größe der Eingabe, welche als $n$ gekennzeichnet wird. Bei Graphen ist die Eingabe $n=|V|+|E|$. Die Laufzeit wird in einer asymptotischen Notation beschrieben, um von Konstanten und additiven Faktoren zu abstrahieren.
 Sei $g: {{\mathbb N}} \rightarrow {{\mathbb N}}$ eine Funktion.\newline\newline
 Dann ist $\mathcal{O}(g) = \left\{ f:{{\mathbb N}} \rightarrow {{\mathbb N}} ~\left|~
 \begin{array}{l}
@@ -205,11 +205,15 @@ Dann ist $\mathcal{O}(g) = \left\{ f:{{\mathbb N}} \rightarrow {{\mathbb N}} ~\l
 x \geq x_0 \Rightarrow f(x) \leq c \cdot g(x)
 \end{array} \right. \right\}$\cite{buchwanke}.\newline\newline
 Die Funktionen in $\mathcal{O}(g)$ wachsen \emph{asymptotisch höchstens} so wie $g$. Die asymptotische Komplexität beachtet immer den \emph{schlimmsten Fall (worst-case)}.\\
-Algorithmen oder Probleme mit ihrer besten algorithmischen Lösung für den schlimmsten Fall werden nach ihrem Laufzeitaufwand zu Komplexitätsklassen zusammengefasst. Drei Komplexitätsklassen, welche in dieser Arbeit angesprochen werden, sind folgend definiert:
+Es gilt $Lin(n)=\mathcal{O}(n)$ und $Pol(n)=\mathcal{O}(n^c)$ mit $c>1$.
+Algorithmen oder Probleme mit ihrer besten algorithmischen Lösung für den schlimmsten Fall werden nach ihrem Laufzeitaufwand zu Komplexitätsklassen zusammengefasst.
 \begin{itemize}
-\item[\textbf{Lin}]- Eine det. Turingmaschine mit linearer Komplexität löst das Problem.
-\item[\textbf{P}]- Eine det. Turingmaschine mit polynomieller Komplexität löst das Problem.
-\item[\textbf{NP}]- Eine nichtdet. Turingmaschine mit polynomieller Komplexität löst das Problem.
+\item[\textbf{Lin}]- Klasse der Probleme, die in $Lin(n)$ (linearer)
+Zeit gelöst werden können.
+\item[\textbf{P}]- Klasse der Probleme, die in $Pol(n)$ (polynomialer)
+Zeit gelöst werden können.
+\item[\textbf{NP}]- Klasse der Probleme, die in $Pol(n)$ (polynomialer)
+Zeit überprüft werden können.
 \end{itemize}
 Es gilt die folgende Inklusion: $$\textbf{Lin}\subset\textbf{P}\subseteq\footnote{\text{Ob \textbf{P}=\textbf{NP} oder \textbf{P}$\neq$ \textbf{NP} ist eines der größten noch offenen Probleme in der theoretischen Informatik}}\textbf{NP} $$
 \newpage
@@ -245,18 +249,6 @@ Ein \emph{Rad} $W_{1,n}=(V,E)$ besteht aus einem Kreis $C_n=(V_n,E_n)$ und $V_n=
    \includegraphics[width=330pt]{bilder/rad.pdf}
 	\caption{Drei Räder $W_{1,3}$, $W_{1,6}$ und $W_{1,n}$}
   	 \end{figure}
-  	 
-\vspace{-4mm}
-\begin{defi}{\textbf{(Stern $S_{1,n}$)}}\newline
-Ein Baum mit einem inneren Knoten und $n$ Blättern wird als \emph{Stern} $S_{1,n}$ bezeichnet. 
-\label{defstern}\end{defi}
-\vspace{-5mm}
-\begin{figure}[h!]
-		\centering 		 
-   \includegraphics[width=330pt]{bilder/stern.pdf}
-	\caption{Drei Sterne $S_{1,0}$, $S_{1,6}$ und $S_{1,n}$}
-  	 \end{figure}
-\newpage
 \vspace{-4mm}
 \begin{defi}{\textbf{(Vollständiger Graph $K_n$)}}\newline
 Ein Graph heißt vollständig und wird als $K_n$ bezeichnet, wenn alle Knoten paarweise adjazent sind.
@@ -264,10 +256,10 @@ Ein Graph heißt vollständig und wird als $K_n$ bezeichnet, wenn alle Knoten pa
 \vspace{-8mm}
 \begin{figure}[h!]
 		\centering 		 
-   \includegraphics[width=350pt]{bilder/vollstaendigergraph.pdf}
+   \includegraphics[width=330pt]{bilder/vollstaendigergraph.pdf}
 	\caption{Drei vollständige Graphen $K_1$, $K_5$ und $K_n$}
   	 \end{figure}
-  	 \vspace{-4mm}
+  	 \newpage
 \begin{defi}{\textbf{(Vollständig bipartiter Graph $K_{n,m}$)}}\newline
 Ein Graph $G$ heißt \emph{bipartit} sofern seine Knotenmenge in zwei disjunkte Mengen $V_1$ und $V_2$ partitioniert werden kann, so dass für jede Kante $\{u,v\}$ in $G$ gilt: $$(u \in V_1 \wedge v \in V_2)\vee (v \in V_1 \wedge u \in V_2)$$Sind je zwei Knoten aus $V_1$ und $V_2$ mit $|V_1|=n$ und $|V_2|=m$ adjazent, so wird der Graph als vollständig bipartiter Graph $K_{n,m}$ bezeichnet. \end{defi}
   	 \vspace{-6mm}
@@ -289,6 +281,16 @@ Ein kreisfreier, zusammenhängender Graph mit $n$ Knoten wird als \emph{Baum} be
 \begin{bem}
 Für $n \geq 3$ ist die Bezeichnung $T_n$ nicht eindeutig.  
 \end{bem}
+\begin{defi}{\textbf{(Stern $S_{1,n}$)}}\newline
+Ein Baum mit einem inneren Knoten und $n$ Blättern wird als \emph{Stern} $S_{1,n}$ bezeichnet. 
+\label{defstern}\end{defi}
+\vspace{-5mm}
+\begin{figure}[h!]
+		\centering 		 
+   \includegraphics[width=380pt]{bilder/stern.pdf}
+	\caption{Drei Sterne $S_{1,0}$, $S_{1,6}$ und $S_{1,n}$}
+  	 \end{figure}
+
 \newpage
 \begin{defi}{\textbf{(Gitter $G_{n,m}$)}}\\
 Für $m,n \geq 1$ ist das \emph{Gitter} $G_{n,m}$ definiert durch $$G_{n,m}=(\{1,\ldots,n\}\times\{1,\ldots ,m\},\{\{(i,j),(i',j')\}\;|\;|i-i'|+|j-j'|=1\} ),$$ dabei ist $|x|$ definiert als der Absolutbetrag der Zahl $x \in \mathbb{Z}$.\cite{buchwanke} 
@@ -356,18 +358,18 @@ Neben diesen Erfolgen gibt es außerdem einige Resultate über die NP-Vollständ
 {\textbf{Graphen mit fester und parameterabhängiger metrischer Dimension}}
 \begin{lem}
 \label{path}\cite{landmarks}
-Die metrische Dimension eines Graphen $G$ ist genau dann eins wenn der Graph $G$ der Weg $P_n$ ist.
+Die metrische Dimension eines Graphen $G$ ist genau dann eins wenn der Graph $G$ der Weg $P_n$ mit $n\geq 2$ ist.
 \end{lem}
 \begin{lem}
 \label{complete}\cite{upper}
-Die metrische Dimension eines Graphen $G$ ist genau dann $n-1$ wenn der Graph $G$ der vollständige Graph $K_n$ ist.
+Die metrische Dimension eines Graphen $G$ ist genau dann $n-1$ wenn der Graph $G$ der vollständige Graph $K_n$ mit $n\geq 2$ ist.
 \end{lem}
 \begin{lem}\cite{upper}
-Sei $G = (V, E)$ ein Graph mit $n$ Knoten und metrischer Dimension $n-2$, dann gilt eine der folgenden Aussagen:
+Sei $G = (V, E)$ ein Graph mit $n$ Knoten und metrischer Dimension $n-2$, dann gilt eine der folgenden Aussagen für $n\geq 4$:
 \begin{enumerate}
 \item Der Graph $G$ ist der $K_{r,s}$ mit $r,s \geq 1$.
-\item Der Graph $G$ ist der $K_{r}+ \overline{K_s}$ mit $r,s \geq 1$.
-\item Der Graph $G$ ist der $K_{r,s}$ mit $r,s \geq 1$.
+\item Der Graph $G$ ist der $K_{r}+ \overline{K_s}$ mit $r \geq 1,\;s \geq 2$.
+\item Der Graph $G$ ist der $K_r+(K_1 \cup K_s)$ mit $r,s \geq 1$.
 \end{enumerate}
 %\todo[inline]{n-3}
 \end{lem}
@@ -390,7 +392,7 @@ Eine Übersicht über die metrische Dimension einiger Graphklassen:
 \textbf{Algorithmen zur metrischen Dimension}
 \begin{lem}\cite{landmarks} 
 \label{baum}
-Die metrische Dimension eines Baumes $T$, welcher kein Weg ist, lässt sich berechnen durch $\Sigma_{v \in V:L_v >1} (l_v-1)$. Dabei ist $l_v$ die Anzahl der Brücken welche Wege sind am Knoten $v$.
+Die metrische Dimension eines Baumes $T$, welcher kein Weg ist, lässt sich berechnen durch $\Sigma_{v \in V:l_v >1} (l_v-1)$. Dabei ist $l_v$ die Anzahl der Brücken welche Wege sind am Knoten $v$.
 \end{lem}
 \begin{lem}\cite{aussenplanar}
 Sei ein außenplanarer Graph $G=(V,E)$ gegeben. Dann kann $\beta(G)$ in Polynomialzeit berechnet werden.
@@ -406,7 +408,7 @@ Sei ein außenplanarer Graph $G=(V,E)$ gegeben. Dann kann $\beta(G)$ in Polynomi
 \newpage
 \MP{{Metrische Dimension Minimierungsproblem}}
 {Ein ungerichteter Graph $G=(V,E)$.}
-{Die metrische Dimension $k$ oder die Größe $k$ einer metrischen Basis.}
+{Die metrische Dimension $k$ d.h. die Größe $k$ einer metrischen Basis.}
 \end{defi}
 \begin{lem}\cite{book,landmarks}
 Sei ein Graph $G=(V,E)$ gegeben. Das Minimierungsproblem für das Finden der metrischen Dimension von $G$ ist NP-vollständig.
