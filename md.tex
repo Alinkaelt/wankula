@@ -801,7 +801,7 @@ Sei eine Sonne $S_n$ mit zwei Ankerknoten gegeben. Gibt es ein nicht getrenntes 
 \begin{proof}[Beweis:]
 \begin{enumerate}
 \item Es gibt zwei Knoten auf dem Kreis, welche nicht getrennt sind. Dieser Fall tritt nur auf wenn der Kreis gerade ist und die Ankerknoten in gegenüberliegenden Strahlen sind.
-\item Zwei Knoten, wobei mindestens einer in einem Strahl ist, sind nicht getrennt. Sei $a+k/b+k$ mit $a,\;b,\;k \geq 1$ die Markierung des Knoten in dem Strahl. Die Markierung des Strahlursprungs ist $a/b$. Damit es einen weiteren nicht getrennten Knoten gibt muss es einen Knoten mit der Markierung $a+k/b+k$ geben und damit auch einen Strahlursprung mit der Markierung $a+l/b+l$ mit $\leq l \leq k$ geben. Sei o.B.d.A. $l\geq 1$, denn für $l=0$ tritt Fall eins auf. Die Wege zwischen dem Strahlursprung mit der Markierung $a/b$ und dem Strahlursprung mit der Markierung $a+l/b+l$ müssen knotendisjunkt sein, da es keinen Bifurkator gibt. Für die Größe des Kreises der Strahlursprünge gilt: $a+l+b+l+a+b=2(a+b+l)$ und damit $2(a+b+l)\neq 2n+1$ für $n\in \mathbb{N}$. \end{enumerate}
+\item Zwei Knoten, wobei mindestens einer in einem Strahl ist, sind nicht getrennt. Sei $a+k/b+k$ mit $a,\;b,\;k \geq 0$ die Markierung des Knoten in dem kürzeren Strahl. Die Markierung des Strahlursprungs ist $a/b$. Damit es einen weiteren nicht getrennten Knoten gibt muss es einen Knoten mit der Markierung $a+k/b+k$ geben und damit auch einen Strahlursprung mit der Markierung $a+l/b+l$ mit $1 \leq l \leq k$ geben. Sei o.B.d.A. $l\geq 1$, denn für $l=0$ tritt Fall eins auf. Die Wege zwischen dem Strahlursprung mit der Markierung $a/b$ und dem Strahlursprung mit der Markierung $a+l/b+l$ müssen knotendisjunkt sein, da es keinen Bifurkator gibt. Für die Größe des Kreises der Ursprungsknoten gilt: $a+l+b+l+a+b=2(a+b+l)$ und damit $2(a+b+l)\neq 2n+1$ für $a,\;b,\;l,\;n\in \mathbb{N}$. \end{enumerate}
 \end{proof}
 
 \vspace{-4mm}\begin{bem}
@@ -815,7 +815,7 @@ Sei eine gerade Sonne $S_n$ gegeben. Gibt es ein nicht getrenntes Knotenpaar, we
 \end{lem}
 
 \begin{proof}[Beweis:]
-Es gibt zwei nicht getrennte Knoten $u,v$ mit den Markierungen $a/b$ von den zwei Ankerknoten $r_1,r_2$ und $a-l/b-l$,$\;a-i/b-i$ für $0\leq i,l$ die Markierung der Strahlursprünge. Die Wege zwischen den Strahlursprüngen müssen knotendisjunkt sein, da es keinen Bifurkator gibt. Angenommen es gibt einen weiteren Ankerknoten $r_3$ und der Knoten $v$ bekommt die Markierung $a/b/c$ und $a\neq c$ und $b\neq c$, da es nur einen Ankerknoten pro Strahl gibt. Sei $r_3$ o.E.d.A. auf dem kürzesten Weg von $u$ zu $r_1$. Die Markierung von $v$ ist $a/b/c+2b=2a-c$. Für $dist(r_3,u)=dist(r_3,v)$ muss $a=c$ sein. $\lightning$ \end{proof}
+Es gibt zwei nicht getrennte Knoten $u,v$ mit den Markierungen $a/b$ von den zwei Ankerknoten $r_1,r_2$ und $a-l/b-l$,$\;a-i/b-i$ für $i,\;l\geq 0$ die Markierung der Strahlursprünge. Die Wege zwischen den Strahlursprüngen müssen knotendisjunkt sein, da es keinen Bifurkator gibt. Angenommen es gibt einen weiteren Ankerknoten $r_3$ und der Knoten $v$ bekommt die Markierung $a/b/c$ und $a\neq c$ und $b\neq c$, da es nur einen Ankerknoten pro Strahl geben darf nach Lemma \ref{knotenimstrahl}. Sei $r_3$ o.E.d.A. auf dem kürzesten Weg von $u$ zu $r_1$. Die Markierung von $v$ ist $a/b/c+2b=2a-c$. Damit $dist(r_3,u)=dist(r_3,v)$ muss $2a-c=c$ und damit $a=c$ sein. $\lightning$ \end{proof}
 \begin{lem}
 \label{sonneerweiterung}
 Sei ein Sonnengraph $S_{n}$ gegeben. Auf jeder Kante auf den Wegen kann mit Knoten vom Grad zwei erweitert werden und Kanten, sofern ein inzidenter Knoten den Grad zwei hat, auf den Wegen können ohne Auswirkungen auf die metrische Dimension kontrahiert werden.
@@ -824,8 +824,8 @@ Sei ein Sonnengraph $S_{n}$ gegeben. Auf jeder Kante auf den Wegen kann mit Knot
 Angenommen der $S_n$ sei durch eine Menge von Knoten nicht getrennt, durch welche der $S_{n,1}$ getrennt ist.
 Sei $a+k/b+k$ für einen ungeraden Kreis und $a+k/b+k/c+k$ für einen geraden Kreis die metrischen Koordinaten von $v$. Angenommen, es gibt einen Knoten $u$ in dem Graphen $G$ mit den gleichen metrischen Koordinaten.
 \begin{enumerate}
-\item Der Strahlursprung $v_k$ hat die metrischen Koordinaten $a/b$ oder $a/b/c$. Sofern es einen anderen Knoten $v'$ als $v$ gibt mit der Distanz $k$ zu dem Knoten $v_k$ und den gleichen metrischen Koordinaten wie $v$, so gibt es auch einen Knoten zwischen den Knoten $v'$ und $v$ mit den metrischen Koordinaten $a+1/b+1$ oder $a+1/b+1/c+1$. Dieser Knoten hat die gleichen metrischen Koordinaten wie der ein Knoten $v$ von dem $S_{n,1}$. Dadurch ist der Graph $S_{n,1}$ auch nicht getrennt.
-\item Angenommen, es gibt einen Knoten $v'$ als $v$ mit der Distanz $2a+k$ zu dem Knoten $v_k$ und den gleichen metrischen Koordinaten wie $v$. Nach den Lemmata \ref{lemnurbifur1} und \ref{lemnurbifur2} ist dieser Fall für eine ungerade Sonne mit zwei Ankerknoten und eine gerade Sonne mit drei Ankerknoten nicht möglich.
+\item Der Strahlursprung $v_k$ hat die metrischen Koordinaten $a/b$ oder $a/b/c$. Sofern es einen anderen Knoten $v'$ als $v$ gibt mit der Distanz $k$ zu dem Knoten $v_k$ und den gleichen metrischen Koordinaten wie $v$, so gibt es auch einen Knoten zwischen den Knoten $v'$ und $v$ mit den metrischen Koordinaten $a+1/b+1$ oder $a+1/b+1/c+1$. Dieser Knoten hat die gleichen metrischen Koordinaten wie der Knoten an $v$ welcher auch in $S_{n,1}$ ist. Dadurch wäre der Graph $S_{n,1}$ auch nicht getrennt. $\lightning$
+\item Angenommen, es gibt einen anderen Knoten $v'$ als $v$ mit der Distanz $2a+k$ zu dem Knoten $v_k$ und den gleichen metrischen Koordinaten wie $v$. Nach den Lemmata \ref{lemnurbifur1} und \ref{lemnurbifur2} ist dieser Fall für eine ungerade Sonne mit zwei Ankerknoten und eine gerade Sonne mit drei Ankerknoten nicht möglich.
 %\begin{itemize}
 %\item Der Knoten $v'$ liegt auf dem Kreis. Wenn der kürzeste Weg über alle Ankerknoten gleich ist, tritt Fall 1 auf.
 %\begin{itemize}
@@ -841,7 +841,7 @@ Sei $a+k/b+k$ für einen ungeraden Kreis und $a+k/b+k/c+k$ für einen geraden Kr
 \end{enumerate}
 \end{proof}
 \begin{bem}
-Es werden nur noch metrische Basen mit maximal einem Ankernoten in einem Strahl betrachtet. O.B.d.A. ist der Endknoten des Strahls der Ankerknoten. Außerdem gilt nach Lemma \ref{sonneerweiterung} für die metrische Dimension von Sonnengraphen: $$\beta(S_{n,1})=\beta(S_{n,k})=\beta(S_n)$$
+Nach Lemmata \ref{sonneerweiterung} und \ref{einelementreichtnicht} ist die metrische Dimension von einer $S_n$ nicht größer als von einer $S_{n,1}$. Und nach Lemma \ref{sun1} ist sie auch nicht kleiner. Also gilt für die metrische Dimension von Sonnengraphen: $$\beta(S_{n,1})=\beta(S_{n,k})=\beta(S_n)$$
 Dadurch wird bei der weiteren Berechnung nur der Sonnengraph $S_{n,1}$ beachtet, da sich die Ergebnisse auf jeden beliebigen Sonnengraph übertragen lassen. 
 \end{bem}
 \newpage
@@ -890,7 +890,7 @@ Durch die Wahl von $v_{\frac{n}{2}-1}$ oder $v_{\frac{n}{2}+1}$ entstehen mindes
 Ein ungerader Sonnengraph $S_n$ mit $n\geq 3$ ist getrennt, wenn der maximale Abstand zwischen zwei Strahlursprüngen mit einem Ankerknoten $max\;dist(r_i,r_j)\leq \frac{n+3}{2}$ mit $r_i,r_j \in R$ und $r_j\neq r_i$.
 \end{lem}
 \begin{proof}[Beweis:]
-Angenommen zwei Knoten sind nicht getrennt. Nach Lemma \ref{lemnurbifur1} sind bei einem ungeraden Sonnengraph zwei Knoten nur dann nicht getrennt wenn sie einen gemeinsamen Bifurkator haben. Es muss einen Strahlursprung mit der maximal möglichen Distanz $\frac{n-1}{2}$ geben und einen Nachbarn $v$ mit einem Strahl ohne Ankerknoten. Damit es einen gemeinsamen Bifurkator gibt darf der kürzeste Weg von $v$ zu allen Ankerknoten höchstens $\frac{n-1}{2}-1$ sein. Der maximale Abstand zwischen zwei Ankerknoten ist größer als $n-\frac{n-1}{2}-1=\frac{n+3}{2}$.
+Angenommen zwei Knoten sind nicht getrennt. Nach Lemma \ref{lemnurbifur1} sind bei einem ungeraden Sonnengraph zwei Knoten nur dann nicht getrennt wenn sie einen gemeinsamen Bifurkator haben. Es muss einen Strahlursprung mit der maximal möglichen Distanz $\frac{n-1}{2}$ geben und einen Nachbarn $v$ mit einem Strahl ohne Ankerknoten. Damit es einen gemeinsamen Bifurkator gibt darf der kürzeste Weg von $v$ zu allen Ankerknoten höchstens $\frac{n-1}{2}-1$ sein und ist mindestens $1$. Der maximale Abstand zwischen zwei Ankerknoten ist mindestens $n-(\frac{n-1}{2}-1)+1=\frac{n+5}{2}$.
 \end{proof}
 \vspace{-1mm}
 \begin{lem}
@@ -900,7 +900,7 @@ Ein gerader Sonnengraphen $S_n$ mit $n\geq 6$ ist getrennt wenn der maximale Abs
 
 \vspace{-1mm}
 \begin{proof}[Beweis:]
-Analog zum Beweis von Lemma \ref{ungerade_sonne} mit dem Unterschied, dass die maximal mögliche Distanz $\frac{n}{2}$ ist und dadurch der maximale Abstand zwischen zwei Ankerknoten größer als $n-\frac{n}{2}-1=\frac{n+2}{2}$ ist.
+Analog zum Beweis von Lemma \ref{ungerade_sonne} mit dem Unterschied, dass die maximal mögliche Distanz $\frac{n}{2}$ ist und dadurch der maximale Abstand zwischen zwei Ankerknoten mindestens $n-\frac{n}{2}+2=\frac{n+4}{2}$ ist.
 \end{proof}
 
 \vspace{-1mm}
@@ -948,16 +948,16 @@ $$\beta(C_n) \leq \beta(S'_{n})\leq \beta(S_{n})$$
 
 \vspace{-1mm}
 \begin{proof}[Beweis:]
-Um einen unvollständigen Sonnengraphen aus einem Kreis $C_n$ zu erhalten wird mindestens ein neuer Knoten erzeugt und mit genau einem Knoten in dem Graphen $C_n$ verbunden. Dieser Vorgang wird wiederholt, bis der gewünschte unvollständige Graph erzeugt ist. Um einen Sonnengraphen $S_{n}$ aus einem unvollständigen Sonnengraphen zu erhalten, wird mindestens ein Knoten hinzugefügt und mit genau einer Kante verbunden. Nach Lemma \ref{dist} gilt für die metrische Dimension:
+Um einen unvollständigen Sonnengraphen aus einem Kreis $C_n$ zu erhalten wird mindestens ein neuer Knoten erzeugt und mit genau einem Knoten in dem Graphen $C_n$ verbunden. Dieser Vorgang wird wiederholt, bis der gewünschte unvollständige Graph erzeugt ist. Um einen Sonnengraphen $S_{n}$ aus einem unvollständigen Sonnengraphen zu erhalten, wird mindestens ein Knoten hinzugefügt und mit genau einer Kante verbunden. Nach Lemma \ref{einelementreichtnicht} gilt für die metrische Dimension:
 $$\beta(C_n)  \leq \beta(S'_{n}) \leq \beta(C_n) +1 \text{ und } \beta(S'_{n}) \leq \beta(S_n) \leq \beta(S'_{n})+1$$
 \end{proof}\vspace{-4mm}
 \begin{lem}
 \label{usg}
 Ist $max\;dist(r_i,r_j)> \lceil \frac{n+2}{2}\rceil$, kann der unvollständige Sonnengraph trotzdem getrennt sein. Ist der Sonnergraph ungerade, so ist er durch zwei Ankerknoten getrennt oder durch drei Ankerknoten, wenn er gerade ist, sofern es keine Strahlen gibt auf allen Knoten $v$, wobei:\newline
-$\cdot$ $v$ liegt zwischen den Knoten $r_i$ und $r_{j+\lfloor\frac{n}{2}\rfloor}$ (gezählt auf der Seite wo $r_i$ liegt) \\$\cdot$ $v$ liegt zwischen den Knoten $r_j$ und $r_{i+\lfloor\frac{n}{2}\rfloor}$ (gezählt auf der Seite wo $r_j$ liegt)
+$-$ $v$ liegt zwischen den Knoten $r_i$ und $r_{j+\lfloor\frac{n}{2}\rfloor}$ (gezählt auf der Seite wo $r_i$ liegt) \\$-$ $v$ liegt zwischen den Knoten $r_j$ und $r_{i+\lfloor\frac{n}{2}\rfloor}$ (gezählt auf der Seite wo $r_j$ liegt)
 \end{lem}
 \begin{bem}
-Alle Knoten bei welchen es keinen Strahl geben darf, würden sonst Bifurkatoren zwischen allen Ankerknoten den Knoten auf dem Strahl und Knoten auf dem Kreis sein. Gibt es keine Knoten auf dem Strahl, so gibt es auch keine Bifurkatoren mit der Eigenschaft aus Lemma \ref{Bifurnachbar} nicht. Nach den Lemmata \ref{lemnurbifur1} und \ref{lemnurbifur2} können nur nicht getrennte Knotenpaare existieren, wenn es einen solchen Bifurkator gibt. Der unvollständige Sonnengraph ist damit getrennt.
+Alle Knoten bei welchen es keinen Strahl geben darf, würden sonst Bifurkatoren zwischen allen Ankerknoten, einem Knoten auf dem Strahl und einem Knoten auf dem Kreis sein. Gibt es keine Knoten auf dem Strahl, so gibt es auch keine Bifurkatoren mit der Eigenschaft aus Lemma \ref{Bifurnachbar}. Nach den Lemmata \ref{lemnurbifur1} und \ref{lemnurbifur2} können nur nicht getrennte Knotenpaare existieren, wenn es einen solchen Bifurkator gibt. Der unvollständige Sonnengraph ist damit getrennt.
 \end{bem}
 \begin{bem}
 Nach Lemma \ref{schrankenunvsg} gilt für $n=2k+1$ für $k \in \mathbb{N}$: $$2=\beta(C_n) \leq \beta(S'_{n,k})\leq \beta(S_{n,k})=2$$
@@ -972,7 +972,7 @@ Daraus folgt, dass die metrische Dimension eines unvollständigen Sonnengraphen 
    \caption{Strahllänge $l_k$}
 \end{minipage}
 \begin{minipage}[r]{260pt}
-Zwei Ankerknoten in gegenüberliegenden Strahlen trennen niemals eine unvollständige Sonne. Bei allen anderen Kombinationen gibt es die gegenüberliegenden Blöcke ohne Strahlen, welche sonst den Strahlursprung als Bifurkator aus Lemma \ref{Bifurnachbar} hätten. Die Größe des verbotenen Blocks ist die kürzeste Weglänge $kw(r_1,r_2)-1$ zwischen den Strahlursprüngen mit den Ankerknoten und die verbotene Strahllänge $l_k$ berechnet sich aus:
+Zwei Ankerknoten in gegenüberliegenden Strahlen trennen niemals eine unvollständige Sonne. Bei allen anderen Kombinationen gibt es die gegenüberliegenden Blöcke ohne Strahlen, welche sonst den Strahlursprung als Bifurkator aus Lemma \ref{Bifurnachbar} hätten. Die Größe des verbotenen Blocks zwischen den Strahlursprüngen mit den Ankerknoten ist die kürzeste Weglänge $kw(r_1,r_2)-1$. Die verbotene Strahllänge $l_k$ an jedem Knoten aus dem Block berechnet sich aus:
 $$l_k=\frac{n-2kw(r_1,r_2)}{2}$$
 \end{minipage}
 \end{figure}
@@ -1064,7 +1064,7 @@ Die metrische Dimension eines Freundschaftsgra-\\phen $F_{n,3}$ ist mindestens g
 
 \newpage
 \begin{proof}[Beweis von Lemma \ref{Freundschaftsgraphen}:] \vspace{+1mm} ~ \linebreak
-Nach Lemma \ref{mindfreundschaftsgraph} ist bekannt, dass die metrische Dimension eines Freundschaftsgraphen $F_{n,3}$ mindestens $n$ ist. Angenommen, alle als $v_{2,i}$ markierten Knoten werden in die metrische Basis aufgenommen. Dann sind sie getrennt. Der Knoten $u$ hat die Distanz eins zu allen Knoten in der metrischen Basis und ist der einzige Knoten mit dieser Eigenschaft. Für jeden Knoten $v_{1,i}$ gibt es genau einen Knoten $v_{2,i}$ mit der Distanz eins. Zu allen anderen Knoten in der metrischen Basis hat jeder Knoten $v_{1,i}$ die Distanz zwei. Alle Markierungen sind eindeutig und der gesamte Graph ist durch die $n$ Knoten getrennt.
+Nach Lemma \ref{mindfreundschaftsgraph} ist bekannt, dass die metrische Dimension eines Freundschaftsgraphen $F_{n,3}$ mindestens $n$ ist. Angenommen, alle als $v_{i,2}$ markierten Knoten werden in die metrische Basis aufgenommen. Dann sind sie getrennt. Der Knoten $u$ hat die Distanz eins zu allen Knoten in der metrischen Basis und ist der einzige Knoten mit dieser Eigenschaft. Für jeden Knoten $v_{i,1}$ gibt es genau einen Knoten $v_{i,2}$ mit der Distanz eins. Zu allen anderen Knoten in der metrischen Basis hat jeder Knoten $v_{i,1}$ die Distanz zwei. Alle Markierungen sind eindeutig und der gesamte Graph ist durch die $n$ Knoten getrennt.
 \end{proof}
 \vspace{-14mm}
 ~ \linebreak
@@ -1124,8 +1124,8 @@ Werden nicht nur Kreise sondern Sonnen und unvollständige Sonnen an dem Knoten 
 \begin{proof}[Beweis:]
 \begin{itemize}
 \item Um die zwei Nachbarn in dem Teilgraphen von allen Knoten zu trennen, muss nach Lemma \ref{fg} $dist(u,r)\leq \frac{n}{2}$ gelten. Diese Vorraussetzung wird nur für den gegenüberliegenden Knoten von $u$ erfüllt. Dieser Knoten mit dem Separationsknoten als Ankerknoten trennen keinen geraden Kreis.
-\item  Setzt man einen Ankerknoten $r$ mit der Distanz $dist(u,r)= \frac{n+1}{2}$ so sind die Knoten $v,w$ getrennt. Der Separationsknoten $u$ wird lokal als Ankerknoten aufgefasst. Ein ungerader Kreis ist durch zwei Ankerknoten getrennt. Für den ungeraden Sonnengraphen gilt $\frac{n+1}{2}< \frac{n+3}{2}$. Nach Lemma \ref{ungerade_sonne} ist er getrennt und der ungerade unvollständige Sonnenraph damit auch nach Lemma \ref{bemsonne}.
-\item Setze den Knoten mit $dist(u,r)= \frac{n}{2}$ und einen beliebig weiteren als Ankerknoten. Für geraden Sonnengraphen gilt $\frac{n}{2}< \frac{n}{2}+1$. Damit ist nach Lemma \ref{gerade_sonne} der Teilgraph getrennt und der ungerade unvollständige Sonnenraph auch nach Lemma \ref{bemsonne}.
+\item  Setzt man einen Ankerknoten $r$ mit der Distanz $dist(u,r)= \frac{n+1}{2}$ so sind die Knoten $v,w$ getrennt. Der Separationsknoten $u$ wird lokal als Ankerknoten aufgefasst. Ein ungerader Kreis ist durch zwei Ankerknoten getrennt. Für den ungeraden Sonnengraphen gilt $\frac{n+1}{2}< \frac{n+3}{2}$. Nach Lemma \ref{ungerade_sonne} ist er getrennt und der ungerade unvollständige Sonnengraph damit auch nach Bemerkung \ref{bemsonne}.
+\item Setze den Knoten mit $dist(u,r)= \frac{n}{2}$ und einen beliebig weiteren als Ankerknoten. Für geraden Sonnengraphen gilt $\frac{n}{2}< \frac{n}{2}+1$. Damit ist nach Lemma \ref{gerade_sonne} der Teilgraph getrennt und der ungerade unvollständige Sonnengraph auch nach Bemerkung \ref{bemsonne}.
 \end{itemize}
 \vspace{-2mm}
 \end{proof}
